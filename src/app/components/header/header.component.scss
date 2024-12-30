@@ -1,0 +1,102 @@
+@use 'abstracts/container' as container;
+
+// Header
+.header {
+  background-color: #f4f1eb;
+  border-bottom: 1px solid #1c343328;
+  height: 71px;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  top: 0;
+  z-index: 10;
+  // Navegação
+  &__nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    @include container.container();
+  }
+  // Lista de navegação
+  &__list {
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 24px;
+    @media (max-width: 991px) {
+      gap: 12px;
+    }
+  }
+  // Item de lista
+  &__item {
+    height: 100%;
+    align-items: center;
+    font-size: 24px;
+    color: #333;
+    // Modificadores do item
+    &--logo {
+      display: flex;
+      position: absolute;
+      left: 0;
+    }
+    &--menu {
+      display: flex;
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+    &--toggle {
+      display: none;
+      @media (max-width: 991px) {
+        display: flex;
+      }
+    }
+    &--emphasis {
+      display: flex;
+      background-color: #1c3433;
+      height: 48px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+  }
+  // Link de menu
+  &__link {
+    text-decoration: none;
+    color: #1c3433;
+    font-size: 16px;
+    font-weight: 500;
+    // Modificadores do Link
+    &--emphasis {
+      color: #f4f1eb;
+    }
+  }
+  &__toggle {
+    height: 48px;
+    width: 48px;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+  }
+  &__line {
+    height: 2px;
+    background-color: #1c3433;
+    transition: width 0.2s ease-in-out;
+    border-radius: 2px;
+  }
+}

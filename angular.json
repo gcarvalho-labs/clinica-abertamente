@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "clinica-abertamente": {
+    "teste-novo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/clinica-abertamente",
+            "outputPath": "dist/teste-novo",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -54,9 +54,14 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -86,10 +91,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "clinica-abertamente:build:production"
+              "buildTarget": "teste-novo:build:production"
             },
             "development": {
-              "buildTarget": "clinica-abertamente:build:development"
+              "buildTarget": "teste-novo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -117,8 +122,23 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "70c5d789-c3fe-480b-9d18-b2d650a7b249",
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }

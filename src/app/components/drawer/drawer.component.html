@@ -1,0 +1,14 @@
+<div class="fade">
+<nav class="drawer" [class.drawer--open]="isOpen">
+  <ul class="drawer__list">
+    <li class="drawer__item drawer__item--menu" *ngFor="let menu of menus">
+      <a
+        class="drawer__link"
+        [routerLink]="menu.link"
+        [attr.aria-label]="menu.name"
+        >{{ menu.name }}</a
+      >
+    </li>
+  </ul>
+</nav>
+</div>

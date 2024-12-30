@@ -1,0 +1,56 @@
+@use "sass:map";
+@use "abstracts/container" as container;
+@use "abstracts/button" as button;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* ---------------------------------------------- */
+/* -------------------Containers----------------- */
+/* ---------------------------------------------- */
+
+$ca-breakpoints: (
+  // Extra Small
+  xs: 0,
+  // Small
+  sm: 576px,
+  // Medium
+  md: 768px,
+  // Large
+  lg: 992px,
+  // Extra Large
+  xl: 1200px,
+  // Extra Extra Large
+  xxl: 1400px
+);
+
+$ca-gutters: (
+  xs: 0px,
+  sm: 0px,
+  md: 0px,
+  lg: 0px,
+  xl: 0px,
+  xxl: 0px,
+);
+
+@mixin ca-container {
+  @include container.container($ca-gutters, $ca-breakpoints);
+}
+
+/* ---------------------------------------------- */
+/* --------------------Botões-------------------- */
+/* ---------------------------------------------- */
+
+
+
+/* ---------------------------------------------- */
+/* --------------------Geral--------------------- */
+/* ---------------------------------------------- */
+
+html {
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  background-color: #f4f1eb;
+  margin: 0;
+  padding: 0;
+}

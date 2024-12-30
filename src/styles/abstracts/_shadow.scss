@@ -1,0 +1,49 @@
+/* Sem sombra */
+@mixin shadow-none {
+  box-shadow: none;
+}
+
+/* Sombra pequena */
+@mixin shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Sombra padrão */
+@mixin shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Sombra intermediária */
+@mixin shadow-md {
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* Sombra grande */
+@mixin shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+/* Sem sombra */
+@mixin p-shadow-none {
+  box-shadow: none;
+}
+
+/* Sombra pequena proporcional */
+@mixin p-shadow-sm {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Sombra padrão proporcional */
+@mixin p-shadow {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Sombra intermediária proporcional */
+@mixin p-shadow-md {
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* Sombra grande proporcional */
+@mixin p-shadow-lg {
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.175);
+}
