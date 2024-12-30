@@ -1,6 +1,7 @@
-<app-header></app-header>
-<main class="main">
-  <app-hero></app-hero>
+<app-header (toggleDrawer)="toggleDrawerState()"></app-header>
+<app-drawer [isOpen]="isDrawerOpen"></app-drawer>
+<main style="margin-top: 185px;">
+<!--   <app-hero></app-hero>-->
+  <app-services></app-services>
 </main>
-
 <router-outlet />

@@ -28,9 +28,13 @@
     list-style: none;
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin: 0;
     padding: 0;
     gap: 24px;
+    @media (max-width: 991px) {
+      gap: 12px;
+    }
   }
   // Item de lista
   &__item {
@@ -56,6 +60,15 @@
         display: flex;
       }
     }
+    &--emphasis {
+      display: flex;
+      background-color: #1c3433;
+      height: 48px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
   }
   // Link de menu
   &__link {
@@ -63,7 +76,10 @@
     color: #1c3433;
     font-size: 16px;
     font-weight: 500;
-    transition: color 0.3s ease-in-out;
+    // Modificadores do Link
+    &--emphasis {
+      color: #f4f1eb;
+    }
   }
   &__toggle {
     height: 48px;

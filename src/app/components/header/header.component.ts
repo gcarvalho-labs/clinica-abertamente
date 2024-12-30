@@ -1,24 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForOf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [NgForOf],
+  imports: [NgForOf, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   isToggled = false;
+  @Output() toggleDrawer = new EventEmitter<void>();
 
   menus = [
-    { name: 'Menu 2', link: '/menu2' },
-    { name: 'Menu 3', link: '/menu3' },
-    { name: 'Menu 4', link: '/menu4' },
-    { name: 'Menu 5', link: '/menu5' },
+    { name: 'Início', link: '#' },
+    { name: 'Serviços', link: '#' },
+    { name: 'Equipe', link: '#' },
+    { name: 'Metodologia', link: '#' },
+    { name: 'Localização', link: '#' },
   ];
 
   //Propriedades Calculadas
-
   get firstLineWidth(): number {
     return this.isToggled ? 16 : 28;
   }
@@ -27,11 +29,16 @@ export class HeaderComponent {
     return this.isToggled ? 28 : 16;
   }
 
-  get toggleBackgroundColor(): string {
+  get toggleBgColor(): string {
     return this.isToggled ? '#75fb91' : '#e5e4de';
   }
 
   toggleMenuState(): void {
     this.isToggled = !this.isToggled;
+    this.notifyDrawer();
+  }
+
+  notifyDrawer() {
+    this.toggleDrawer.emit();
   }
 }

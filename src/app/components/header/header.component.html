@@ -5,12 +5,15 @@
         <a class="header__link" href="">Logo</a>
       </li>
       <li class="header__item header__item--menu" *ngFor="let menu of menus">
-        <a class="header__link" href="{{ menu.link }}">{{ menu.name }}</a>
+        <a class="header__link" [routerLink]="menu.link">{{ menu.name }}</a>
+      </li>
+      <li class="header__item header__item--emphasis">
+        <a class="header__link header__link--emphasis" href="">Nosso blog</a>
       </li>
       <li class="header__item header__item--toggle">
         <button
           class="header__toggle"
-          [style.background-color]="toggleBackgroundColor"
+          [style.background-color]="toggleBgColor"
           (click)="toggleMenuState()"
         >
           <div class="header__line" [style.width.px]="firstLineWidth"></div>
