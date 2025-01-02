@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ServicesComponent } from './components/sections/services/services.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import {HeroComponent} from './components/sections/hero/hero.component';
+import { TeamComponent } from './components/sections/team/team.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import {HeroComponent} from './components/sections/hero/hero.component';
     HeroComponent,
     DrawerComponent,
     HeroComponent,
+    TeamComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
