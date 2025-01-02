@@ -1,7 +1,16 @@
 <app-header (toggleDrawer)="toggleDrawerState()"></app-header>
 <app-drawer [isOpen]="isDrawerOpen"></app-drawer>
-<main style="margin-top: 185px;">
-<!--   <app-hero></app-hero>-->
+<div
+  class="backdrop"
+  [class.backdrop--open]="isDrawerOpen"
+  (click)="toggleDrawerState()"
+  aria-hidden="true"
+></div>
+
+
+<main>
+  <app-hero></app-hero>
   <app-services></app-services>
+
 </main>
-<router-outlet />
+<router-outlet></router-outlet>

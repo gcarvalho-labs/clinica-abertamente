@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { ServicesComponent } from './components/sections/services/services.component';
- // import { HeroComponent } from './components/sections/hero/hero.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
+import {HeroComponent} from './components/sections/hero/hero.component';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +11,9 @@ import { DrawerComponent } from './components/drawer/drawer.component';
     RouterOutlet,
     HeaderComponent,
     ServicesComponent,
-     // HeroComponent,
+    HeroComponent,
     DrawerComponent,
+    HeroComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -22,7 +23,16 @@ export class AppComponent {
 
   title = 'clinica-abertamente';
 
-  toggleDrawerState(): void {
+  toggleDrawerState() {
     this.isDrawerOpen = !this.isDrawerOpen;
+
+    const appRoot = document.querySelector('app-root');
+    if (appRoot) {
+      if (this.isDrawerOpen) {
+        appRoot.classList.add('backdrop--open');
+      } else {
+        appRoot.classList.remove('backdrop--open');
+      }
+    }
   }
 }
