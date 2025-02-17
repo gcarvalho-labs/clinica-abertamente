@@ -1,27 +1,30 @@
 <section class="hero">
-  <div class="hero__content">
-    <div class="hero__flex-content">
-      <div class="hero__text">
-        <h1 class="hero__title">
-          Redescubra a sí mesmo com
-          <span class="hero__emphasis">cuidado</span> especializado
-        </h1>
-        <p class="hero__description">
-          Estamos aqui para ouvir você, oferecer apoio e ajudar a construir o
-          equilíbrio emocional que transforma vidas.
-        </p>
-        <div class="hero__buttons">
-          <button class="hero__button hero__button--primary">
-            Vamos conversar
-          </button>
-          <button class="hero__button hero__button--secondary">
-            Nossa metodologia
-          </button>
-        </div>
+  <div class="hero__container">
+    <div class="hero__text">
+      <h1 class="hero__title">
+        {{ title.initial }}
+        <span class="hero__title hero__title--emphasis">{{
+          title.emphasis
+        }}</span>
+        {{ title.final }}
+      </h1>
+      <div style="padding: 10px;"></div>
+      <p class="hero__description">
+        {{ description }}
+      </p>
+      <div style="padding: 15px;"></div>
+
+      <div class="hero__buttons">
+        <button class="hero__button hero__button--primary">
+          {{ buttonPrimary }}
+        </button>
+        <button class="hero__button hero__button--secondary">
+          {{ buttonSecondary }}
+        </button>
       </div>
-      <div class="hero__photo">
-        <img class="hero__image" src="/hero.webp" alt="" />
-      </div>
+    </div>
+    <div class="hero__image-container">
+      <img class="hero__image" [attr.src]="imageSrc" [attr.alt]="imageAlt" />
     </div>
   </div>
 </section>

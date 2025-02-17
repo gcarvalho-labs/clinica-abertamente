@@ -1,44 +1,39 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { NgForOf } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
+import { NgClass, NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [NgForOf, RouterLink],
+  imports: [NgForOf, NgIf, NgClass],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  isToggled = false;
-  @Output() toggleDrawer = new EventEmitter<void>();
+  // Itens de menu:
 
-  menus = [
-    { name: 'Início', link: '#' },
-    { name: 'Serviços', link: '#' },
-    { name: 'Equipe', link: '#' },
-    { name: 'Metodologia', link: '#' },
-    { name: 'Localização', link: '#' },
+  items = [
+    { name: 'Logo', link: '#', type: 'logo', emphasis: false },
+    { name: 'Início', link: '#', type: 'default', emphasis: false },
+    { name: 'Serviços', link: '#', type: 'default', emphasis: false },
+    { name: 'Equipe', link: '#', type: 'default', emphasis: false },
+    { name: 'Metodologia', link: '#', type: 'default', emphasis: false },
+    { name: 'Localização', link: '#', type: 'default', emphasis: false },
+    { name: 'Nosso Blog', link: '#', type: 'default', emphasis: true },
   ];
 
-  //Propriedades Calculadas
-  get firstLineWidth(): number {
-    return this.isToggled ? 16 : 28;
+  // Modo mobile:
+  isMobile = window.innerWidth <= 991;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.isMobile = (event.target as Window).innerWidth <= 991;
   }
 
-  get secondLineWidth(): number {
-    return this.isToggled ? 28 : 16;
-  }
+  // Drawer:
+  @Output() toggleDrawer = new EventEmitter<void>();
 
-  get toggleBgColor(): string {
-    return this.isToggled ? '#75fb91' : '#e5e4de';
-  }
-
-  toggleMenuState(): void {
-    this.isToggled = !this.isToggled;
-    this.notifyDrawer();
-  }
-
-  notifyDrawer() {
+  toggleButton() {
     this.toggleDrawer.emit();
+    this.isDrawerActive = !this.isDrawerActive;
   }
+  isDrawerActive = false;
 }

@@ -4,8 +4,18 @@ import { Component } from '@angular/core';
   selector: 'app-hero',
   imports: [],
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  styleUrl: './hero.component.scss',
 })
 export class HeroComponent {
-
+  title = {
+    initial: 'Redescubra a si mesmo com',
+    emphasis: ' cuidado',
+    final: ' especializado',
+  };
+  description: string =
+    'Estamos aqui para ouvir você, oferecer apoio e ajudar a construir o equilíbrio emocional que transforma vidas.';
+  buttonPrimary: string = 'Vamos conversar';
+  buttonSecondary: string = 'Nossa metodologia';
+  imageSrc: string = '';
+  imageAlt: string = 'Imagem ilustrativa';
 }

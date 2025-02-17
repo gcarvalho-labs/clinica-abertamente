@@ -2,7 +2,12 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 71px 0 0;
   background-color: #f4f1eb;
   font-family: 'DM Sans', sans-serif;
+}
+
+button, input, select, textarea, a {
+  font-family: inherit;
+  outline: none;
 }

@@ -1,17 +1,9 @@
-<app-header (toggleDrawer)="toggleDrawerState()"></app-header>
-<app-drawer [isOpen]="isDrawerOpen"></app-drawer>
-<div
-  class="backdrop"
-  [class.backdrop--open]="isDrawerOpen"
-  (click)="toggleDrawerState()"
-  aria-hidden="true"
-></div>
-
-
+<app-header (toggleDrawer)="drawerVisible = !drawerVisible"></app-header>
+<app-drawer [visible]="drawerVisible"></app-drawer>
 <main>
   <app-hero></app-hero>
-  <app-services></app-services>
-  <app-team></app-team>
+
 
 </main>
+
 <router-outlet></router-outlet>

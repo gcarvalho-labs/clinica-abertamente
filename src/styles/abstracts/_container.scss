@@ -1,7 +1,7 @@
-@mixin container {
+@mixin container($pr: 16px, $pl: 16px) {
   width: 100%;
-  padding-right: 12px;
-  padding-left: 12px;
+  padding-right: $pr;
+  padding-left: $pl;
   margin-right: auto;
   margin-left: auto;
 
