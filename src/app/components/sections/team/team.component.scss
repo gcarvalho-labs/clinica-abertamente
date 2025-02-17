@@ -1,8 +1,29 @@
 @use 'abstracts/container' as container;
-.team{
+.team {
+  padding-top: 100px;
+  padding-bottom: 100px;
   box-sizing: border-box;
-  &__carousel{
-    box-sizing: border-box;
-    @include container.container();
+  @include container.container();
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title {
+    margin: 0;
+    padding: 0;
+  }
+  &__description {
+    margin: 0;
+    padding: 0;
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  &__button {
+    width: 38px;
+    height: 38px;
   }
 }
