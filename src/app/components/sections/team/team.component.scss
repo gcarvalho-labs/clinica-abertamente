@@ -1,0 +1,8 @@
+@use 'abstracts/container' as container;
+.team{
+  box-sizing: border-box;
+  &__carousel{
+    box-sizing: border-box;
+    @include container.container();
+  }
+}

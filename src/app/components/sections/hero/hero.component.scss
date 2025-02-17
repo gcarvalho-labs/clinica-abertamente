@@ -2,11 +2,13 @@
 
 .hero {
   width: 100%;
-  height: 672px;
+  min-height: 672px;
   box-sizing: border-box;
   padding-top: 129px;
+  padding-bottom: 161px;
   @media (max-width: 991px) {
     padding-top: 49px;
+    padding-bottom: 468px;
   }
   @include container.container();
   &__container {
@@ -20,6 +22,10 @@
     padding-left: 66px;
     padding-right: 66px;
     gap: 66px;
+    @media (max-width: 1400px) {
+      padding: 44px;
+      gap: 41px;
+    }
     @media (max-width: 991px) {
       flex-direction: column;
       padding: 44px;
@@ -27,7 +33,7 @@
     }
     @media (max-width: 479px) {
       flex-direction: column;
-      gap: 33px;
+      gap: 12px;
       padding: 24px;
     }
   }
@@ -46,26 +52,39 @@
     align-items: center;
     border-radius: 24px;
     width: 100%;
-    height: 100%;
+    min-height: 70px;
+    max-height: 772px;
     position: relative;
     @media (max-width: 991px) {
-      height: 100px;
+      max-height: 542px;
+    }
+    @media (max-width: 768px) {
+      max-height: 542px;
+    }
+    @media (max-width: 480px) {
       max-height: 542px;
     }
   }
   &__image {
     border-radius: 24px;
-    background-color: #ea927d;
+    background-color: #076c68;
     width: 100%;
-    height: 120%;
+    height: 772px;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+    object-fit: cover;
     position: absolute;
     @media (max-width: 991px) {
       transform: none;
       top: 0;
-      height: 600px;
+      height: 542px;
+    }
+    @media (max-width: 768px) {
+      height: 500px;
+    }
+    @media (max-width: 480px) {
+      height: 450px;
     }
   }
 
@@ -122,13 +141,26 @@
     border-radius: 8px;
     padding-left: 32px;
     padding-right: 32px;
+    transition: background-color 0.3s ease-in-out;
     &--primary {
       background-color: #f37355;
       color: white;
+      &:hover {
+        background-color: #d95e42;
+      }
+      &:active {
+        background-color: #c8523a;
+      }
     }
     &--secondary {
       background-color: white;
       color: #f37355;
+      &:hover {
+        background-color: #EDD7D3BA
+      }
+      &:active {
+        background-color: #E4C0BBBA
+      }
     }
   }
 }

@@ -69,24 +69,27 @@
     justify-content: center;
     gap: 8px;
     border-radius: 8px;
-    border: none;
-    background-color: darkgray;
+    background-color: #f0ebe5;
     display: flex;
     flex-direction: column;
     transition: background-color 0.3s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     &--active {
-      background-color: black;
+      //background-color: #076c68;
+    }
+    &:focus{
+      outline: none;
     }
   }
   &__line {
     border-radius: 8px;
-    background-color: black;
+    background-color: #076c68;
     height: 3px;
     transition:
       width 0.3s ease-in-out,
       background-color 0.3s ease-in-out;
     &--active {
-      background-color: darkgray;
+      //background-color: white;
     }
     &--w100 {
       width: 100%;
