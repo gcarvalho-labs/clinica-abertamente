@@ -13,7 +13,7 @@
     width: 100%;
     height: 672px;
     border-radius: 24px;
-    background-color: darkgray;
+    background-color: white;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -55,7 +55,7 @@
   }
   &__image {
     border-radius: 24px;
-    background-color: pink;
+    background-color: #ea927d;
     width: 100%;
     height: 120%;
     top: 50%;
@@ -70,7 +70,7 @@
   }
 
   &__title {
-    color: white;
+    color: #076c68;
     font-size: 64px;
     margin: 0;
     padding: 0;
@@ -87,11 +87,11 @@
       font-size: 38px;
     }
     &--emphasis {
-      color: black;
+      color: #f37355;
     }
   }
   &__description {
-    color: white;
+    color: #076c68;
     font-size: 24px;
     margin: 0;
     padding: 0;
@@ -122,5 +122,13 @@
     border-radius: 8px;
     padding-left: 32px;
     padding-right: 32px;
+    &--primary {
+      background-color: #f37355;
+      color: white;
+    }
+    &--secondary {
+      background-color: white;
+      color: #f37355;
+    }
   }
 }
