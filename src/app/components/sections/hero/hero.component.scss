@@ -106,7 +106,7 @@
       font-size: 38px;
     }
     &--emphasis {
-      color: #f37355;
+      color: #ff8055;
     }
   }
   &__description {
@@ -142,8 +142,9 @@
     padding-left: 32px;
     padding-right: 32px;
     transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
     &--primary {
-      background-color: #f37355;
+      background-color: #ff8055;
       color: white;
       &:hover {
         background-color: #d95e42;
@@ -154,12 +155,12 @@
     }
     &--secondary {
       background-color: white;
-      color: #f37355;
+      color: #ff8055;
       &:hover {
         background-color: #EDD7D3BA
       }
       &:active {
-        background-color: #E4C0BBBA
+        background-color: rgba(228, 192, 187, 0.64)
       }
     }
   }

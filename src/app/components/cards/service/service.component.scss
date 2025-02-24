@@ -20,14 +20,67 @@
     background-color: transparent;
   }
   &__title {
-    font-weight: 560;
+    font-weight: 600;
     font-size: 28px;
     color: #076c68;
     padding: 0;
     margin: 0;
+    @media (max-width: 1399px) {
+      font-size: 24px;
+    }
+    @media (max-width: 991px) {
+      font-size: 22px;
+    }
+    @media (max-width: 767px) {
+      font-size: 28px;
+    }
+    @media (max-width: 375px) {
+      font-size: 24px;
+    }
     &--neutral {
-      font-weight: bold;
       font-size: 46px;
+      @media (max-width: 1399px) {
+        font-size: 36px;
+      }
+      @media (max-width: 991px) {
+        font-size: 40px;
+      }
+      @media (max-width: 375px) {
+        font-size: 36px;
+      }
+    }
+    &--emphasis {
+      color: white;
+    }
+  }
+  &__description {
+    font-size: 18px;
+    height: 100%;
+    color: #076c68;
+    padding: 0;
+    margin: 0;
+    @media (max-width: 1399px) {
+      font-size: 16px;
+    }
+    @media (max-width: 991px) {
+      font-size: 18px;
+    }
+    @media (max-width: 375px) {
+      font-size: 16px;
+    }
+    &--neutral {
+      height: auto;
+      font-size: 20px;
+      font-weight: 430;
+      @media (max-width: 1399px) {
+        font-size: 18px;
+      }
+      @media (max-width: 767px) {
+        font-size: 22px;
+      }
+      @media (max-width: 375px) {
+        font-size: 18px;
+      }
     }
     &--emphasis {
       color: white;
@@ -44,7 +97,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #f37355;
+      background-color: #ff8055;
+      cursor: pointer;
       height: 54px;
       padding: 0 32px;
       line-height: 18px;
@@ -58,21 +112,6 @@
       &:active {
         background-color: #c8523a;
       }
-    }
-    &--emphasis {
-      color: white;
-    }
-  }
-  &__description {
-    font-size: 18px;
-    height: 100%;
-    color: #076c68;
-    padding: 0;
-    margin: 0;
-    &--neutral {
-      height: auto;
-      font-size: 20px;
-      font-weight: 430;
     }
     &--emphasis {
       color: white;

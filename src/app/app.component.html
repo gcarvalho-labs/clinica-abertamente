@@ -1,19 +1,20 @@
 <app-header (toggleDrawer)="drawerVisible = !drawerVisible"></app-header>
 <app-drawer [visible]="drawerVisible"></app-drawer>
-<div class="overlay"
-     [ngClass]="{ 'overlay--visible': drawerVisible }"
-     (click)="drawerVisible = false"
-     (keydown.escape)="drawerVisible = false"
-     (keydown.enter)="drawerVisible = false"
-     role="button"
-     tabindex="0">
-</div>
+<div
+  class="overlay"
+  [ngClass]="{ 'overlay--visible': drawerVisible }"
+  (click)="drawerVisible = false"
+  (keydown.escape)="drawerVisible = false"
+  (keydown.enter)="drawerVisible = false"
+  role="button"
+  tabindex="0"
+></div>
 
 <main>
   <app-hero></app-hero>
   <app-services></app-services>
   <app-team></app-team>
-
+  <app-method></app-method>
 </main>
 
 <router-outlet></router-outlet>

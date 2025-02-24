@@ -6,6 +6,9 @@ import { DrawerComponent } from './components/drawer/drawer.component';
 import { ServicesComponent } from './components/sections/services/services.component';
 import { NgClass } from '@angular/common';
 import { TeamComponent } from './components/sections/team/team.component';
+import {MethodComponent} from './components/sections/method/method.component';
+
+
 
 @Component({
   selector: 'app-root',
@@ -17,6 +20,7 @@ import { TeamComponent } from './components/sections/team/team.component';
     ServicesComponent,
     NgClass,
     TeamComponent,
+    MethodComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

@@ -1,0 +1,12 @@
+<div class="stepper">
+  <div class="stepper__step" *ngFor="let step of steps; let last = last">
+    <div class="stepper__indicator">
+      <div class="stepper__circle"></div>
+      <div class="stepper__line" [ngClass]="{ 'stepper__line--final': last }"></div>
+    </div>
+    <div class="stepper__info">
+      <h1 class="stepper__title">{{ step.title }}</h1>
+      <p class="stepper__description">{{ step.description }}</p>
+    </div>
+  </div>
+</div>
