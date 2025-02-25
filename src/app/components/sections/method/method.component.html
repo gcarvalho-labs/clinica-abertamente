@@ -1,22 +1,25 @@
 <section class="method">
-  <div class="method__header">
-    <h1 class="method__title">Sua Jornada, Passo a Passo</h1>
-    <p class="method__description">
-      Acompanhe cada etapa do caminho para o seu bem-estar emocional.
-    </p>
-  </div>
+  <div class="method__container">
+    <div class="method__header">
+      <h1 class="method__title">Sua Jornada, Passo a Passo</h1>
+      <p class="method__description">
+        Acompanhe cada etapa do caminho para o seu bem-estar emocional.
+      </p>
+    </div>
 
-  <div class="method__body">
-    <app-stepper
-      [steps]="steps"
-      [activeStepIndex]="activeStepIndex"
-      (stepActivated)="onStepActivated($event)">
-    </app-stepper>
-  </div>
+    <div class="method__body">
+      <app-stepper
+        [steps]="steps"
+        [activeStepIndex]="activeStepIndex"
+        (stepActivated)="onStepActivated($event)"
+      >
+      </app-stepper>
+    </div>
 
-  <div class="method__footer">
-    <button class="method__button method__button--primary">
-      Vamos conversar
-    </button>
+    <div class="method__footer">
+      <button class="method__button method__button--primary">
+        Vamos conversar
+      </button>
+    </div>
   </div>
 </section>
