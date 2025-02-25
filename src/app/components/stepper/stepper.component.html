@@ -1,7 +1,11 @@
 <div class="stepper">
-  <div class="stepper__step" *ngFor="let step of steps; let last = last">
+  <div
+    class="stepper__step"
+    *ngFor="let step of steps; let i = index; let last = last"
+    #stepElement
+  >
     <div class="stepper__indicator">
-      <div class="stepper__circle"></div>
+      <div class="stepper__circle" [class.active]="i <= activeStepIndex && activeStepIndex !== -1"></div>
       <div class="stepper__line" [ngClass]="{ 'stepper__line--final': last }"></div>
     </div>
     <div class="stepper__info">

@@ -1,14 +1,13 @@
-import {Component, Input} from '@angular/core';
-import { StepperComponent } from '../../stepper/stepper.component';
+import { Component } from '@angular/core';
+import {StepperComponent} from '../../stepper/stepper.component';
 
 @Component({
   selector: 'app-method',
-  imports: [StepperComponent],
   templateUrl: './method.component.html',
-  styleUrl: './method.component.scss',
+  styleUrls: ['./method.component.scss'],
+  imports: [StepperComponent],
 })
 export class MethodComponent {
-  @Input() image!: '/images/components/sections/team/member5.webp';
   steps = [
     { title: 'Converse conosco', description: 'Está pronto para dar o primeiro passo rumo ao seu bem-estar emocional? ' +
         'Aqui, sua jornada começa com uma conversa acolhedora e transformadora. Nossa equipe está\n' +
@@ -61,4 +60,10 @@ export class MethodComponent {
         'adquiridas para seguir em frente com autonomia.',
     },
   ];
+
+  activeStepIndex: number = -1; // Nenhum ativo no início
+
+  onStepActivated(index: number) {
+    this.activeStepIndex = index; // Atualiza o step visível corretamente
+  }
 }
