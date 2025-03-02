@@ -3,8 +3,14 @@
   [style.background-image]="'url(' + image + ')'"
   [attr.aria-label]="imageAlt"
 >
-  <div class="member__info">
+  <button
+    class="member__info"
+    [ngClass]="{ 'expanded': isExpanded }"
+    (click)="toggleExpand()"
+    tabindex="0"
+  >
     <h1 class="member__title">{{ name }}</h1>
+    <img class="member__arrow"  src="/images/components/cards/member/arrow.svg" alt="">
     <p class="member__description">{{ description }}</p>
-  </div>
+  </button>
 </div>

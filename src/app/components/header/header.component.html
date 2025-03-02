@@ -1,54 +1,37 @@
 <header class="header">
   <nav class="header__nav">
-    <ul class="header__list" *ngIf="!isMobile">
-      <li
-        class="header__item"
-        [ngClass]="{
-          'header__item--left': item.type === 'logo',
-          'header__item--emphasis': item.emphasis,
-        }"
-        *ngFor="let item of items"
-      >
-        <a
-          [href]="item.link"
-          class="header__link"
-          [ngClass]="{
-            'header__link--logo': item.type === 'logo',
-            'header__link--emphasis': item.emphasis,
-          }"
+    <ul class="header__list">
+      <ng-container *ngFor="let item of items; let i = index">
+        <li
+          class="header__item"
+          [class.header__item--logo]="i === 0"
+          [class.header__item--emphasis]="i === 6"
+          id="item-{{ i }}"
+          tabindex="0"
+          *ngIf="i === 0 || i === 6 || (!isMobile && i >= 1 && i <= 5)"
+
         >
-          {{ item.name }}
-        </a>
+
+          <a
+            href="#"
+            class="header__link"
+            [class.header__link--logo]="i === 0"
+            [class.header__link--emphasis]="i === 6"
+
+          >
+            {{ item.name }}
+          </a>
+        </li>
+      </ng-container>
+
+      <li class="header__item" *ngIf="isMobile">
+        <app-toggle-button
+          [isDrawerActive]="isDrawerActive"
+          (click)="toggleButton()"
+        ></app-toggle-button>
       </li>
+
+
     </ul>
-
-    <a class="header__link" [href]="items[0].link" *ngIf="isMobile">
-      {{ items[0].name }}
-    </a>
-
-    <button
-      class="header__toggle"
-      [ngClass]="{ 'header__toggle--active': isDrawerActive }"
-      *ngIf="isMobile"
-      (click)="toggleButton()"
-    >
-      <div
-        class="header__line"
-        [ngClass]="{
-      'header__line--active': isDrawerActive,
-      'header__line--w100': !isDrawerActive,
-      'header__line--w50': isDrawerActive
-    }"
-      ></div>
-      <div
-        class="header__line"
-        [ngClass]="{
-      'header__line--active': isDrawerActive,
-      'header__line--w50': !isDrawerActive,
-      'header__line--w100': isDrawerActive
-    }"
-      ></div>
-    </button>
-
   </nav>
 </header>

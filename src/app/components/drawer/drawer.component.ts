@@ -16,6 +16,5 @@ export class DrawerComponent {
     { name: 'Equipe', link: '#' },
     { name: 'Metodologia', link: '#' },
     { name: 'Localização', link: '#' },
-    { name: 'Nosso blog', link: '#' }
   ];
 }

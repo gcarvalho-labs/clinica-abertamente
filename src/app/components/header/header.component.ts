@@ -1,26 +1,24 @@
-import { Component, EventEmitter, HostListener, Output } from '@angular/core';
-import { NgClass, NgForOf, NgIf } from '@angular/common';
+import { Component, HostListener, Output, EventEmitter } from '@angular/core';
+import { ToggleButtonComponent } from '../toggle-button/toggle-button.component';
+import { NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [NgForOf, NgIf, NgClass],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  imports: [ToggleButtonComponent, NgIf, NgForOf],
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  // Itens de menu:
-
   items = [
-    { name: 'Logo', link: '#', type: 'logo', emphasis: false },
-    { name: 'Início', link: '#', type: 'default', emphasis: false },
-    { name: 'Serviços', link: '#', type: 'default', emphasis: false },
-    { name: 'Equipe', link: '#', type: 'default', emphasis: false },
-    { name: 'Metodologia', link: '#', type: 'default', emphasis: false },
-    { name: 'Localização', link: '#', type: 'default', emphasis: false },
-    { name: 'Nosso Blog', link: '#', type: 'default', emphasis: true },
+    { name: 'Logo', link: '#' },
+    { name: 'Início', link: '#' },
+    { name: 'Serviços', link: '#' },
+    { name: 'Equipe', link: '#' },
+    { name: 'Metodologia', link: '#' },
+    { name: 'Localização', link: '#' },
+    { name: 'Nosso blog', link: '#' },
   ];
 
-  // Modo mobile:
   isMobile = window.innerWidth <= 991;
 
   @HostListener('window:resize', ['$event'])
@@ -28,12 +26,11 @@ export class HeaderComponent {
     this.isMobile = (event.target as Window).innerWidth <= 991;
   }
 
-  // Drawer:
   @Output() toggleDrawer = new EventEmitter<void>();
+  isDrawerActive = false;
 
   toggleButton() {
     this.toggleDrawer.emit();
     this.isDrawerActive = !this.isDrawerActive;
   }
-  isDrawerActive = false;
 }

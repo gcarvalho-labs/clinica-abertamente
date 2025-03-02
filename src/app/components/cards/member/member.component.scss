@@ -13,13 +13,16 @@
   padding: 16px;
   box-sizing: border-box;
   &__info {
+    border: none;
     cursor: pointer;
     display: flex;
+    align-items: center;
+    justify-content: start;
     flex-direction: column;
-    gap: 10px;
-    height: 50px;
+    height: 55px;
     width: 100%;
-    border-radius: 24px;
+    gap: 7px;
+    border-radius: 34px;
     background: white;
     opacity: 1;
     visibility: visible;
@@ -28,18 +31,29 @@
     overflow: hidden;
     box-sizing: border-box;
     transition: height 0.3s ease-in-out;
-    &:hover {
+    -webkit-tap-highlight-color: transparent; /* Remove o efeito de destaque no toque */
+    touch-action: manipulation; /* Melhora a resposta ao toque */
+    &:hover,
+    &.expanded {
       height: 180px;
     }
   }
+  &__arrow{
+    transition: transform 0.3s ease;
+  }
+  &__info.expanded .member__arrow,
+  &__info:hover .member__arrow {
+    transform: rotate(180deg);
+  }
   &__title {
+    line-height: 18px;
     padding: 0;
     font-size: 18px;
     margin: 0;
     color: #076c68;
-
   }
   &__description {
+    line-height: 16px;
     margin: 0;
     padding: 0;
     font-size: 16px;
