@@ -1,37 +1,30 @@
 <header class="header">
-  <nav class="header__nav">
+  <nav class="header__nav" role="navigation">
+    <img class="header__logo" src="" alt="Logo" />
     <ul class="header__list">
       <ng-container *ngFor="let item of items; let i = index">
         <li
           class="header__item"
-          [class.header__item--logo]="i === 0"
-          [class.header__item--emphasis]="i === 6"
-          id="item-{{ i }}"
-          tabindex="0"
-          *ngIf="i === 0 || i === 6 || (!isMobile && i >= 1 && i <= 5)"
-
+          [class.header__item--emphasis]="i === 5"
+          *ngIf="!isMobile || i === 5"
         >
-
           <a
             href="#"
             class="header__link"
             [class.header__link--logo]="i === 0"
-            [class.header__link--emphasis]="i === 6"
-
+            [class.header__link--emphasis]="i === 5"
+            (click)="i !== 5 ? selectMenu(i) : null"
           >
             {{ item.name }}
           </a>
+          <span *ngIf="i === 0" class="header__indicator"></span>
         </li>
       </ng-container>
-
-      <li class="header__item" *ngIf="isMobile">
-        <app-toggle-button
-          [isDrawerActive]="isDrawerActive"
-          (click)="toggleButton()"
-        ></app-toggle-button>
-      </li>
-
-
     </ul>
+    <app-toggle-button
+      *ngIf="isMobile"
+      [isDrawerActive]="isDrawerActive"
+      (click)="toggleButton()"
+    ></app-toggle-button>
   </nav>
 </header>

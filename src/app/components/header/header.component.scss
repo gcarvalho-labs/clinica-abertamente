@@ -7,10 +7,11 @@
   left: 0;
   z-index: 100;
   background-color: #f0ebe5;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   &__nav {
     box-sizing: border-box;
     display: flex;
+    gap: 14px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -29,28 +30,29 @@
     margin: 0;
     justify-content: right;
     align-items: center;
-    position: relative;
     @media (max-width: 991px) {
       gap: 10px;
     }
   }
-  &__indicator{
+  &__indicator {
     position: absolute;
-    bottom: 17px;
+    bottom: -5px;
+    left: 0;
+    width: 0;
     background-color: #076c68;
     height: 4.5px;
     border-radius: 5px;
-    transition: all 0.2s ease-in-out;
+    transition:
+      left 0.3s,
+      width 0.3s;
+  }
+  &__logo {
+
   }
   &__item {
+    position: relative;
     padding: 0;
     margin: 0;
-    &--logo {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
     &--emphasis {
       cursor: pointer;
       box-sizing: border-box;
