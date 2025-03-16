@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { MemberComponent } from '../../cards/member/member.component';
 
@@ -18,6 +18,15 @@ export class TeamComponent {
   description: string = 'Profissionais qualificados e apaixonados. Cada membro traz experiência, empatia e um compromisso genuíno com o seu crescimento pessoal. Conte com a gente para caminhar ao seu lado nessa jornada.';
   buttonText: string = 'Vamos conversar';
 
+  @ViewChild('teamCarousel', { static: true }) teamCarousel!: ElementRef;
+
+  scrollLeft() {
+    this.teamCarousel.nativeElement.scrollBy({ left: -310, behavior: 'smooth' });
+  }
+
+  scrollRight() {
+    this.teamCarousel.nativeElement.scrollBy({ left: 310, behavior: 'smooth' });
+  }
 
 
   team = [
@@ -61,7 +70,7 @@ export class TeamComponent {
       description:
         'Especialista em Terapia Sistêmica, fortalecicmento das relações familiares e conjugais, e construção de vinculos saudáveis.',
       image: {
-        src: '/images/components/sections/team/member4.webp',
+        src: '/images/components/sections/team/member5.webp',
         alt: 'Foto do Membro 5',
       },
     },

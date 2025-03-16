@@ -1,9 +1,14 @@
-@use 'abstracts/container' as container;
+@use 'abstracts/containers' as containers;
+@use 'abstracts/buttons' as buttons;
+
 .team {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  box-sizing: border-box;
-  @include container.container();
+  background-color: #ebe4db;
+  &__container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    @include containers.container();
+  }
   &__header {
     display: flex;
     align-items: center;
@@ -67,27 +72,15 @@
     }
   }
   &__button {
-    font-size: 18px;
-    height: 54px;
-    border: none;
-    border-radius: 8px;
-    padding-left: 32px;
-    padding-right: 32px;
-    transition: background-color 0.3s ease-in-out;
-    cursor: pointer;
-
+    @include buttons.button();
     &--primary {
-      background-color: #ff8055;
-      color: white;
-      &:hover {
-        background-color: #d95e42;
-      }
-      &:active {
-        background-color: #c8523a;
-      }
+      @include buttons.button-variant(#ff8055, white, #d95e42, #c8523a);
     }
   }
   &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 }

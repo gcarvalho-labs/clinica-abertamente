@@ -1,3 +1,5 @@
+@use 'abstracts/buttons' as buttons;
+
 .service {
   box-sizing: border-box;
   background-color: white;
@@ -94,26 +96,10 @@
     margin: 0;
     font-weight: 500;
     &--neutral {
-      width: fit-content;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #ff8055;
-      cursor: pointer;
-      height: 54px;
-      padding: 0 32px;
-      line-height: 18px;
-      font-weight: 430;
-      border-radius: 8px;
-      color: white;
-      transition: background-color 0.3s ease-in-out;
-      &:hover {
-        background-color: #d95e42;
-      }
-      &:active {
-        background-color: #c8523a;
-      }
+      @include buttons.button();
+      @include buttons.button-variant(#ff8055, white, #d95e42, #c8523a, 430);
     }
+
     &--emphasis {
       color: white;
     }

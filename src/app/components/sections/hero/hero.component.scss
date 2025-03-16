@@ -1,4 +1,5 @@
-@use 'abstracts/container' as container;
+@use 'abstracts/containers' as containers;
+@use 'abstracts/buttons' as buttons;
 
 .hero {
   width: 100%;
@@ -10,7 +11,7 @@
     padding-top: 49px;
     padding-bottom: 468px;
   }
-  @include container.container();
+  @include containers.container();
   &__container {
     width: 100%;
     height: 672px;
@@ -129,39 +130,19 @@
     gap: 10px;
     @media (max-width: 991px) {
       justify-content: center;
+      align-items: center;
     }
     @media (max-width: 479px) {
       flex-direction: column;
     }
   }
   &__button {
-    font-size: 18px;
-    height: 54px;
-    border: none;
-    border-radius: 8px;
-    padding-left: 32px;
-    padding-right: 32px;
-    transition: background-color 0.3s ease-in-out;
-    cursor: pointer;
+    @include buttons.button();
     &--primary {
-      background-color: #ff8055;
-      color: white;
-      &:hover {
-        background-color: #d95e42;
-      }
-      &:active {
-        background-color: #c8523a;
-      }
+      @include buttons.button-variant(#ff8055, white, #d95e42, #c8523a);
     }
     &--secondary {
-      background-color: white;
-      color: #ff8055;
-      &:hover {
-        background-color: #EDD7D3BA
-      }
-      &:active {
-        background-color: rgba(228, 192, 187, 0.64)
-      }
+      @include buttons.button-variant(white, #ff8055, #edd7d3ba, #e4c0bba3);
     }
   }
 }

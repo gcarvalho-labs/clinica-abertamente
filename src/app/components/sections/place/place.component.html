@@ -1,0 +1,32 @@
+<section class="place">
+  <div class="place__container">
+    <div class="place__header">
+      <h1 class="place__title">Nosso Espaço</h1>
+      <p class="place__subtitle">
+        Conheça cada detalhe do nosso ambiente pensado para o seu conforto e
+        bem-estar.
+      </p>
+    </div>
+
+    <div class="place__body">
+      <app-gallery
+        [image1]="images[0]"
+        [image2]="images[1]"
+        [image3]="images[2]"
+        [image4]="images[3]"
+        [image5]="images[4]"
+        [image6]="images[5]"
+      ></app-gallery>
+    </div>
+
+    <div class="place__footer">
+      <p class="place__description">
+        Aqui, cada espaço foi planejado para acolher você com carinho e
+        tranquilidade.
+      </p>
+      <button class="place__button place__button--primary">
+        Vamos conversar
+      </button>
+    </div>
+  </div>
+</section>

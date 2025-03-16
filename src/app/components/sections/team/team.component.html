@@ -1,28 +1,32 @@
 <section class="team">
-  <div class="team__header">
-    <h1 class="team__title">{{ title }}</h1>
-    <div class="team__nav">
-      <button class="team__nav-button">
-        <img class="team__nav-icon" [src]="leftIcon" [alt]="leftAlt" />
-      </button>
-      <button class="team__nav-button">
-        <img class="team__nav-icon" [src]="rightIcon" [alt]="rightAlt" />
+  <div class="team__container">
+    <div class="team__header">
+      <h1 class="team__title">{{ title }}</h1>
+      <div class="team__nav">
+        <button class="team__nav-button" (click)="scrollLeft()">
+          <img class="team__nav-icon" [src]="leftIcon" [alt]="leftAlt" />
+        </button>
+        <button class="team__nav-button" (click)="scrollRight()">
+          <img class="team__nav-icon" [src]="rightIcon" [alt]="rightAlt" />
+        </button>
+      </div>
+    </div>
+    <div class="team__body" #teamCarousel>
+      <app-member
+        *ngFor="let member of team"
+        [name]="member.title"
+        [description]="member.description"
+        [image]="member.image.src"
+        [imageAlt]="member.image.alt"
+      >
+      </app-member>
+    </div>
+    <div class="team__footer">
+      <h2 class="team__subtitle">{{ subtitle }}</h2>
+      <p class="team__description">{{ description }}</p>
+      <button class="team__button team__button--primary">
+        {{ buttonText }}
       </button>
     </div>
-  </div>
-  <div class="team__body">
-    <app-member
-      *ngFor="let member of team"
-      [name]="member.title"
-      [description]="member.description"
-      [image]="member.image.src"
-      [imageAlt]="member.image.alt"
-    >
-    </app-member>
-  </div>
-  <div class="team__footer">
-    <h2 class="team__subtitle">{{ subtitle }}</h2>
-    <p class="team__description">{{ description }}</p>
-    <button class="team__button team__button--primary">{{ buttonText }}</button>
   </div>
 </section>

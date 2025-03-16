@@ -1,4 +1,4 @@
-@use 'abstracts/container' as container;
+@use 'abstracts/containers' as containers;
 .header {
   height: 71px;
   width: 100%;
@@ -17,7 +17,7 @@
     justify-content: space-between;
     width: 100%;
     height: 100%;
-    @include container.container();
+    @include containers.container();
   }
   &__list {
     width: 100%;
