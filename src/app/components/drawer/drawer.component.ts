@@ -13,6 +13,8 @@ export class DrawerComponent {
   items = [
     { name: 'Início', link: '#' },
     { name: 'Serviços', link: '#' },
+    { name: 'Espaço' +
+        '', link: '#' },
     { name: 'Equipe', link: '#' },
     { name: 'Metodologia', link: '#' },
     { name: 'Localização', link: '#' },

@@ -8,6 +8,7 @@ import { NgClass } from '@angular/common';
 import { TeamComponent } from './components/sections/team/team.component';
 import { MethodComponent } from './components/sections/method/method.component';
 import {PlaceComponent} from './components/sections/place/place.component';
+import {FooterComponent} from './components/footer/footer.component';
 @Component({
   selector: 'app-root',
   imports: [
@@ -20,6 +21,7 @@ import {PlaceComponent} from './components/sections/place/place.component';
     TeamComponent,
     MethodComponent,
     PlaceComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

@@ -5,15 +5,15 @@
       <ng-container *ngFor="let item of items; let i = index">
         <li
           class="header__item"
-          [class.header__item--emphasis]="i === 5"
-          *ngIf="!isMobile || i === 5"
+          [class.header__item--emphasis]="i === 6"
+          *ngIf="!isMobile || i === 6"
         >
           <a
             href="#"
             class="header__link"
             [class.header__link--logo]="i === 0"
-            [class.header__link--emphasis]="i === 5"
-            (click)="i !== 5 ? selectMenu(i) : null"
+            [class.header__link--emphasis]="i === 6"
+            (click)="i !== 6 ? selectMenu(i) : null"
           >
             {{ item.name }}
           </a>

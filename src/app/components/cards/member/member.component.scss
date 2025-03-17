@@ -1,5 +1,4 @@
 .member {
-  background-color: white;
   width: 280px;
   height: 370px;
   max-width: 300px;
@@ -31,8 +30,8 @@
     overflow: hidden;
     box-sizing: border-box;
     transition: height 0.3s ease-in-out;
-    -webkit-tap-highlight-color: transparent; /* Remove o efeito de destaque no toque */
-    touch-action: manipulation; /* Melhora a resposta ao toque */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
     &:hover,
     &.expanded {
       height: 180px;
