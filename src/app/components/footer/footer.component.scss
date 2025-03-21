@@ -1,58 +1,42 @@
 @use 'abstracts/containers' as containers;
 
 .footer {
-  height: 300px;
-  width: 100%;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #f0e9e3;
   &__container {
-    width: 100%;
     height: 100%;
     box-sizing: border-box;
     @include containers.container();
   }
-  &__divider {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
-    height: 1px;
+  &__section {
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1);
   }
   &__top {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    gap: 100px;
+    height: 100px;
   }
-  &__icons {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+  &__body {
+    height: 100px;
   }
-  &__payments {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    gap: 10px;
-    & img {
-      max-width: 40px;
-    }
-  }
-
   &__bottom {
-    width: 100%;
-    height: 71px;
+    height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
-  &__description {
-    margin: 0;
+  &__copyright,
+  &__credits {
+    font-weight: 460;
+    color: #076c68;
     padding: 0;
+    margin: 0;
   }
-  &__link {
+  &__developer {
+    color: #076c68;
     text-decoration: none;
-    color: inherit;
+    font-weight: 460;
+  }
+  &__brand {
+    color: #ff8055;
+    font-weight: 550;
   }
 }
