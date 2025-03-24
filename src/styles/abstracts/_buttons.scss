@@ -1,10 +1,10 @@
 // _buttons.scss
-@mixin button {
-  font-size: 18px;
-  height: 54px;
+@mixin button($height: 54px, $padding: 0 32px, $font-size: 18px) {
+  font-size: $font-size;
+  height: $height;
   border: none;
-  border-radius: 8px;
-  padding: 0 32px;
+  border-radius: 30px;
+  padding: $padding;
   transition: background-color 0.3s ease-in-out;
   cursor: pointer;
   display: flex;
@@ -14,7 +14,13 @@
   line-height: 18px;
 }
 
-@mixin button-variant($bg-color, $text-color, $hover-bg, $active-bg, $font-weight: 500) {
+@mixin button-variant(
+  $bg-color,
+  $text-color,
+  $hover-bg,
+  $active-bg,
+  $font-weight: 500
+) {
   background-color: $bg-color;
   color: $text-color;
   font-weight: $font-weight;
