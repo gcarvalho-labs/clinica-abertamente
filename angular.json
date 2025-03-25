@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "teste-novo": {
+    "clinica-abertamente": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/teste-novo",
+            "outputPath": "dist/clinica-abertamente",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -91,10 +91,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "teste-novo:build:production"
+              "buildTarget": "clinica-abertamente:build:production"
             },
             "development": {
-              "buildTarget": "teste-novo:build:development"
+              "buildTarget": "clinica-abertamente:build:development"
             }
           },
           "defaultConfiguration": "development"
