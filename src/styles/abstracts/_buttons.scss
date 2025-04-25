@@ -19,12 +19,13 @@
   $text-color,
   $hover-bg,
   $active-bg,
-  $font-weight: 500
+  $font-weight: 500,
+  $border: none
 ) {
   background-color: $bg-color;
   color: $text-color;
   font-weight: $font-weight;
-
+  border: $border;
   &:hover {
     background-color: $hover-bg;
   }

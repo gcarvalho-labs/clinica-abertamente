@@ -1,118 +1,81 @@
 <footer class="footer">
-  <div class="footer__section footer__section--emphasis">
-    <div class="footer__container">
-      <div class="footer__top">
-        <h2 class="footer__title">Fique por dentro de novidades</h2>
-        <p class="footer__text footer__text--info">
-          Inscreva-se e seja o primeiro a saber sobre as novidades, promoções e
-          muito mais!
-        </p>
-        <div class="footer__fg">
-          <input
-            class="footer__fg-input"
-            placeholder="Cadastre seu e-mail..."
-          />
-          <button class="footer__fg-button">Enviar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!--Top-->
+  <!--Middle-->
   <div class="footer__section">
     <div class="footer__container">
-      <div class="footer__body">
-        <div class="footer__column">
-          <h2 class="footer__title">Clínica Abertamente</h2>
-          <p class="footer__text footer__text--info">
-            Oferecemos apoio emocional com dedicação, profissionalismo e
-            acolhimento ao longo de toda a sua jornada pessoal.
-          </p>
-          <div class="footer__row">
-            <div class="footer__circle"><!--Apenas para teste--></div>
-            <div class="footer__circle"><!--Apenas para teste--></div>
-            <div class="footer__circle"><!--Apenas para teste--></div>
-            <div class="footer__circle"><!--Apenas para teste--></div>
-            <div class="footer__circle"><!--Apenas para teste--></div>
+      <div class="footer__middle">
+        <!--Desktop-->
+        <ng-container *ngFor="let column of columns; let i = index">
+          <div class="footer__column" *ngIf="!isMobile || i === 0">
+            <h2 class="footer__title">{{ column.title }}</h2>
+            <ng-container *ngIf="column.description">
+              <p class="footer__text footer__text--info">
+                {{ column.description }}
+              </p>
+            </ng-container>
+            <ul
+              class="footer__list"
+              [ngClass]="
+                column.listStyle ? 'footer__list--' + column.listStyle : ''
+              "
+            >
+              <li class="footer__list-item" *ngFor="let item of column.items">
+                <ng-container [ngSwitch]="item.type">
+                  <a
+                    *ngSwitchCase="'link'"
+                    class="footer__link"
+                    [href]="item.href"
+                  >
+                    {{ item.text }}
+                  </a>
+                  <img
+                    *ngSwitchCase="'image'"
+                    [src]="item.src"
+                    [alt]="item.alt || ''"
+                  />
+                  <ng-container *ngSwitchCase="'text'">
+                    {{ item.text }}
+                  </ng-container>
+                </ng-container>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div class="footer__column">
-          <h2 class="footer__title">Pagamento</h2>
-          <div class="footer__grid">
-            <img src="images/payments/amex.svg" alt="" />
-            <img src="images/payments/dinners.svg" alt="" />
-            <img src="images/payments/elo.svg" alt="" />
-            <img src="images/payments/hipercard.svg" alt="" />
-            <img src="images/payments/mastercard.svg" alt="" />
-            <img src="images/payments/mercado-pago.svg" alt="" />
-            <img src="images/payments/pix.svg" alt="" />
-          </div>
-        </div>
-        <div *ngIf="!isMobile" class="footer__column">
-          <h2 class="footer__title">Navegação</h2>
-          <ul class="footer__list">
-            <li class="footer__list-item">
-              <a class="footer__link" href="">Início</a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__link" href="">Serviços</a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__link" href="">Espaço</a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__link" href="">Equipe</a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__link" href="">Metodologia</a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__link" href="">Localização</a>
-            </li>
-            <li class="footer__list-item">
-              <a class="footer__link" href="">Nosso blog</a>
-            </li>
-          </ul>
-        </div>
-        <div *ngIf="!isMobile" class="footer__column">
-          <h2 class="footer__title">Contato</h2>
-          <ul class="footer__list">
-            <li class="footer__list-item">(43) 3337-7793</li>
-            <li class="footer__list-item">
-              oi{{ '@' }}clinicaabertamente.com.br
-            </li>
-            <li class="footer__list-item">
-              R. Belo Horizonte, 1558 - Centro, Londrina - PR, 86020-061
-            </li>
-            <li class="footer__list-item">Segunda à Sexta das 8:00 às 21:00</li>
-          </ul>
-        </div>
-        <app-accordion
-          *ngIf="isMobile"
-          [title]="'Navegação'"
-          [items]="[
-            'Início',
-            'Serviços',
-            'Espaço',
-            'Equipe',
-            'Metodologia',
-            'Localização',
-            'Nosso blog',
-          ]"
-        >
-        </app-accordion>
-        <app-accordion
-          *ngIf="isMobile"
-          [title]="'Contato'"
-          [items]="[
-            '(43) 3337-7793',
-            'oi@clinicaabertamente.com.br',
-            'R. Belo Horizonte, 1558 - Centro, Londrina - PR, 86020-061',
-            'Segunda à Sexta das 8:00 às 21:00',
-          ]"
-        >
-        </app-accordion>
+        </ng-container>
+        <!--Mobile-->
+        <ng-container *ngFor="let column of columns; let i = index">
+          <app-accordion class="accordion" *ngIf="isMobile && i !== 0">
+            <ng-container accordion-header>
+              <h2>{{ column.title }}</h2>
+              <img src="images/widgets/arrow.svg" alt="" />
+            </ng-container>
+
+            <ng-container accordion-body>
+              <li class="footer__list-item" *ngFor="let item of column.items">
+                <ng-container [ngSwitch]="item.type">
+                  <a
+                    *ngSwitchCase="'link'"
+                    class="footer__link"
+                    [href]="item.href"
+                  >
+                    {{ item.text }}
+                  </a>
+                  <img
+                    *ngSwitchCase="'image'"
+                    [src]="item.src"
+                    [alt]="item.alt || ''"
+                  />
+                  <ng-container *ngSwitchCase="'text'">
+                    {{ item.text }}
+                  </ng-container>
+                </ng-container>
+              </li>
+            </ng-container>
+          </app-accordion>
+        </ng-container>
       </div>
     </div>
   </div>
+  <!--Bottom-->
   <div class="footer__section">
     <div class="footer__container">
       <div class="footer__bottom">

@@ -1,162 +1,80 @@
-@use 'abstracts/containers' as containers;
 @use 'abstracts/buttons' as buttons;
+@use 'abstracts/containers' as containers;
 
 .hero {
-  width: 100%;
-  min-height: 672px;
-  box-sizing: border-box;
-  padding-top: 129px;
-  padding-bottom: 161px;
-  @media (max-width: 991px) {
-    padding-top: 49px;
-    padding-bottom: 468px;
-  }
-  @include containers.container();
+  padding-top: 53px;
+  //padding-bottom: 53px;
+  background-color: #fefbf9;
   &__container {
-    width: 100%;
-    height: 672px;
-    border-radius: 24px;
-    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
+    @include containers.container();
+  }
+  &__content {
+    text-align: start;
     display: flex;
     flex-direction: row;
-    padding-left: 66px;
-    padding-right: 66px;
-    gap: 66px;
-    @media (max-width: 1400px) {
-      padding: 44px;
-      gap: 41px;
-    }
-
-    @media (max-width: 991px) {
-      flex-direction: column;
-      padding: 44px;
-      gap: 41px;
-    }
-    @media (max-width: 479px) {
-      flex-direction: column;
-      gap: 12px;
-      padding: 24px;
-    }
-  }
-  &__text {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-  &__image-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    border-radius: 24px;
-    width: 100%;
-    min-height: 70px;
-    max-height: 772px;
-    position: relative;
-    @media (max-width: 991px) {
-      max-height: 542px;
-    }
-    @media (max-width: 768px) {
-      max-height: 542px;
-    }
-    @media (max-width: 480px) {
-      max-height: 542px;
-    }
   }
-  &__image {
-    border-radius: 24px;
-    background-color: #076c68;
-    width: 100%;
-    height: 772px;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    object-fit: cover;
-    position: absolute;
-    @media (max-width: 991px) {
-      transform: none;
-      top: 0;
-      height: 542px;
-    }
-    @media (max-width: 768px) {
-      height: 500px;
-    }
-    @media (max-width: 480px) {
-      height: 450px;
-    }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 620px;
   }
-
   &__title {
-    color: #076c68;
+    margin: 0;
+    padding: 0;
     font-size: 64px;
-    margin: 0;
-    padding: 0;
-    text-align: start;
     font-weight: 600;
-    @media (max-width: 991px) {
-      font-size: 56px;
-      text-align: center;
-    }
-    @media (max-width: 767px) {
-      font-size: 48px;
-    }
-    @media (max-width: 479px) {
-      font-size: 38px;
-    }
-    &--emphasis {
-      color: #f58362;
-    }
   }
-  &__description {
-    color: #076c68;
-    font-size: 24px;
+  &__paragraph {
     margin: 0;
-    padding: 0;
-    text-align: start;
-    @media (max-width: 991px) {
-      text-align: center;
-    }
-    @media (max-width: 479px) {
-      font-size: 22px;
-    }
+    font-size: 24px;
+    padding: 0 0 0 10px;
+    border-left: 4px solid #1d6a5f;
+    font-weight: 420;
+  }
+  &__emph-secondary {
+    color: #1d6a5f;
+    font-weight: 550;
+  }
+  &__emph-primary {
+    color: #ed6633;
   }
   &__buttons {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    gap: 10px;
-    @media (max-width: 991px) {
-      justify-content: center;
-      align-items: center;
-    }
-    @media (max-width: 479px) {
-      flex-direction: column;
-    }
+    gap: 15px;
   }
   &__button {
     @include buttons.button();
     &--primary {
       @include buttons.button-variant(
-        $bg-color: #f58362,
-        $text-color: white,
-        $hover-bg: #ea7e5d,
-        $active-bg: #e37a5a,
+        $bg-color: #ed6633,
+        $text-color: #ffffff,
+        $hover-bg: #d85b2c,
+        $active-bg: #e66737,
         $font-weight: 500
       );
     }
 
     &--secondary {
+      text-shadow: 0 0 0.8px rgba(0, 0, 0, 0.4);
       @include buttons.button-variant(
-        $bg-color: #ffffff,
-        $text-color: #ef7d54,
-        $hover-bg: #f0eae8,
-        $active-bg: #efe1dc,
-        $font-weight: 430
+        $bg-color: #1d6a5f,
+        $text-color: #ffffff,
+        $hover-bg: #1b655a,
+        $active-bg: #196158,
+        $font-weight: 500
       );
     }
+  }
+  &__image {
+    width: 400px;
+    height: auto;
   }
 }

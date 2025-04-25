@@ -1,47 +1,33 @@
 @use 'abstracts/buttons' as buttons;
 
 .service {
+  user-select: none;
+  background-color: #fefbf9;
   box-sizing: border-box;
-  background-color: white;
   border-radius: 24px;
-  min-width: 300px;
-  height: 270px;
   max-width: 100%;
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
   align-items: start;
-  transition:
-    transform 0.5s ease,
-    box-shadow 0.5s ease;
+  min-width: 300px;
+  height: 270px;
 
-  &:not(.service--neutral, .service--emphasis):hover {
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    transform: translateY(-8px);
-  }
+  transition: transform 0.5s ease;
+  will-change: transform;
 
-  &--emphasis {
-    background-color: #076c68;
-    transform: rotate(-5deg);
-    &:hover {
-      transform: rotate(-5deg) translateY(-10px);
-      box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
-    }
-  }
-
-  &--neutral {
-    padding: 0;
-    background-color: transparent;
+  &:hover{
+    transform: translateY(-9px);
   }
 
   &__title {
     font-weight: 600;
     font-size: 28px;
-    color: #076c68;
     padding: 0;
     margin: 0;
+    color: #ed6633;
     @media (max-width: 1399px) {
       font-size: 24px;
     }
@@ -54,26 +40,12 @@
     @media (max-width: 375px) {
       font-size: 24px;
     }
-    &--neutral {
-      font-size: 46px;
-      @media (max-width: 1399px) {
-        font-size: 36px;
-      }
-      @media (max-width: 991px) {
-        font-size: 40px;
-      }
-      @media (max-width: 375px) {
-        font-size: 36px;
-      }
-    }
-    &--emphasis {
-      color: white;
-    }
   }
   &__description {
+    color: #ed6633;
+    font-weight: 500;
     font-size: 18px;
     height: 100%;
-    color: #076c68;
     padding: 0;
     margin: 0;
     @media (max-width: 1399px) {
@@ -85,43 +57,13 @@
     @media (max-width: 375px) {
       font-size: 16px;
     }
-    &--neutral {
-      height: auto;
-      font-size: 20px;
-      font-weight: 430;
-      @media (max-width: 1399px) {
-        font-size: 18px;
-      }
-      @media (max-width: 767px) {
-        font-size: 22px;
-      }
-      @media (max-width: 375px) {
-        font-size: 18px;
-      }
-    }
-    &--emphasis {
-      color: white;
-    }
   }
   &__subtitle {
     cursor: pointer;
     font-size: 18px;
-    color: #076c68;
     padding: 0;
     margin: 0;
     font-weight: 500;
-    &--neutral {
-      @include buttons.button();
-      @include buttons.button-variant(
-        $bg-color: #f58362,
-        $text-color: white,
-        $hover-bg: #ea7e5d,
-        $active-bg: #e37a5a
-      );
-    }
-
-    &--emphasis {
-      color: white;
-    }
+    color: #ed6633;
   }
 }

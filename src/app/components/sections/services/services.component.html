@@ -1,11 +1,21 @@
 <section class="services">
-  <div class="services__grid">
-    <app-service
-      *ngFor="let service of services"
-      [title]="service.title"
-      [subtitle]="service.subtitle"
-      [description]="service.description"
-      [type]="service.type"
-    ></app-service>
+  <div class="services__container">
+    <div class="services__content">
+      <h2 class="services__title">Nossos serviços</h2>
+      <p class="services__paragraph">
+        Soluções completas em saúde mental para promover bem-estar e
+        desenvolvimento pessoal e profissional.
+      </p>
+      <button class="services__button">Vamos conversar</button>
+    </div>
+    <div class="services__grid">
+      <app-service
+        *ngFor="let service of services"
+        [title]="service.title"
+        [description]="service.description"
+        [subtitle]="service.subtitle"
+        [vClass]="service.vClass"
+      ></app-service>
+    </div>
   </div>
 </section>

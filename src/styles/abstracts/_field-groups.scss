@@ -1,5 +1,5 @@
-@mixin fg($bg: white, $height: 40px, $radius: 24px, $max-width: 300px) {
-  background-color: $bg;
+@mixin fg($bg-color: white, $height: 40px, $radius: 24px, $max-width: 300px) {
+  background-color: $bg-color;
   border-radius: $radius;
   height: $height;
   display: flex;

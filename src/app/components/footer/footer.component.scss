@@ -3,7 +3,6 @@
 @use 'abstracts/field-groups' as field-groups;
 
 .footer {
-  background-color: #f8f4f0;
   &__container {
     height: 100%;
     box-sizing: border-box;
@@ -25,7 +24,7 @@
       gap: 24px;
     }
   }
-  &__body {
+  &__middle {
     width: 100%;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -60,8 +59,8 @@
   }
   &__section {
     border-top: 0.5px solid rgba(0, 0, 0, 0.1);
-    &--emphasis{
-      background-color: #efeae6;
+    &--emphasis {
+      background-color: #f1f0f5;
     }
   }
   &__column {
@@ -69,28 +68,7 @@
     flex-direction: column;
     gap: 10px;
   }
-  &__row {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    @media (max-width: 1199px) {
-      justify-content: center;
-    }
-  }
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 34px);
-    gap: 10px;
-    align-items: center;
-    @media (max-width: 1199px) {
-      grid-auto-flow: column;
-      grid-auto-rows: auto;
-    }
-  }
-  img {
-    width: 34px;
-    height: auto;
-  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -98,8 +76,27 @@
     padding: 0;
     margin: 0;
     gap: 10px;
-    @media (max-width: 1199px) {
-
+    &--grid {
+      display: grid;
+      grid-template-columns: repeat(2, 34px);
+      gap: 10px;
+      align-items: center;
+      @media (max-width: 1199px) {
+        grid-auto-flow: column;
+        grid-auto-rows: auto;
+      }
+    }
+    &--row {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      @media (max-width: 1199px) {
+        justify-content: center;
+      }
+    }
+    img {
+      width: 34px;
+      height: auto;
     }
   }
   &__list-item {
@@ -109,14 +106,12 @@
     font-weight: 500;
     font-size: 15px;
     max-width: 350px;
-
   }
   &__title {
     padding: 0;
     margin: 0;
     font-size: 18px;
     color: #076c68;
-
   }
   &__text {
     margin: 0;
@@ -132,7 +127,6 @@
 
     &--info {
       max-width: 350px;
-      color: rgba(7, 108, 104, 0.77);
     }
   }
 
@@ -172,4 +166,3 @@
     }
   }
 }
-

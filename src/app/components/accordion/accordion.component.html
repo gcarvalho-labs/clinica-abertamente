@@ -1,20 +1,9 @@
 <div class="accordion">
   <button class="accordion__button" (click)="toggle()">
-    <h2 class="accordion__title">{{ title }}</h2>
-    <img
-      class="accordion__icon"
-      [class.rotated]="isOpen"
-      src="images/widgets/arrow.svg"
-      alt=""
-    />
+    <ng-content select="[accordion-header]"></ng-content>
   </button>
 
-  <ul
-    class="accordion__list"
-    [@collapse]="isOpen ? 'open' : 'closed'"
-  >
-    <li *ngFor="let item of items" class="accordion__item">
-      {{ item }}
-    </li>
+  <ul class="accordion__list" [@collapse]="isOpen ? 'open' : 'closed'">
+    <ng-content select="[accordion-body]"></ng-content>
   </ul>
 </div>

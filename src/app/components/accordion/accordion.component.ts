@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-accordion',
   standalone: true,
-  imports: [NgFor],
+  imports: [],
   templateUrl: './accordion.component.html',
   styleUrl: './accordion.component.scss',
   animations: [

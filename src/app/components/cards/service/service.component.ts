@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgClass, NgForOf } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-service',
@@ -9,7 +9,23 @@ import { NgClass, NgForOf } from '@angular/common';
 })
 export class ServiceComponent {
   @Input() title!: string;
-  @Input() description!: string;
+  @Input() description?: string;
   @Input() subtitle!: string;
-  @Input() type: string = 'default';
+  @Input() vClass!: string | null;
+
+  get vService(): string {
+    return this.vClass ? 'service--' + this.vClass : '';
+  }
+
+  get vTitle(): string {
+    return this.vClass ? 'service__title--' + this.vClass : '';
+  }
+
+  get vDescription(): string {
+    return this.vClass ? 'service__description--' + this.vClass : '';
+  }
+
+  get vSubtitle(): string {
+    return this.vClass ? 'service__subtitle--' + this.vClass : '';
+  }
 }

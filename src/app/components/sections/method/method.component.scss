@@ -4,6 +4,7 @@
 .method {
   padding-top: 100px;
   padding-bottom: 100px;
+
   &__container {
     box-sizing: border-box;
     @include containers.container();
@@ -21,7 +22,6 @@
   &__description {
     font-size: 18px;
     color: #076c68;
-
     margin: 0;
     padding: 0;
     @media (max-width: 767px) {

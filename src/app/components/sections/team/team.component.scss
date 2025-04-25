@@ -2,7 +2,8 @@
 @use 'abstracts/buttons' as buttons;
 
 .team {
-  background-color: #EFEAE6;
+  //background-color: $neutral-150;
+  background-color: #f1edea;
   &__container {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -18,7 +19,7 @@
   &__title {
     font-weight: 600;
     font-size: 46px;
-    color: #076c68;
+    color:#076c68;
     margin: 0;
     padding: 0;
     @media (max-width: 1399px) {
@@ -75,10 +76,11 @@
     @include buttons.button();
     &--primary {
       @include buttons.button-variant(
-        $bg-color: #f58362,
+        $bg-color: #f87d63,
         $text-color: white,
         $hover-bg: #ea7e5d,
         $active-bg: #e37a5a,
+        $font-weight: 500
       );
     }
   }

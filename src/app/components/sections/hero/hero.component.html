@@ -1,30 +1,26 @@
 <section class="hero">
   <div class="hero__container">
-    <div class="hero__text">
-      <h1 class="hero__title">
-        {{ title.initial }}
-        <span class="hero__title hero__title--emphasis">{{
-          title.emphasis
-        }}</span>
-        {{ title.final }}
-      </h1>
-      <div style="padding: 10px;"></div>
-      <p class="hero__description">
-        {{ description }}
-      </p>
-      <div style="padding: 15px;"></div>
-
-      <div class="hero__buttons">
-        <button class="hero__button hero__button--primary">
-          {{ buttonPrimary }}
-        </button>
-        <button class="hero__button hero__button--secondary">
-          {{ buttonSecondary }}
-        </button>
+    <div class="hero__content">
+      <div class="hero__left">
+        <h1 class="hero__title">
+          Great futures are built with a
+          <span class="hero__emph-primary">small charity</span>
+        </h1>
+        <p class="hero__paragraph">
+          The world's largest social fundraising platform, optimized for your
+          <span class="hero__emph-secondary">charity</span> in a
+          more easy way
+        </p>
+        <div class="hero__buttons">
+          <button class="hero__button hero__button--primary">Donate now</button>
+          <button class="hero__button hero__button--secondary">
+            Watch video
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="hero__image-container">
-      <img class="hero__image" [attr.src]="imageSrc" [attr.alt]="imageAlt" />
+      <div class="hero__right">
+        <img class="hero__image" src="/images/hero3.png" alt="" />
+      </div>
     </div>
   </div>
 </section>
