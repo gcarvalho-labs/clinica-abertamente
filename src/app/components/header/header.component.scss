@@ -2,14 +2,13 @@
 @use 'abstracts/containers' as containers;
 
 .header {
-  height: 71px;
+  height: 81px;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   background-color: #ffffff;
-  border-bottom: 3px solid #f4f4f4;
   &__nav {
     box-sizing: border-box;
     height: 100%;
@@ -17,6 +16,7 @@
     @include containers.container();
   }
   &__list {
+  border-bottom: 2px solid #ececec;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -46,7 +46,7 @@
     color: inherit;
     &--emphasis {
       @include buttons.button(
-        $height: 48px,
+        $height: 44px,
         $padding: 0 19px,
         $font-size: 16px
       );

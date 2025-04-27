@@ -11,37 +11,38 @@
     box-sizing: border-box;
     @include containers.container();
   }
-  &__content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
   &__grid {
-    margin-top: 50px;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     justify-content: center;
     align-items: stretch;
+    padding-top: 44px;
+    padding-bottom: 50px;
   }
-
   &__title {
+    text-align: start;
     margin: 0;
-    padding: 0;
     font-size: 46px;
+    line-height: 32px;
+    font-weight: 500;
+    //border-left: 3px solid #ff8055;
+    //padding: 0 0 0 12px;
   }
   &__paragraph {
-    max-width: 410px;
+    margin: auto auto 20px;
+    max-width: 610px;
     padding: 0;
     font-size: 20px;
+    text-align: center;
   }
+
   &__button {
+    margin: auto;
     @include buttons.button();
     @include buttons.button-variant(
-      $bg-color: #ed6633,
+      $bg-color: #ef7445,
       $text-color: #ffffff,
       $hover-bg: #d85b2c,
       $active-bg: #e66737,

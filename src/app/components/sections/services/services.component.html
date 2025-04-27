@@ -1,12 +1,7 @@
 <section class="services">
   <div class="services__container">
-    <div class="services__content">
-      <h2 class="services__title">Nossos serviços</h2>
-      <p class="services__paragraph">
-        Soluções completas em saúde mental para promover bem-estar e
-        desenvolvimento pessoal e profissional.
-      </p>
-      <button class="services__button">Vamos conversar</button>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h2 class="services__title">Nossos <span style="color: #ef7445; font-weight: 650">serviços</span></h2>
     </div>
     <div class="services__grid">
       <app-service
@@ -14,8 +9,13 @@
         [title]="service.title"
         [description]="service.description"
         [subtitle]="service.subtitle"
-        [vClass]="service.vClass"
+        [vClasses]="service.vClasses"
       ></app-service>
     </div>
+    <p class="services__paragraph">
+      Soluções completas em saúde mental para promover bem-estar e
+      desenvolvimento pessoal e profissional.
+    </p>
+    <button class="services__button">Vamos conversar</button>
   </div>
 </section>
