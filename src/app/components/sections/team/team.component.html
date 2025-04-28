@@ -1,16 +1,9 @@
 <section class="team">
   <div class="team__container">
-    <div class="team__header">
-      <h2 class="team__title">{{ title }}</h2>
-      <div class="team__nav">
-        <button class="team__nav-button" (click)="scrollLeft()">
-          <img class="team__nav-icon" [src]="leftIcon" [alt]="leftAlt" />
-        </button>
-        <button class="team__nav-button" (click)="scrollRight()">
-          <img class="team__nav-icon" [src]="rightIcon" [alt]="rightAlt" />
-        </button>
-      </div>
-    </div>
+    <h2 class="team__title">
+      Nossa <span class="team__title--emphasis">equipe</span>
+    </h2>
+
     <div class="team__body" #teamCarousel>
       <app-member
         *ngFor="let member of team"
@@ -22,11 +15,12 @@
       </app-member>
     </div>
     <div class="team__footer">
-      <h2 class="team__subtitle">{{ subtitle }}</h2>
-      <p class="team__description">{{ description }}</p>
-      <button class="team__button team__button--primary">
-        {{ buttonText }}
-      </button>
+      <h2 class="team__subtitle">Um time dedicado ao seu bem-estar</h2>
+      <p class="team__paragraph">
+        Profissionais qualificados e dedicados, com experiência, empatia e
+        compromisso genuíno com seu crescimento.
+      </p>
+      <button class="team__button">Vamos conversar</button>
     </div>
   </div>
 </section>

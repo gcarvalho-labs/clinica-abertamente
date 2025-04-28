@@ -2,26 +2,21 @@
 @use 'abstracts/buttons' as buttons;
 
 .team {
-  //background-color: $neutral-150;
-  background-color: #f1edea;
   &__container {
-    padding-top: 100px;
-    padding-bottom: 100px;
     box-sizing: border-box;
     @include containers.container();
   }
-  &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 35px;
-  }
   &__title {
-    font-weight: 600;
-    font-size: 46px;
-    color:#076c68;
+    text-align: start;
     margin: 0;
-    padding: 0;
+    font-size: 46px;
+    line-height: 32px;
+    font-weight: 600;
+    &--emphasis {
+      color: #ef7445;
+      font-weight: 650;
+    }
+
     @media (max-width: 1399px) {
       font-size: 36px;
     }
@@ -33,56 +28,31 @@
     }
   }
   &__subtitle {
-    color: #076c68;
+    color: #1d6a5f;
     margin: 0 0 8px;
     padding: 0;
   }
-  &__description {
-    font-size: 18px;
-    color: #076c68;
+  &__paragraph {
+    margin: auto auto 20px;
     padding: 0;
-    margin: 0 0 15px;
-  }
-  &__nav {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  }
-  &__nav-button {
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    width: 38px;
-    height: 38px;
-    cursor: pointer;
-  }
-  &__nav-icon {
-    width: 38px;
-    height: 38px;
+    font-size: 20px;
+    max-width: 610px;
+    text-align: center;
   }
   &__body {
     display: flex;
-    flex-direction: row;
-    gap: 30px;
-    margin-bottom: 55px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    ::-webkit-scrollbar {
-      display: none;
-    }
+    justify-content: space-between;
   }
   &__button {
+    margin: auto;
     @include buttons.button();
-    &--primary {
-      @include buttons.button-variant(
-        $bg-color: #f87d63,
-        $text-color: white,
-        $hover-bg: #ea7e5d,
-        $active-bg: #e37a5a,
-        $font-weight: 500
-      );
-    }
+    @include buttons.button-variant(
+      $bg-color: #ef7445,
+      $text-color: #ffffff,
+      $hover-bg: #d85b2c,
+      $active-bg: #e66737,
+      $font-weight: 500
+    );
   }
   &__footer {
     display: flex;

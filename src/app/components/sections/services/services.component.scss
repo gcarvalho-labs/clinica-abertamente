@@ -2,8 +2,6 @@
 @use 'abstracts/buttons' as buttons;
 
 .services {
-  padding-top: 100px;
-  padding-bottom: 100px;
   min-height: 400px;
   box-sizing: border-box;
 
@@ -26,9 +24,11 @@
     margin: 0;
     font-size: 46px;
     line-height: 32px;
-    font-weight: 500;
-    //border-left: 3px solid #ff8055;
-    //padding: 0 0 0 12px;
+    font-weight: 600;
+    &--emphasis {
+      color: #ef7445;
+      font-weight: 650;
+    }
   }
   &__paragraph {
     margin: auto auto 20px;
@@ -37,7 +37,6 @@
     font-size: 20px;
     text-align: center;
   }
-
   &__button {
     margin: auto;
     @include buttons.button();

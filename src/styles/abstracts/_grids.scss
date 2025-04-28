@@ -1,0 +1,14 @@
+@mixin grid-layout($positions) {
+  @for $i from 1 through length($positions) {
+    $pos: nth($positions, $i);
+    $col: nth($pos, 1);
+    $row: nth($pos, 2);
+    $col-end: if(length($pos) > 2, nth($pos, 3), $col);
+    $row-end: if(length($pos) > 3, nth($pos, 4), $row);
+
+    & > :nth-child(#{$i}) {
+      grid-column: #{$col} / #{$col-end + 1};
+      grid-row: #{$row} / #{$row-end + 1};
+    }
+  }
+}

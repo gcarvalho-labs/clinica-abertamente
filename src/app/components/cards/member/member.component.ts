@@ -1,9 +1,9 @@
 import {Component, ElementRef, HostListener, Input} from '@angular/core';
-import {NgClass} from '@angular/common';
+
 
 @Component({
   selector: 'app-member',
-  imports: [NgClass],
+  imports: [],
   templateUrl: './member.component.html',
   styleUrl: './member.component.scss',
 })

@@ -9,14 +9,6 @@ import { MemberComponent } from '../../cards/member/member.component';
   styleUrl: './team.component.scss',
 })
 export class TeamComponent {
-  title: string = 'Nosso time';
-  leftAlt: string = 'Anterior';
-  rightAlt: string = 'Próximo';
-  leftIcon: string = 'images/widgets/arrow-left.svg';
-  rightIcon: string = 'images/widgets/arrow-right.svg';
-  subtitle: string = 'Um time dedicado ao seu bem-estar';
-  description: string = 'Profissionais qualificados e apaixonados. Cada membro traz experiência, empatia e um compromisso genuíno com o seu crescimento pessoal. Conte com a gente para caminhar ao seu lado nessa jornada.';
-  buttonText: string = 'Vamos conversar';
 
   @ViewChild('teamCarousel', { static: true }) teamCarousel!: ElementRef;
 
