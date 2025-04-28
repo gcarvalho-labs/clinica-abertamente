@@ -1,8 +1,6 @@
 @use 'abstracts/containers' as containers;
 @use 'abstracts/buttons' as buttons;
 .place {
-  padding-top: 100px;
-  padding-bottom: 100px;
   &__container {
     display: flex;
     flex-direction: column;

@@ -18,6 +18,7 @@ import {FooterComponent} from './components/footer/footer.component';
     DrawerComponent,
     ServicesComponent,
     NgClass,
+    PlaceComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
