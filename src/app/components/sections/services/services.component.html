@@ -1,9 +1,16 @@
 <section class="services">
   <div class="services__container">
-    <h2 class="services__title">
-      Nossos <span class="services__title--emphasis">serviços</span>
-    </h2>
-
+    <div>
+      <h3 class="services__label">SERVIÇO</h3>
+      <div class="services__header">
+        <h2 class="services__title">
+          Nossos <span class="services__title--emphasis">Serviços</span>
+        </h2>
+        <button class="services__button services__button--secondary">
+          Ver todos
+        </button>
+      </div>
+    </div>
     <div class="services__grid">
       <app-service
         *ngFor="let service of services"
@@ -17,6 +24,8 @@
       Soluções completas em saúde mental para promover bem-estar e
       desenvolvimento pessoal e profissional.
     </p>
-    <button class="services__button">Vamos conversar</button>
+    <button class="services__button services__button--primary">
+      Vamos conversar
+    </button>
   </div>
 </section>

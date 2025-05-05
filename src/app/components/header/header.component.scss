@@ -9,6 +9,7 @@
   left: 0;
   z-index: 100;
   background-color: #ffffff;
+  //border-bottom: 2px solid #ececec;
   &__nav {
     box-sizing: border-box;
     height: 100%;
@@ -16,7 +17,7 @@
     @include containers.container();
   }
   &__list {
-  border-bottom: 2px solid #ececec;
+    border-bottom: 2px solid #ececec;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -51,7 +52,7 @@
         $font-size: 16px
       );
       @include buttons.button-variant(
-        $bg-color: #1d6a5f,
+        $bg-color: #ef7445,
         $text-color: #ffffff,
         $hover-bg: #1b655a,
         $active-bg: #196158,

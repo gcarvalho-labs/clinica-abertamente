@@ -9,6 +9,17 @@
     box-sizing: border-box;
     @include containers.container();
   }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__label {
+    margin: 0 0 14px;
+    padding: 0;
+    color: #1d6a5f;
+    font-size: 16px;
+  }
   &__grid {
     box-sizing: border-box;
     display: grid;
@@ -16,18 +27,17 @@
     gap: 40px;
     justify-content: center;
     align-items: stretch;
-    padding-top: 44px;
-    padding-bottom: 50px;
+    margin-top: 40px;
+    margin-bottom: 60px;
   }
   &__title {
     text-align: start;
     margin: 0;
     font-size: 46px;
-    line-height: 32px;
-    font-weight: 600;
+    font-weight: normal;
     &--emphasis {
       color: #ef7445;
-      font-weight: 650;
+      font-weight: 600;
     }
   }
   &__paragraph {
@@ -38,14 +48,31 @@
     text-align: center;
   }
   &__button {
-    margin: auto;
-    @include buttons.button();
-    @include buttons.button-variant(
-      $bg-color: #ef7445,
-      $text-color: #ffffff,
-      $hover-bg: #d85b2c,
-      $active-bg: #e66737,
-      $font-weight: 500
-    );
+    &--primary {
+      margin: auto;
+      @include buttons.button();
+      @include buttons.button-variant(
+        $bg-color: #ef7445,
+        $text-color: #ffffff,
+        $hover-bg: #d85b2c,
+        $active-bg: #e66737,
+        $font-weight: 500
+      );
+    }
+    &--secondary {
+      @include buttons.button(
+        $height: 44px,
+        $padding: 0 19px,
+        $font-size: 16px
+      );
+      @include buttons.button-variant(
+        $bg-color: #ffffff,
+        $text-color: #ef7445,
+        $hover-bg: #ffffff,
+        $active-bg: #ffffff,
+        $font-weight: 550,
+        $border: 1px solid #ef7445,
+      );
+    }
   }
 }

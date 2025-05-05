@@ -20,13 +20,15 @@
   $hover-bg,
   $active-bg,
   $font-weight: 500,
-  $border: none
+  $border: none,
+  $hover-text-color: $text-color,
 ) {
   background-color: $bg-color;
   color: $text-color;
   font-weight: $font-weight;
   border: $border;
   &:hover {
+    color: $hover-text-color;
     background-color: $hover-bg;
   }
 

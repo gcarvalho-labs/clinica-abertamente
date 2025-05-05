@@ -2,10 +2,10 @@
 @use 'abstracts/containers' as containers;
 
 .hero {
-  padding-top: 53px;
-  //padding-bottom: 53px;
+  box-sizing: border-box;
   background-color: #fefbf9;
   &__container {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,10 +13,13 @@
     @include containers.container();
   }
   &__content {
+    padding-top: 53px;
+    width: 100%;
     text-align: start;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
   }
   &__left {
     display: flex;
@@ -65,11 +68,11 @@
     &--secondary {
       text-shadow: 0 0 0.8px rgba(0, 0, 0, 0.4);
       @include buttons.button-variant(
-        $bg-color: #1d6a5f,
+        $bg-color: #1b655a,
         $text-color: #ffffff,
         $hover-bg: #1b655a,
         $active-bg: #196158,
-        $font-weight: 500
+        $font-weight: 500,
       );
     }
   }

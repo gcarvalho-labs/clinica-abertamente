@@ -13,13 +13,10 @@ export class HeaderComponent {
       vClasses: ['header__item--left'],
       link: { label: 'Logo', vClasses: [] },
     },
+
     {
       vClasses: [],
-      link: { label: 'Início', vClasses: [] },
-    },
-    {
-      vClasses: [],
-      link: { label: 'Serviços', vClasses: [] },
+      link: { label: 'Serviço', vClasses: [] },
     },
     {
       vClasses: [],
@@ -39,7 +36,7 @@ export class HeaderComponent {
     },
     {
       vClasses: ['header__item--right'],
-      link: { label: 'Cantinho', vClasses: ['header__link--emphasis'] },
+      link: { label: 'Lúmen', vClasses: ['header__link--emphasis'] },
     },
   ];
 }
