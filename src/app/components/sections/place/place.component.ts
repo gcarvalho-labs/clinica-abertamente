@@ -10,11 +10,11 @@ import {StepperComponent} from '../../stepper/stepper.component';
 })
 export class PlaceComponent {
   places = [
-    { url: '/images/places/photo01.jpg', alt: 'Foto do ambiente 1' },
-    { url: '/images/places/photo02.jpg', alt: 'Foto do ambiente 2' },
-    { url: '/images/places/photo03.jpg', alt: 'Foto do ambiente 3' },
-    { url: '/images/places/photo04.jpg', alt: 'Foto do ambiente 4' },
-    { url: '/images/places/photo05.jpeg', alt: 'Foto do ambiente 5' },
+    { url: 'images/places/photo01.jpg', alt: 'Foto do ambiente 1' },
+    { url: 'images/places/photo02.jpg', alt: 'Foto do ambiente 2' },
+    { url: 'images/places/photo03.jpg', alt: 'Foto do ambiente 3' },
+    { url: 'images/places/photo04.jpg', alt: 'Foto do ambiente 4' },
+    { url: 'images/places/photo05.jpeg', alt: 'Foto do ambiente 5' },
   ];
   steps = [
     {
