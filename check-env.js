@@ -1,7 +1,7 @@
 const { execSync } = require('child_process');
 
-const expectedNode = '22.12.0';
-const expectedNpm = '11.1.0';
+const expectedNode = '20.19.0';
+const expectedNpm = '10.8.2';
 
 const actualNode = process.version.replace(/^v/, '');
 const actualNpm = execSync('npm -v').toString().trim();

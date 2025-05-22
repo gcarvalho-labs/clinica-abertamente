@@ -2,13 +2,18 @@
   <nav class="header__nav">
     <ul class="header__list">
       <li
-        *ngFor="let item of items"
+        *ngFor="let item of items; let i = index"
         class="header__item"
         [ngClass]="item.vClasses"
       >
-        <a class="header__link" href="#" [ngClass]="item.link.vClasses">{{
-            item.link.label
-          }}</a>
+        <a class="header__link" href="#" [ngClass]="item.link.vClasses">
+          {{ item.link.label }}
+        </a>
+        <div
+          class="header__item-indicator"
+          *ngIf="i === 1"
+        >
+        </div>
       </li>
     </ul>
   </nav>

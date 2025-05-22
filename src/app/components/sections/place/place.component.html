@@ -9,35 +9,12 @@
       </div>
     </div>
     <div class="place__content">
-      <ul class="place__list">
-        <li class="place__list-item">
-          <div class="place__number">1</div>
-          <h2 class="place__subtitle">Ambiente acolhedor</h2>
-          <p class="place__description">
-            Nosso espaço foi cuidadosamente planejado para proporcionar
-            conforto, acolhimento e privacidade — elementos essenciais para o
-            cuidado com a saúde mental.
-          </p>
-        </li>
-        <li class="place__list-item">
-          <div class="place__number">2</div>
-          <h2 class="place__subtitle">Sem custos adicionais</h2>
-          <p class="place__description">
-            Oferecemos uma estrutura completa, sem taxas extras, para garantir
-            que você possa focar totalmente no seu processo terapêutico com
-            tranquilidade.
-          </p>
-        </li>
-        <li class="place__list-item">
+      <app-stepper
+        class="place__stepper"
+        [steps]="steps"
+        [activeStepIndex]="activeStepIndex"
+      ></app-stepper>
 
-          <div class="place__number">3</div>
-          <h2 class="place__subtitle">Fácil acesso</h2>
-          <p class="place__description">
-            Localizado em uma região central e acessível, nosso espaço
-            proporciona segurança e bem-estar desde o primeiro contato.
-          </p>
-        </li>
-      </ul>
       <div class="place__grid">
         <div
           class="place__grid-item"
@@ -49,9 +26,9 @@
     </div>
 
     <p class="place__paragraph">
-      Nosso espaço foi pensado para oferecer uma experiência terapêutica com conforto, estrutura e profissionalismo.
+      Nosso espaço foi pensado para oferecer uma experiência terapêutica com
+      conforto, estrutura e profissionalismo.
     </p>
-
 
     <button class="place__button place__button--primary">
       Vamos conversar

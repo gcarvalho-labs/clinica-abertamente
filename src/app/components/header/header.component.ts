@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NgClass, NgForOf } from '@angular/common';
+import {NgClass, NgForOf, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [NgForOf, NgClass],
+  imports: [NgForOf, NgClass, NgIf],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -36,7 +36,7 @@ export class HeaderComponent {
     },
     {
       vClasses: ['header__item--right'],
-      link: { label: 'Lúmen', vClasses: ['header__link--emphasis'] },
+      link: { label: 'Blog', vClasses: ['header__link--emphasis'] },
     },
   ];
 }

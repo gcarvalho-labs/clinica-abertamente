@@ -1,24 +1,11 @@
 .stepper {
+
   &__step {
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    justify-content: start;
     box-sizing: border-box;
-    padding-left: 200px;
-    padding-right: 200px;
-    @media (max-width: 1199px) {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-    @media (max-width: 991px) {
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-    @media (max-width: 767px) {
-      padding-left: 0;
-      padding-right: 0;
-      gap: 20px;
-    }
+    gap: 40px;
   }
 
   &__indicator {
@@ -31,77 +18,35 @@
   }
 
   .stepper__circle {
-    width: 28px;
-    height: 28px;
+    min-width: 28px;
+    min-height: 28px;
     border-radius: 50%;
-    background-color: #076c68;
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 0;
-      top: 50%;
-      left: 50%;
-      background-color: #f87d63;
-      border-radius: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      transition:
-        width 0.9s ease-in-out,
-        height 0.9s ease-in-out,
-        transform 0.9s ease-in-out;
-    }
-
-    &.active::before {
-      width: 105%;
-      height: 105%;
-      transform: translate(-50%, -50%) scale(1);
-    }
+    background-color: #e37a5a;
   }
 
-  .stepper {
-    &__line {
-      position: relative;
-      height: 100%;
-      min-height: 280px;
-      width: 6px;
-      background-color: #076c68;
-      overflow: hidden;
+  &__line {
+    height: 100%;
+    min-height: 150px;
+    width: 6px;
+    background-color: #1d6a5f;
+    overflow: hidden;
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 0;
-        background-color: #f87d63;
-        transition: height 0.9s ease-in-out;
-        z-index: 1;
-      }
+    &--final {
+      display: none;
+    }
 
-      &.filled::after {
-        height: 100%;
-      }
-
-      &--final {
-        display: none;
-      }
-
-      @media (max-width: 991px) {
-        min-height: 300px;
-      }
-      @media (max-width: 767px) {
-        min-height: 350px;
-      }
+    @media (max-width: 991px) {
+      min-height: 300px;
+    }
+    @media (max-width: 767px) {
+      min-height: 350px;
     }
   }
-
 
   &__info {
     display: flex;
     flex-direction: column;
+    justify-content: start;
     gap: 10px;
   }
 
@@ -109,7 +54,7 @@
     margin: 0;
     padding: 0;
     font-size: 28px;
-    color: #076c68;
+    line-height: 28px;
 
     @media (max-width: 767px) {
       font-size: 22px;
@@ -124,7 +69,6 @@
     padding: 0;
     font-size: 18px;
     font-weight: 430;
-    color: #076c68;
     @media (max-width: 452px) {
       font-size: 16px;
     }
