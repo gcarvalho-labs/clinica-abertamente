@@ -5,16 +5,27 @@
         *ngFor="let item of items; let i = index"
         class="header__item"
         [ngClass]="item.vClasses"
+        #itemRefs
+        [class.active]="i === activeIndex"
       >
-        <a class="header__link" href="#" [ngClass]="item.link.vClasses">
-          {{ item.link.label }}
-        </a>
-        <div
-          class="header__item-indicator"
-          *ngIf="i === 1"
+        <button
+          class="header__button"
+          [attr.disabled]="i === 0 || i === items.length - 1 ? true : null"
+          (click)="(i !== 0 && i !== items.length - 1) && onItemClick(i)"
+          #btnRefs
         >
-        </div>
+          <a class="header__link" href="#" [ngClass]="item.link.vClasses">
+            {{ item.link.label }}
+          </a>
+        </button>
       </li>
+      <div
+        class="header__indicator"
+        [ngStyle]="{
+          width: indicatorWidth + 'px',
+          transform: 'translateX(' + indicatorOffset + 'px)'
+        }"
+      ></div>
     </ul>
   </nav>
 </header>

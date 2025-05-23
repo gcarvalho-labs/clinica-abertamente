@@ -1,13 +1,46 @@
-import { Component } from '@angular/core';
-import {NgClass, NgForOf, NgIf} from '@angular/common';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
+import { NgClass, NgForOf, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [NgForOf, NgClass, NgIf],
+  imports: [NgForOf, NgClass, NgStyle],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
+  @ViewChildren('btnRefs', { read: ElementRef })
+  buttons!: QueryList<ElementRef>;
+
+  activeIndex = 1;
+  indicatorOffset = 1;
+  indicatorWidth = 0;
+
+  ngAfterViewInit() {
+    setTimeout(() => this.updateIndicator(), 0);
+  }
+
+  onItemClick(index: number): void {
+    this.activeIndex = index;
+    this.updateIndicator();
+  }
+
+  updateIndicator(): void {
+    const button = this.buttons.get(this.activeIndex)?.nativeElement;
+    const container = button?.closest('ul');
+    if (button && container) {
+      const buttonRect = button.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      this.indicatorOffset = buttonRect.left - containerRect.left;
+      this.indicatorWidth = button.offsetWidth;
+    }
+  }
+
   items = [
     {
       vClasses: ['header__item--left'],

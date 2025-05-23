@@ -23,7 +23,8 @@
   &__grid {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    //grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     gap: 40px;
     justify-content: center;
     align-items: stretch;
@@ -54,8 +55,8 @@
       @include buttons.button-variant(
         $bg-color: #ef7445,
         $text-color: #ffffff,
-        $hover-bg: #d85b2c,
-        $active-bg: #e66737,
+        $hover-bg: #ef7445,
+        $active-bg: #ef7445,
         $font-weight: 500
       );
     }

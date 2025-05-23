@@ -2,62 +2,37 @@
 @use 'abstracts/buttons' as buttons;
 
 .team {
+  padding-top: 100px;
+  padding-bottom: 100px;
   &__container {
     box-sizing: border-box;
     @include containers.container();
   }
-  &__title {
-    text-align: start;
-    margin: 0;
-    font-size: 46px;
-    line-height: 32px;
-    font-weight: 600;
-    &--emphasis {
-      color: #ef7445;
-      font-weight: 650;
-    }
+  &__caroussel {
+    min-height: 460px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: end;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  &__card {
+    background-color: #ccc;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    flex: 1;
+    height: 200px;
+    min-width: 100px;
 
-    @media (max-width: 1399px) {
-      font-size: 36px;
+    &.active {
+      flex: 2;
+      min-width: 350px;
+      height: 460px;
     }
-    @media (max-width: 991px) {
-      font-size: 40px;
-    }
-    @media (max-width: 375px) {
-      font-size: 36px;
-    }
-  }
-  &__subtitle {
-    color: #1d6a5f;
-    margin: 0 0 8px;
-    padding: 0;
-  }
-  &__paragraph {
-    margin: auto auto 20px;
-    padding: 0;
-    font-size: 20px;
-    max-width: 610px;
-    text-align: center;
-  }
-  &__body {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__button {
-    margin: auto;
-    @include buttons.button();
-    @include buttons.button-variant(
-      $bg-color: #ef7445,
-      $text-color: #ffffff,
-      $hover-bg: #d85b2c,
-      $active-bg: #e66737,
-      $font-weight: 500
-    );
-  }
-  &__footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
 }

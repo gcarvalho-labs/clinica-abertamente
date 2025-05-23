@@ -3,8 +3,11 @@
 
 .place {
   min-height: 400px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   box-sizing: border-box;
-
+  //background-color: #fbf8f5;
+  //background-color: #fefbf9;
   &__container {
     box-sizing: border-box;
     @include containers.container();
@@ -88,7 +91,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    max-width: 550px;
+    max-width: 610px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -135,8 +138,8 @@
       @include buttons.button-variant(
         $bg-color: #ef7445,
         $text-color: #ffffff,
-        $hover-bg: #d85b2c,
-        $active-bg: #e66737,
+        $hover-bg: #ef7445,
+        $active-bg: #ef7445,
         $font-weight: 500
       );
     }

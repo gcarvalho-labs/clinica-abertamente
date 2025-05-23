@@ -4,23 +4,12 @@ import { MemberComponent } from '../../cards/member/member.component';
 
 @Component({
   selector: 'app-team',
-  imports: [MemberComponent, NgForOf],
+  imports: [NgForOf],
   templateUrl: './team.component.html',
   styleUrl: './team.component.scss',
 })
 export class TeamComponent {
-
-  @ViewChild('teamCarousel', { static: true }) teamCarousel!: ElementRef;
-
-  scrollLeft() {
-    this.teamCarousel.nativeElement.scrollBy({ left: -310, behavior: 'smooth' });
-  }
-
-  scrollRight() {
-    this.teamCarousel.nativeElement.scrollBy({ left: 310, behavior: 'smooth' });
-  }
-
-
+  activeIndex = 1; // por exemplo, o terceiro é o padrão
   team = [
     {
       title: 'Kawana',
@@ -33,7 +22,8 @@ export class TeamComponent {
     },
     {
       title: 'Luana',
-      description: 'Psicóloga infantil e do adolescente, ajuda no desenvolvimento emocional e nas relações familiares.',
+      description:
+        'Psicóloga infantil e do adolescente, ajuda no desenvolvimento emocional e nas relações familiares.',
       image: {
         src: 'images/members/member2.webp',
         alt: 'Foto do Membro 2',
@@ -42,7 +32,8 @@ export class TeamComponent {
 
     {
       title: 'Mariana',
-      description: 'Atua no apoio psicológico para desafios emocionais, promovendo equilíbrio e qualidade de vida.',
+      description:
+        'Atua no apoio psicológico para desafios emocionais, promovendo equilíbrio e qualidade de vida.',
       image: {
         src: 'images/members/member3.webp',
         alt: 'Foto do Membro 3',

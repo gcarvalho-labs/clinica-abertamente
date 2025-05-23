@@ -4,6 +4,7 @@
 .hero {
   box-sizing: border-box;
   background-color: #fefbf9;
+  //border-bottom: 2px solid #ececec;
   &__container {
     display: flex;
     align-items: center;
@@ -19,34 +20,24 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
   }
   &__nav-button {
-    cursor: pointer;
+    @include buttons.button($height: 42px, $padding: 0, $font-size: 16px);
     border-radius: 50%;
-    max-height: 42px;
-    max-width: 42px;
-    border: none;
     background-color: transparent;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    @include buttons.button-variant(
+      $bg-color: transparent,
+      $text-color: inherit,
+      $hover-bg: rgba(0, 96, 85, 0.1),
+      $active-bg: rgba(0, 96, 85, 0.1),
+      $font-weight: 500,
+      $border: none,
+      $hover-text-color: inherit
+    );
+
     box-sizing: border-box;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-      background-color: rgba(0, 96, 85, 0.1);
-      box-shadow: 0 0 0 2px rgba(0, 96, 85, 0.2);
-      transform: scale(1.05);
-      transition: transform 0.3s cubic-bezier(0.25, 1.5, 0.5, 1), background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    &:active {
-      transform: scale(0.92);
-      transition: transform 0.08s ease-out;
-    }
-
-
 
     img {
       max-width: 100%;
@@ -108,7 +99,7 @@
         $text-color: #ffffff,
         $hover-bg: #1b655a,
         $active-bg: #196158,
-        $font-weight: 500,
+        $font-weight: 500
       );
     }
   }
