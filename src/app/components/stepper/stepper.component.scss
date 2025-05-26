@@ -1,3 +1,15 @@
+:host {
+  --gap-steps: 20px;
+  --gap-step: 5px;
+  --text-indent: 60px;
+  --circle-size: 32px;
+  --circle-border: 5px;
+  --line-width: 5px;
+  --line-color: #1b655a;
+  --circle-border-color: #ef7445;
+  --circle-bg: #ffffff;
+}
+
 .stepper {
   display: flex;
   flex-direction: column;

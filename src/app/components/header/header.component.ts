@@ -1,7 +1,8 @@
 import {
   AfterViewInit,
   Component,
-  ElementRef, HostListener,
+  ElementRef,
+  HostListener,
   QueryList,
   ViewChildren,
 } from '@angular/core';
@@ -70,13 +71,10 @@ export class HeaderComponent implements AfterViewInit {
     {
       vClasses: [],
       link: { label: 'Sobre', vClasses: [] },
-    },    {
-      vClasses: [],
-      link: { label: 'Blog', vClasses: [] },
     },
     {
       vClasses: ['header__item--right'],
-      link: { label: 'Conversar', vClasses: ['header__link--emphasis'] },
+      link: { label: 'Blog', vClasses: ['header__link--emphasis'] },
     },
   ];
 }

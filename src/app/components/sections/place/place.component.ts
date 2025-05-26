@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgForOf} from '@angular/common';
+import { NgForOf } from '@angular/common';
 import { StepperComponent } from '../../stepper/stepper.component';
 
 @Component({
@@ -34,10 +34,4 @@ export class PlaceComponent {
         'Localizado em uma região central e acessível, nosso espaço proporciona segurança e bem-estar desde o primeiro contato.',
     },
   ];
-
-  activeStepIndex: number = -1; // Nenhum ativo no início
-
-  onStepActivated(index: number) {
-    this.activeStepIndex = index; // Atualiza o step visível corretamente
-  }
 }
