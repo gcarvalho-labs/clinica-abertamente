@@ -19,19 +19,18 @@ export class PlaceComponent {
 
   steps = [
     {
-      title: 'Ambiente acolhedor',
-      description:
-        'Nosso espaço foi cuidadosamente planejado para proporcionar conforto, acolhimento e privacidade — elementos essenciais para o cuidado com a saúde mental.',
+      title: 'Acolhimento',
+      description: 'Primeiro contato e escuta empática',
     },
     {
-      title: 'Sem custos adicionais',
+      title: 'Avaliação',
       description:
-        'Oferecemos uma estrutura completa, sem taxas extras, para garantir que você possa focar totalmente no seu processo terapêutico com tranquilidade.',
+        'Análise das necessidades individuais',
     },
     {
-      title: 'Fácil acesso',
+      title: 'Planejamento',
       description:
-        'Localizado em uma região central e acessível, nosso espaço proporciona segurança e bem-estar desde o primeiro contato.',
+        'Definição do plano terapêutico',
     },
   ];
 }

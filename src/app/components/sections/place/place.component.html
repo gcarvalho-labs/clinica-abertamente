@@ -9,7 +9,11 @@
       </div>
     </div>
     <div class="place__content">
-      <app-stepper style="max-width: 550px" [steps]="steps"></app-stepper>
+      <app-stepper
+        style="max-width: 550px"
+        [steps]="steps"
+
+      ></app-stepper>
 
       <div class="place__grid">
         <div class="place__grid-item" *ngFor="let image of images">

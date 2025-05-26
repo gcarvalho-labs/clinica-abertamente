@@ -20,7 +20,7 @@ export class StepperComponent implements OnInit {
 
   @Input() gapBetweenSteps!: string;
   @Input() gapInsideStep!: string;
-  @Input() paddingLeft!: string;
+  @Input() textIndent!: string;
   @Input() circleSize!: string;
   @Input() circleBorder!: string;
   @Input() lineWidth!: string;
@@ -39,8 +39,8 @@ export class StepperComponent implements OnInit {
     if (this.gapInsideStep) {
       host.style.setProperty('--gap-step', this.gapInsideStep);
     }
-    if (this.paddingLeft) {
-      host.style.setProperty('--text-indent', this.paddingLeft);
+    if (this.textIndent) {
+      host.style.setProperty('--text-indent', this.textIndent);
     }
     if (this.circleSize) {
       host.style.setProperty('--circle-size', this.circleSize);

@@ -2,7 +2,7 @@
 @use 'abstracts/containers' as containers;
 
 .header {
-  height: 86px;
+  height: 81px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -80,7 +80,7 @@
     height: 5px;
     border-radius: 6px;
     position: absolute;
-    bottom: 21px;
+    bottom: 20px;
     left: 0;
     transition:
       transform 0.3s ease,
