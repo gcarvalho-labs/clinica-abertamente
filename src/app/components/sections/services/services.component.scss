@@ -9,11 +9,6 @@
     box-sizing: border-box;
     @include containers.container();
   }
-  &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
   &__label {
     margin: 0 0 14px;
     padding: 0;
@@ -23,11 +18,12 @@
   &__grid {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 40px;
+    row-gap: 50px;
     justify-content: center;
     align-items: stretch;
-    margin-top: 40px;
+    margin-top: 70px;
     margin-bottom: 60px;
   }
   &__title {
@@ -57,23 +53,6 @@
         $hover-bg: #d85b2c,
         $active-bg: #e66737,
         $font-weight: 500
-      );
-    }
-    &--secondary {
-
-      @include buttons.button(
-        $height: 44px,
-        $padding: 0 19px,
-        $font-size: 16px
-      );
-      @include buttons.button-variant(
-        $bg-color: transparent,
-        $text-color: #1d6a5f,
-        $hover-bg: #1d6a5f,
-        $active-bg: #1d6a5f,
-        $font-weight: 550,
-        $border: 1px solid #1d6a5f,
-      $hover-text-color: #ffffff
       );
     }
   }

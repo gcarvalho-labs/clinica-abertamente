@@ -5,27 +5,36 @@
   box-sizing: border-box;
   background-color: #fefbf9;
   &__container {
-
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
     @include containers.container();
   }
-  &__content {
-    padding-top: 53px;
-    width: 100%;
-    text-align: start;
+  &__carousel {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    text-align: start;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 100%;
   }
   &__left {
     display: flex;
     flex-direction: column;
     gap: 40px;
     max-width: 650px;
+  }
+  &__right {
+    width: 400px;
+    height: auto;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
   }
   &__title {
     margin: 0;
@@ -59,25 +68,55 @@
       @include buttons.button-variant(
         $bg-color: #ef7445,
         $text-color: #ffffff,
-        $hover-bg: #d85b2c,
-        $active-bg: #e66737,
+        $hover-bg: #ef7445,
+        $active-bg: #ef7445,
         $font-weight: 500
       );
     }
-
     &--secondary {
-      text-shadow: 0 0 0.8px rgba(0, 0, 0, 0.4);
       @include buttons.button-variant(
         $bg-color: #1b655a,
         $text-color: #ffffff,
         $hover-bg: #1b655a,
-        $active-bg: #196158,
-        $font-weight: 500,
+        $active-bg: #1b655a,
+        $font-weight: 500
       );
     }
   }
-  &__image {
-    width: 400px;
-    height: auto;
+  &__nav-button {
+    @include buttons.button($height: 42px, $padding: 10px, $font-size: 16px);
+    @include buttons.button-variant(
+      $bg-color: #a5c3bf,
+      $text-color: inherit,
+      $hover-bg: #1b655a,
+      $active-bg: #1b655a,
+      $font-weight: 500,
+      $border: none,
+    );
+    min-height: 42px;
+    min-width: 42px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &__indexes{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    display: flex;
+    gap: 10px;
+  }
+  &__index{
+    width: 26px;
+    height: 8px;
+    background-color: #a5c3bf;
+    border-radius: 8px;
+    &--active{
+      background-color: #1b655a;
+    }
   }
 }

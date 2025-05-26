@@ -1,23 +1,18 @@
 <section class="services">
   <div class="services__container">
-    <div>
-      <h3 class="services__label">SERVIÇO</h3>
-      <div class="services__header">
-        <h2 class="services__title">
-          Nossos <span class="services__title--emphasis">Serviços</span>
-        </h2>
-        <button class="services__button services__button--secondary">
-          Ver todos
-        </button>
-      </div>
-    </div>
+    <h3 class="services__label">SERVIÇO</h3>
+
+    <h2 class="services__title">
+      Nossos <span class="services__title--emphasis">Serviços</span>
+    </h2>
+
     <div class="services__grid">
       <app-service
         *ngFor="let service of services"
         [title]="service.title"
         [description]="service.description"
         [subtitle]="service.subtitle"
-        [vClasses]="service.vClasses"
+        [icon]="service.icon"
       ></app-service>
     </div>
     <p class="services__paragraph">
@@ -25,7 +20,7 @@
       desenvolvimento pessoal e profissional.
     </p>
     <button class="services__button services__button--primary">
-      Vamos conversar
+      Ver todos
     </button>
   </div>
 </section>

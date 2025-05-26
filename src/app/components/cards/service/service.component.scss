@@ -3,7 +3,6 @@
 .service {
   position: relative;
   display: inline-block;
-
   &__content {
     position: relative;
     background-color: #ffffff;
@@ -13,15 +12,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 24px;
     align-items: start;
     min-width: 300px;
     max-width: 100%;
     height: 270px;
+    gap: 20px;
     border: 2px solid #ececec;
     transition: transform 0.3s ease;
   }
-
   &::after {
     content: '';
     position: absolute;
@@ -29,27 +27,44 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ef7445;
+    background-color: #ececec;
     border-radius: 24px;
     z-index: -1;
-    transform: translate(4px, 4px);
+    transform: translate(5px, 5px);
     transition: transform 0.3s ease;
     box-sizing: border-box;
   }
 
   &:hover::after {
-    transform: translate(4px, -4px);
+    transform: translate(5px, -3px);
   }
 
   &:hover &__content {
     transform: translateY(-8px);
   }
 
+  i {
+    position: absolute;
+    top: -32px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #fbf1ed;
+    color: #ef7445;
+    font-size: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-sizing: content-box;
+  }
+
   &__title {
     font-weight: 600;
     font-size: 24px;
+    line-height: 24px;
     padding: 0;
-    margin: 0;
+    margin: 15px 0 0;
 
     @media (max-width: 1399px) {
       font-size: 24px;
@@ -64,6 +79,7 @@
       font-size: 24px;
     }
   }
+
   &__description {
     font-weight: 500;
     font-size: 17px;
@@ -71,6 +87,7 @@
     padding: 0;
     margin: 0;
     text-align: start;
+
     @media (max-width: 1399px) {
       font-size: 16px;
     }
@@ -81,20 +98,21 @@
       font-size: 16px;
     }
   }
-  &__subtitle {
+
+  &__link {
     @include buttons.button(
       $height: 44px,
-      $padding: 6px 12px,
-      $font-size: 16px
+      $padding: 4px 12px,
+      $font-size: 17px
     );
     @include buttons.button-variant(
-      $bg-color: #transparent,
+      $bg-color: transparent,
       $text-color: #1d6a5f,
       $hover-bg: #1d6a5f,
       $active-bg: #1d6a5f,
       $font-weight: 550,
-      $border: 1px solid #1d6a5f,
-      $hover-text-color: #ffffff
+      $hover-text-color: #ffffff,
+      $border: 1px solid #1d6a5f
     );
   }
 }

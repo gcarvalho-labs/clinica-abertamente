@@ -4,8 +4,6 @@
     flex-direction: row;
     gap: 40px;
     box-sizing: border-box;
-    padding-left: 200px;
-    padding-right: 200px;
     @media (max-width: 1199px) {
       padding-left: 100px;
       padding-right: 100px;
@@ -31,55 +29,23 @@
   }
 
   .stepper__circle {
-    width: 28px;
-    height: 28px;
+    min-width: 32px;
+    min-height: 32px;
     border-radius: 50%;
-    background-color: #076c68;
+    background-color: #ffffff;
+    border: 5px solid #ef7445;
     position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 0;
-      top: 50%;
-      left: 50%;
-      background-color: #f87d63;
-      border-radius: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      transition:
-        width 0.9s ease-in-out,
-        height 0.9s ease-in-out,
-        transform 0.9s ease-in-out;
-    }
-
-    &.active::before {
-      width: 105%;
-      height: 105%;
-      transform: translate(-50%, -50%) scale(1);
-    }
+    box-sizing: border-box;
   }
 
   .stepper {
     &__line {
       position: relative;
       height: 100%;
-      min-height: 280px;
-      width: 6px;
-      background-color: #076c68;
+      min-height: 144px;
+      width: 5px;
+      background-color: #1b655a;
       overflow: hidden;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 0;
-        background-color: #f87d63;
-        transition: height 0.9s ease-in-out;
-        z-index: 1;
-      }
 
       &.filled::after {
         height: 100%;
@@ -98,7 +64,6 @@
     }
   }
 
-
   &__info {
     display: flex;
     flex-direction: column;
@@ -108,9 +73,8 @@
   &__title {
     margin: 0;
     padding: 0;
-    font-size: 28px;
-    color: #076c68;
-
+    font-size: 20px;
+    line-height: 30px;
     @media (max-width: 767px) {
       font-size: 22px;
     }
@@ -122,9 +86,8 @@
   &__description {
     margin: 0;
     padding: 0;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 430;
-    color: #076c68;
     @media (max-width: 452px) {
       font-size: 16px;
     }

@@ -1,26 +1,12 @@
-<section class="team">
+<div class="team">
   <div class="team__container">
-    <h2 class="team__title">
-      Nossa <span class="team__title--emphasis">equipe</span>
-    </h2>
-
-    <div class="team__body" #teamCarousel>
-      <app-member
-        *ngFor="let member of team"
-        [name]="member.title"
-        [description]="member.description"
-        [image]="member.image.src"
-        [imageAlt]="member.image.alt"
-      >
-      </app-member>
-    </div>
-    <div class="team__footer">
-      <h2 class="team__subtitle">Um time dedicado ao seu bem-estar</h2>
-      <p class="team__paragraph">
-        Profissionais qualificados e dedicados, com experiência, empatia e
-        compromisso genuíno com seu crescimento.
-      </p>
-      <button class="team__button">Vamos conversar</button>
+    <div class="team__caroussel">
+      <div
+        class="team__card"
+        *ngFor="let member of team; let i = index"
+        [class.active]="i === activeIndex"
+        (click)="activeIndex = i"
+      ></div>
     </div>
   </div>
-</section>
+</div>

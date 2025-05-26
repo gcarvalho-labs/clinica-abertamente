@@ -2,14 +2,28 @@
   <nav class="header__nav">
     <ul class="header__list">
       <li
-        *ngFor="let item of items"
+        *ngFor="let item of items; let i = index"
         class="header__item"
         [ngClass]="item.vClasses"
+        [class.active]="i === activeIndex"
       >
-        <a class="header__link" href="#" [ngClass]="item.link.vClasses">{{
-            item.link.label
-          }}</a>
+        <button
+          class="header__button"
+          (click)="i !== 0 && i !== items.length - 1 && onItemClick(i)"
+          #btnRefs
+        >
+          <a class="header__link" href="#" [ngClass]="item.link.vClasses">
+            {{ item.link.label }}
+          </a>
+        </button>
       </li>
+      <div
+        class="header__indicator"
+        [ngStyle]="{
+          width: indicatorWidth + 'px',
+          transform: 'translateX(' + indicatorOffset + 'px)',
+        }"
+      ></div>
     </ul>
   </nav>
 </header>

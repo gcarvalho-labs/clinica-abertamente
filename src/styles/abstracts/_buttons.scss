@@ -5,34 +5,40 @@
   border: none;
   border-radius: 30px;
   padding: $padding;
-  transition: background-color 0.3s ease-in-out;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   width: fit-content;
   line-height: 18px;
+  transition:
+    background-color 0.3s ease-in-out,
+    transform 0.3s cubic-bezier(0.25, 1.5, 0.5, 1);
 }
 
 @mixin button-variant(
-  $bg-color,
-  $text-color,
-  $hover-bg,
-  $active-bg,
+  $bg-color: transparent,
+  $text-color: inherit,
+  $hover-bg: transparent,
+  $active-bg: transparent,
   $font-weight: 500,
   $border: none,
-  $hover-text-color: $text-color,
+  $hover-text-color: $text-color
 ) {
   background-color: $bg-color;
   color: $text-color;
   font-weight: $font-weight;
   border: $border;
+
   &:hover {
+    transform: scale(1.05);
     color: $hover-text-color;
     background-color: $hover-bg;
   }
 
   &:active {
     background-color: $active-bg;
+    transform: scale(0.92);
+    transition: transform 0.08s ease-out;
   }
 }
