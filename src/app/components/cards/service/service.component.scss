@@ -103,14 +103,14 @@
     @include buttons.button(
       $height: 44px,
       $padding: 4px 12px,
-      $font-size: 17px
+      $font-size: 16px
     );
     @include buttons.button-variant(
       $bg-color: transparent,
       $text-color: #1d6a5f,
       $hover-bg: #1d6a5f,
       $active-bg: #1d6a5f,
-      $font-weight: 550,
+      $font-weight: 500,
       $hover-text-color: #ffffff,
       $border: 1px solid #1d6a5f
     );

@@ -1,37 +1,52 @@
-import { Component, Input, Output, EventEmitter, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
-import { NgClass, NgForOf } from '@angular/common';
+import {
+  Component,
+  Input,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+  Renderer2,
+  OnInit,
+} from '@angular/core';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.scss'],
-  imports: [NgForOf, NgClass],
+  imports: [NgForOf],
 })
-export class StepperComponent implements AfterViewInit {
+export class StepperComponent implements OnInit {
   @Input() steps: { title: string; description: string }[] = [];
-  @Output() stepActivated = new EventEmitter<number>();
-  @Input() activeStepIndex: number = -1; // Nenhum step ativado ao carregar
-
   @ViewChildren('stepElement') stepElements!: QueryList<ElementRef>;
 
-  ngAfterViewInit() {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const index = this.stepElements
-            .toArray()
-            .findIndex((el) => el.nativeElement === entry.target);
+  @Input() gapBetweenSteps: string = '20px';
+  @Input() gapInsideStep: string = '5px';
+  @Input() paddingLeft: string = '60px';
+  @Input() circleSize: string = '32px';
+  @Input() circleBorder: string = '5px';
+  @Input() lineWidth: string = '5px';
+  @Input() lineColor: string = '#1b655a';
+  @Input() circleBorderColor: string = '#ef7445';
+  @Input() circleBg: string = '#ffffff';
 
-          if (entry.isIntersecting && index !== -1) {
-            if (this.activeStepIndex < index) {
-              this.stepActivated.emit(index); // Atualiza apenas quando um novo step for ativado
-            }
-          }
-        });
-      },
-      { threshold: 1.0 } // Apenas quando 100% visível
-    );
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+  ) {}
 
-    this.stepElements.forEach((step) => observer.observe(step.nativeElement));
+  ngOnInit(): void {
+    this.setCssVariable('--gap-steps', this.gapBetweenSteps);
+    this.setCssVariable('--gap-step', this.gapInsideStep);
+    this.setCssVariable('--text-indent', this.paddingLeft);
+    this.setCssVariable('--circle-size', this.circleSize);
+    this.setCssVariable('--circle-border', this.circleBorder);
+    this.setCssVariable('--line-width', this.lineWidth);
+    this.setCssVariable('--line-color', this.lineColor);
+    this.setCssVariable('--circle-border-color', this.circleBorderColor);
+    this.setCssVariable('--circle-bg', this.circleBg);
+  }
+
+  private setCssVariable(name: string, value: string): void {
+    this.renderer.setStyle(this.el.nativeElement, name, value);
   }
 }

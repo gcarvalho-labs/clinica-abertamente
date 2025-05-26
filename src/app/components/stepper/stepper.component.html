@@ -1,30 +1,10 @@
 <div class="stepper">
   <div
     class="stepper__step"
-    *ngFor="let step of steps; let i = index; let last = last"
-    #stepElement
+    *ngFor="let step of steps; let last = last"
+    [class.stepper__step--last]="last"
   >
-    <div class="stepper__indicator">
-      <div
-        class="stepper__circle"
-        [class.active]="i <= activeStepIndex && activeStepIndex !== -1"
-      ></div>
-      <div
-        class="stepper__line"
-        [ngClass]="{
-          'stepper__line--final': last,
-          'filled': i < activeStepIndex
-        }"
-      ></div>
-    </div>
-    <div class="stepper__info">
-      <h1
-        class="stepper__title"
-        [class.active]="i <= activeStepIndex && activeStepIndex !== -1"
-      >
-        {{ step.title }}
-      </h1>
-      <p class="stepper__description">{{ step.description }}</p>
-    </div>
+    <h1 class="stepper__title">{{ step.title }}</h1>
+    <p class="stepper__description">{{ step.description }}</p>
   </div>
 </div>

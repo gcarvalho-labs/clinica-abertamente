@@ -1,83 +1,54 @@
 .stepper {
+  display: flex;
+  flex-direction: column;
+
   &__step {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    box-sizing: border-box;
-    @media (max-width: 1199px) {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-    @media (max-width: 991px) {
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-    @media (max-width: 767px) {
-      padding-left: 0;
-      padding-right: 0;
-      gap: 20px;
-    }
-  }
-
-  &__indicator {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20px;
-    //background-color: hotpink;
-  }
-
-  .stepper__circle {
-    min-width: 32px;
-    min-height: 32px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: 5px solid #ef7445;
+    padding-left: var(--text-indent);
+    margin-bottom: var(--gap-steps);
+    gap: var(--gap-step);
     position: relative;
-    box-sizing: border-box;
-  }
-
-  .stepper {
-    &__line {
-      position: relative;
-      height: 100%;
-      min-height: 144px;
-      width: 5px;
-      background-color: #1b655a;
-      overflow: hidden;
-
-      &.filled::after {
-        height: 100%;
-      }
-
-      &--final {
-        display: none;
-      }
-
-      @media (max-width: 991px) {
-        min-height: 300px;
-      }
-      @media (max-width: 767px) {
-        min-height: 350px;
-      }
-    }
-  }
-
-  &__info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    box-sizing: border-box;
+
+    // Linha vertical
+    &::after {
+      top: var(--circle-size);
+      left: calc((var(--circle-size) / 2) - (var(--line-width) / 2));
+      min-height: calc(100% - var(--circle-size) + var(--gap-steps));
+      width: var(--line-width);
+      background-color: var(--line-color);
+      position: absolute;
+      content: '';
+    }
+
+    // Círculo
+    &::before {
+      width: var(--circle-size);
+      height: var(--circle-size);
+      background-color: var(--circle-bg);
+      border: var(--circle-border) solid var(--circle-border-color);
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+
+    &--last::after {
+      display: none;
+    }
   }
 
   &__title {
     margin: 0;
-    padding: 0;
     font-size: 20px;
-    line-height: 30px;
+
     @media (max-width: 767px) {
       font-size: 22px;
     }
+
     @media (max-width: 452px) {
       font-size: 18px;
     }
@@ -85,9 +56,9 @@
 
   &__description {
     margin: 0;
-    padding: 0;
     font-size: 16px;
     font-weight: 430;
+
     @media (max-width: 452px) {
       font-size: 16px;
     }
