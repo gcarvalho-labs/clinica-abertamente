@@ -1,5 +1,5 @@
 :host {
-  --gap-steps: 20px;
+  --gap-steps: 100px;
   --gap-step: 5px;
   --circle-size: 32px;
   --circle-border: 5px;
@@ -12,79 +12,48 @@
 
 .stepper {
   display: flex;
-  &-vertical {
-    flex-direction: column;
-  }
-  &-horizontal {
-    flex-direction: row;
-  }
+  flex-direction: column;
 
   &__step {
     margin-bottom: var(--gap-steps);
+    padding-left: var(--text-indent);
     gap: var(--gap-step);
-    &-vertical {
-      padding-left: var(--text-indent);
-      // Linha vertical
-      &::after {
-        top: var(--circle-size);
-        left: calc((var(--circle-size) / 2) - (var(--line-width) / 2));
-        min-height: calc(100% - var(--circle-size) + var(--gap-steps));
-        width: var(--line-width);
-        background-color: var(--line-color);
-        position: absolute;
-        content: '';
-      }
-
-      // Círculo
-      &::before {
-        width: var(--circle-size);
-        height: var(--circle-size);
-        background-color: var(--circle-bg);
-        border: var(--circle-border) solid var(--circle-border-color);
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 50%;
-        box-sizing: border-box;
-      }
-    }
-    &-horizontal {
-      padding-top: var(--text-indent);
-      // Linha horizontal
-      &::after {
-        left: var(--circle-size);
-        top: calc((var(--circle-size) / 2) - (var(--line-width) / 2));
-        min-width: calc(100% - var(--circle-size) + var(--gap-steps));
-        height: var(--line-width);
-        background-color: var(--line-color);
-        position: absolute;
-        content: '';
-      }
-
-      // Círculo
-      &::before {
-        width: var(--circle-size);
-        height: var(--circle-size);
-        background-color: var(--circle-bg);
-        border: var(--circle-border) solid var(--circle-border-color);
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 50%;
-        box-sizing: border-box;
-      }
-    }
-
     position: relative;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    // Linha vertical
+    &::after {
+      top: var(--circle-size);
+      left: calc((var(--circle-size) / 2) - (var(--line-width) / 2));
+      min-height: calc(100% - var(--circle-size) + var(--gap-steps));
+      width: var(--line-width);
+      background-color: var(--line-color);
+      position: absolute;
+      content: '';
+      &:last-child{
+        display: none;
+      }
+    }
 
+    // Círculo
+    &::before {
+      width: var(--circle-size);
+      height: var(--circle-size);
+      background-color: var(--circle-bg);
+      border: var(--circle-border) solid var(--circle-border-color);
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
 
-
-    &--last::after {
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:last-child::after {
       display: none;
     }
   }
