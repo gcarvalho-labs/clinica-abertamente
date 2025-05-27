@@ -12,12 +12,18 @@
 
 .stepper {
   display: flex;
-  flex-direction: column;
+
+  &-vertical {
+    flex-direction: column;
+  }
+  &-horizontal {
+    flex-direction: row;
+  }
 
   &__step {
-    margin-bottom: var(--gap-steps);
     padding-left: var(--text-indent);
     gap: var(--gap-step);
+    padding-bottom: var(--gap-steps);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -26,12 +32,12 @@
     &::after {
       top: var(--circle-size);
       left: calc((var(--circle-size) / 2) - (var(--line-width) / 2));
-      min-height: calc(100% - var(--circle-size) + var(--gap-steps));
+      min-height: 100%;
       width: var(--line-width);
       background-color: var(--line-color);
       position: absolute;
       content: '';
-      &:last-child{
+      &:last-child {
         display: none;
       }
     }
@@ -51,7 +57,7 @@
     }
 
     &:last-child {
-      margin-bottom: 0;
+      padding-bottom: 0;
     }
     &:last-child::after {
       display: none;
