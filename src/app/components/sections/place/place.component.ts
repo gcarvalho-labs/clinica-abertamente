@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { NgForOf } from '@angular/common';
 import { StepperComponent } from '../../stepper/stepper.component';
 
 @Component({
   selector: 'app-place',
-  imports: [NgForOf, StepperComponent],
+  imports: [ StepperComponent],
   templateUrl: './place.component.html',
   styleUrl: './place.component.scss',
 })

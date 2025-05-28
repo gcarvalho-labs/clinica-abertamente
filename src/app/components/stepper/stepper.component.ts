@@ -6,59 +6,74 @@ import {
   ViewChildren,
   OnInit,
 } from '@angular/core';
-import { NgForOf } from '@angular/common';
+import { NgClass, NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.scss'],
-  imports: [NgForOf],
+  imports: [NgForOf, NgIf, NgClass],
 })
 export class StepperComponent implements OnInit {
   @Input() steps: { title: string; description: string }[] = [];
   @ViewChildren('stepElement') stepElements!: QueryList<ElementRef>;
+  @Input() orientation: 'horizontal' | 'vertical' = 'vertical';
 
-  @Input() gapBetweenSteps!: string;
-  @Input() gapInsideStep!: string;
-  @Input() textIndent!: string;
+
+  /****** Circle ******/
   @Input() circleSize!: string;
-  @Input() circleBorder!: string;
-  @Input() lineWidth!: string;
-  @Input() lineColor!: string;
-  @Input() circleBorderColor!: string;
+  @Input() circleThickness!: string;
   @Input() circleBg!: string;
+  @Input() circleBorderBg!: string;
+
+  /****** Line ******/
+  @Input() lineSize!: string;
+  @Input() lineThickness!: string;
+  @Input() lineBg!: string;
+
+  /****** Label ******/
+  @Input() labelSize!: string;
+  @Input() labelGap!: string;
+  // Label Vertical
+  @Input() labelVTop!: string;
+  @Input() labelVLeft!: string;
+  // Label Horizontal
+  @Input() labelHTop!: string;
+  @Input() labelHLeft!: string;
+
+  /****** Title ******/
+  @Input() titleSize!: string;
+
+  /****** Description ******/
+  @Input() descriptionSize!: string;
 
   constructor(private el: ElementRef) {}
 
   ngOnInit(): void {
     const host = this.el.nativeElement as HTMLElement;
 
-    if (this.gapBetweenSteps) {
-      host.style.setProperty('--gap-steps', this.gapBetweenSteps);
-    }
-    if (this.gapInsideStep) {
-      host.style.setProperty('--gap-step', this.gapInsideStep);
-    }
-    if (this.textIndent) {
-      host.style.setProperty('--text-indent', this.textIndent);
-    }
-    if (this.circleSize) {
-      host.style.setProperty('--circle-size', this.circleSize);
-    }
-    if (this.circleBorder) {
-      host.style.setProperty('--circle-border', this.circleBorder);
-    }
-    if (this.lineWidth) {
-      host.style.setProperty('--line-width', this.lineWidth);
-    }
-    if (this.lineColor) {
-      host.style.setProperty('--line-color', this.lineColor);
-    }
-    if (this.circleBorderColor) {
-      host.style.setProperty('--circle-border-color', this.circleBorderColor);
-    }
-    if (this.circleBg) {
-      host.style.setProperty('--circle-bg', this.circleBg);
+    const cssVars: Record<string, string | undefined> = {
+      '--circle-size': this.circleSize,
+      '--circle-thickness': this.circleThickness,
+      '--circle-bg': this.circleBg,
+      '--circle-border-bg': this.circleBorderBg,
+      '--line-size': this.lineSize,
+      '--line-thickness': this.lineThickness,
+      '--line-bg': this.lineBg,
+      '--label-size': this.labelSize,
+      '--label-v-top': this.labelVTop,
+      '--label-v-left': this.labelVLeft,
+      '--label-h-top': this.labelHTop,
+      '--label-h-left': this.labelHLeft,
+      '--label-gap': this.labelGap,
+      '--title-size': this.titleSize,
+      '--description-size': this.descriptionSize,
+    };
+
+    for (const [key, value] of Object.entries(cssVars)) {
+      if (value) {
+        host.style.setProperty(key, value);
+      }
     }
   }
 }
