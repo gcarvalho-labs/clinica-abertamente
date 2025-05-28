@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { StepperComponent } from '../../stepper/stepper.component';
 
 @Component({
   selector: 'app-place',
-  imports: [ StepperComponent],
+  imports: [],
   templateUrl: './place.component.html',
   styleUrl: './place.component.scss',
 })
@@ -23,13 +22,11 @@ export class PlaceComponent {
     },
     {
       title: 'Avaliação',
-      description:
-        'Análise das necessidades individuais',
+      description: 'Análise das necessidades individuais',
     },
     {
       title: 'Planejamento',
-      description:
-        'Definição do plano terapêutico',
+      description: 'Definição do plano terapêutico',
     },
   ];
 }
