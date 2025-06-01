@@ -9,11 +9,26 @@
     box-sizing: border-box;
     @include containers.container();
   }
+  &__header{
+    border-left: 4px solid #1b655a;
+    padding-left: 10px;
+  }
   &__label {
     margin: 0 0 14px;
     padding: 0;
     color: #1d6a5f;
     font-size: 16px;
+  }
+  &__title {
+    text-align: start;
+    margin: 0;
+    font-size: 46px;
+    line-height: 32px;
+    font-weight: normal;
+    &--emphasis {
+      color: #ef7445;
+      font-weight: 600;
+    }
   }
   &__grid {
     box-sizing: border-box;
@@ -26,16 +41,7 @@
     margin-top: 70px;
     margin-bottom: 60px;
   }
-  &__title {
-    text-align: start;
-    margin: 0;
-    font-size: 46px;
-    font-weight: normal;
-    &--emphasis {
-      color: #ef7445;
-      font-weight: 600;
-    }
-  }
+
   &__paragraph {
     margin: auto auto 20px;
     max-width: 610px;

@@ -1,50 +1,74 @@
-<section class="space">
+<div class="space">
   <div class="space__container">
-    <h3 class="space__label">ESPAÇO</h3>
-
-    <h2 class="space__title">
-      Nosso <span class="space__title--emphasis">Espaço</span>
-    </h2>
-
+    <div class="space__header">
+      <h3 class="space__label">ESPAÇO</h3>
+      <h2 class="space__title">
+        Nosso <span class="space__title--emphasis">Espaço</span>
+      </h2>
+    </div>
     <div class="space__gallery">
-      <div
-        class="space__image"
-        *ngFor="let img of images"
-        [ngStyle]="{'background-image': 'url(' + img.src + ')'}"
-        [attr.aria-label]="img.alt"
-        role="img"
-      >
-        <div class="space__text">
-          rola
+      <div class="space__card">
+        <img class="space__image" src="/images/spaces/space-02.png" alt="" />
+        <div class="space__info">
+          <h2 class="space__info-title">Lorem Ipsum is simply dummy</h2>
+          <p class="space__info-description">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+        </div>
+      </div>
+      <div class="space__card">
+        <img class="space__image" src="/images/spaces/space-02.png" alt="" />
+        <div class="space__info">
+          <h2 class="space__info-title">Lorem Ipsum is simply dummy</h2>
+          <p class="space__info-description">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+        </div>
+      </div>
+      <div class="space__card">
+        <img class="space__image" src="/images/spaces/space-03.png" alt="" />
+        <div class="space__info">
+          <h2 class="space__info-title">Lorem Ipsum is simply dummy</h2>
+          <p class="space__info-description">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+        </div>
+      </div>
+      <div class="space__card">
+        <img class="space__image" src="/images/spaces/space-01.png" alt="" />
+        <div class="space__info">
+          <h2 class="space__info-title">Lorem Ipsum is simply dummy</h2>
+          <p class="space__info-description">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+        </div>
+      </div>
+      <div class="space__card">
+        <img class="space__image" src="/images/spaces/space-03.png" alt="" />
+        <div class="space__info">
+          <h2 class="space__info-title">Lorem Ipsum is simply dummy</h2>
+          <p class="space__info-description">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+        </div>
+      </div>
+      <div class="space__card">
+        <img class="space__image" src="/images/spaces/space-03.png" alt="" />
+        <div class="space__info">
+          <h2 class="space__info-title">Lorem Ipsum is simply dummy</h2>
+          <p class="space__info-description">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
         </div>
       </div>
     </div>
 
-    <div class="space__features">
-      <div class="space__features-container">
-        <h2 class="space__subtitle">
-          Um espaço pensado com carinho para cuidar de você por inteiro.
-        </h2>
-
-        <ul class="space__list">
-          <li class="space__item" *ngFor="let feature of features">
-            <div class="space__icon-container">
-              <i class="fas" [ngClass]="feature.icon"></i>
-            </div>
-            <div class="space__item-container">
-              <h3 class="space__item-title">{{ feature.title }}</h3>
-              <p class="space__item-paragraph">{{ feature.text }}</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="space__image"></div>
-    </div>
-
-    <p class="space__paragraph">
-      Nosso espaço foi pensado para oferecer uma experiência terapêutica com
-      conforto, estrutura e profissionalismo.
-    </p>
-    <button class="space__button space__button--primary">Mais sobre</button>
+    <div class="space__footer"></div>
   </div>
-</section>
+</div>
