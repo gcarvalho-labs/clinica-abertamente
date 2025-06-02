@@ -58,15 +58,15 @@ export class HeaderComponent implements AfterViewInit {
     },
     {
       vClasses: [],
-      link: { label: 'Espaço', vClasses: [] },
-    },
-    {
-      vClasses: [],
       link: { label: 'Equipe', vClasses: [] },
     },
     {
       vClasses: [],
       link: { label: 'Metodologia', vClasses: [] },
+    },
+    {
+      vClasses: [],
+      link: { label: 'Galeria', vClasses: [] },
     },
     {
       vClasses: [],
