@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/sections/hero/hero.component';
 import { ServicesComponent } from './components/sections/services/services.component';
-import { SpaceComponent } from './components/sections/space/space.component';
+import { GalleryComponent } from './components/sections/gallery/gallery.component';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ import { SpaceComponent } from './components/sections/space/space.component';
     HeaderComponent,
     HeroComponent,
     ServicesComponent,
-    SpaceComponent,
+    GalleryComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

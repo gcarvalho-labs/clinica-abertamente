@@ -1,15 +1,12 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import { NgForOf } from '@angular/common';
-import { MemberComponent } from '../../cards/member/member.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-team',
-  imports: [NgForOf],
+  imports: [],
   templateUrl: './team.component.html',
   styleUrl: './team.component.scss',
 })
 export class TeamComponent {
-  activeIndex = 1; // por exemplo, o terceiro é o padrão
   team = [
     {
       title: 'Kawana',

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-space',
+  selector: 'app-gallery',
   imports: [],
-  templateUrl: './space.component.html',
-  styleUrl: './space.component.scss',
+  templateUrl: './gallery.component.html',
+  styleUrl: './gallery.component.scss',
 })
-export class SpaceComponent {
+export class GalleryComponent {
   elements = [
     {
       class: 'space__element-image',
@@ -50,7 +50,7 @@ export class SpaceComponent {
     {
       class: 'space__element-image',
       type: 'image',
-      src: '/images/spaces/space-05.jpg',
+      src: '/images/spaces/gallery-05.jpg',
       alt: 'img3',
     },
     {
