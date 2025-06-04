@@ -1,7 +1,12 @@
 <div class="team">
   <div class="team__container">
     <div class="team__carousel">
-      <div class="team__member" *ngFor="let member of team">
+      <div
+        class="team__member"
+        *ngFor="let member of team; let i = index"
+        [ngClass]="{ 'team__member--active': activeMemberIndex === i }"
+        (click)="setActiveMember(i)"
+      >
         <div class="team__member-content">
           <img
             class="team__member-image"

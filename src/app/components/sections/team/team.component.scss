@@ -21,25 +21,29 @@
   }
 
   &__member {
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    cursor: pointer;
     width: 180px;
     height: 460px;
-    &:not(:nth-child(1)) {
-      & .team__member-info {
-        display: none;
-        backdrop-filter: blur(4px);
-      }
-    }
-    &:nth-child(1) {
-      flex-direction: row;
+    border-radius: 24px;
+    background: white;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.8s ease, padding 0.8s ease, flex-direction 0.8s ease;
+
+    &--active {
       width: 60%;
-      min-height: auto;
       padding: 40px;
-      box-sizing: border-box;
+      & .team__member-info{
+        display: flex; // necessário para ativar layout
+        flex-direction: column;
+        justify-content: end;
+        align-items: start;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
     }
 
     &-content {
@@ -60,13 +64,12 @@
     }
 
     &-info {
+      display: none;
+      opacity: 0;
       width: 100%;
       height: 100%;
-      display: flex;
       box-sizing: border-box;
-      flex-direction: column;
-      justify-content: end;
-      align-items: start;
+      transition: opacity 0.9s ease-in-out;
     }
     &-title {
       font-size: 44px;

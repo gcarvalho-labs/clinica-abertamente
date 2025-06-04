@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import {  NgForOf } from '@angular/common';
+import { NgClass, NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-team',
-  imports: [NgForOf],
+  imports: [NgForOf, NgClass],
   templateUrl: './team.component.html',
   styleUrl: './team.component.scss',
 })
@@ -56,4 +56,9 @@ export class TeamComponent {
       },
     },
   ];
+  activeMemberIndex: number | null = null;
+
+  setActiveMember(index: number): void {
+    this.activeMemberIndex = index;
+  }
 }
