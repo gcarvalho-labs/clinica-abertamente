@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NgClass, NgForOf } from '@angular/common';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-team',
-  imports: [NgForOf, NgClass],
+  imports: [NgForOf],
   templateUrl: './team.component.html',
   styleUrl: './team.component.scss',
 })

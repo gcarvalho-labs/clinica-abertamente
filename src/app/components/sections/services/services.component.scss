@@ -34,8 +34,7 @@
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 40px;
-    row-gap: 50px;
+    gap: 20px;
     justify-content: center;
     align-items: stretch;
     margin-top: 70px;

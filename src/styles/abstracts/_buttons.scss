@@ -1,7 +1,7 @@
 // _buttons.scss
 @mixin button($height: 54px, $padding: 0 32px, $font-size: 18px) {
   font-size: $font-size;
-  height: $height;
+  min-height: $height;
   border: none;
   border-radius: 30px;
   padding: $padding;

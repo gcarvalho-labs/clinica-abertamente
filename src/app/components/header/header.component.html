@@ -1,5 +1,5 @@
 <header class="header">
-  <nav class="header__nav">
+  <nav class="header__nav" *ngIf="!isMobile">
     <ul class="header__list">
       <li
         *ngFor="let item of items; let i = index"

@@ -6,11 +6,11 @@ import {
   QueryList,
   ViewChildren,
 } from '@angular/core';
-import { NgClass, NgForOf, NgStyle } from '@angular/common';
+import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [NgForOf, NgClass, NgStyle],
+  imports: [NgForOf, NgClass, NgStyle, NgIf],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -22,17 +22,19 @@ export class HeaderComponent implements AfterViewInit {
   indicatorOffset = 1;
   indicatorWidth = 0;
 
+  isMobile = window.innerWidth <= 991;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.isMobile = (event.target as Window).innerWidth <= 991;
+  }
+
   ngAfterViewInit() {
     setTimeout(() => this.updateIndicator(), 0);
   }
 
   onItemClick(index: number): void {
     this.activeIndex = index;
-    this.updateIndicator();
-  }
-
-  @HostListener('window:resize')
-  onResize() {
     this.updateIndicator();
   }
 

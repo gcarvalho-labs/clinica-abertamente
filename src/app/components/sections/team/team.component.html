@@ -1,32 +1,24 @@
 <div class="team">
   <div class="team__container">
+    <div class="team__header">
+      <h3 class="team__label">EQUIPE</h3>
+      <h2 class="team__title">
+        Nossa <span class="team__title--emphasis">Equipe</span>
+      </h2>
+      <div style="width: 118px; height: 4px; background-color: #1b655a"></div>
+    </div>
     <div class="team__carousel">
-      <div
-        class="team__member"
-        *ngFor="let member of team; let i = index"
-        [ngClass]="{ 'team__member--active': activeMemberIndex === i }"
-        (click)="setActiveMember(i)"
-      >
-        <div class="team__member-content">
-          <img
-            class="team__member-image"
-            [src]="member.image.src"
-            [alt]="member.image.alt"
-          />
-          <div class="team__member-info">
-            <h2 class="team__member-title">{{ member.title }}</h2>
-            <p class="team__member-description">{{ member.description }}</p>
-            <div class="team__member-networks">
-              <div
-                class="team__member-network"
-                *ngFor="let _ of [0, 1, 2, 3]; let i = index"
-              ></div>
-            </div>
-
-            <button class="team__member-button">Ver mais</button>
-          </div>
-        </div>
+      <div class="team__member" *ngFor="let member of team; let i = index">
+        <img
+          class="team__member-image"
+          [src]="member.image.src"
+          [alt]="member.image.alt"
+        />
       </div>
     </div>
+    <p class="team__paragraph">
+      Profissionais qualificados, acolhedores e comprometidos com seu bem-estar
+      emocional. Aqui, você encontra escuta, cuidado e suporte personalizado.
+    </p>
   </div>
 </div>
