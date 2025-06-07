@@ -2,55 +2,134 @@
 @use 'abstracts/buttons' as buttons;
 
 .method {
-  padding-top: 100px;
-  padding-bottom: 100px;
-
   &__container {
     box-sizing: border-box;
     @include containers.container();
   }
   &__header {
-    text-align: center;
-  }
-  &__title {
-    font-weight: 600;
-    font-size: 36px;
-    color: #076c68;
-    margin: 0;
-    padding: 0;
-  }
-  &__description {
-    font-size: 18px;
-    color: #076c68;
-    margin: 0;
-    padding: 0;
-    @media (max-width: 767px) {
-      font-size: 18px;
-    }
-  }
-  &__body {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
-  &__footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  &__label {
+    margin: 0;
+    color: #1d6a5f;
+    font-size: 16px;
     text-align: center;
   }
-  &__button {
-    @include buttons.button();
+  &__divider {
+    height: 4px;
+    width: 90px;
+    background-color: #1b655a;
+    margin-top: 14px;
+    margin-bottom: 18px;
+  }
+  &__title {
+    margin: 0;
+    font-size: 46px;
+    line-height: 32px;
+    font-weight: normal;
+    &--emphasis {
+      color: #ef7445;
+      font-weight: 600;
+    }
+  }
+}
 
-    @include buttons.button-variant(
-      $bg-color: #f58362,
-      $text-color: white,
-      $hover-bg: #ea7e5d,
-      $active-bg: #e37a5a,
-      $font-weight: 500
-    );
+.stepper {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px 0 0;
+
+  &__step {
+    width: 100%;
+    max-width: 700px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: stretch;
+    justify-content: space-between;
+    &:nth-last-child(1) {
+      .stepper__step-line {
+        display: none;
+      }
+      .stepper__step-description {
+        padding-bottom: 0;
+      }
+    }
+    &--left {
+      flex-direction: row;
+      .stepper__step-title,
+      .stepper__step-description {
+        justify-content: start;
+        text-align: start;
+      }
+    }
+    &--right {
+      flex-direction: row-reverse;
+      .stepper__step-title,
+      .stepper__step-description {
+        justify-content: end;
+        text-align: end;
+      }
+    }
+
+    &-image {
+      width: 100%;
+      height: 40px;
+      //background-color: #cecece;
+      border-radius: 12px;
+    }
+
+    &-text {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &-title {
+      height: 30px;
+      font-size: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+    &-description {
+      padding-bottom: 50px;
+      display: flex;
+    }
+
+    &-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-circle {
+      box-sizing: border-box;
+      border: 5px solid #ef7445;
+      min-height: 30px;
+      min-width: 30px;
+      max-height: 30px;
+      max-width: 30px;
+      background-color: white;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    &-line {
+      width: 4px;
+      flex-grow: 1;
+      background-color: #1b655a;
+    }
   }
 }

@@ -1,25 +1,28 @@
 <section class="method">
   <div class="method__container">
     <div class="method__header">
-      <h2 class="method__title">{{ title }}</h2>
-      <p class="method__description">
-        {{ description }}
-      </p>
+      <h3 class="method__label">METODOLOGIA</h3>
+      <div class="method__divider"></div>
+      <h2 class="method__title">
+        Nossa <span class="method__title--emphasis">Metodologia</span>
+      </h2>
     </div>
-
-    <div class="method__body">
-      <app-stepper
-        [steps]="steps"
-        [activeStepIndex]="activeStepIndex"
-        (stepActivated)="onStepActivated($event)"
+    <ul class="stepper">
+      <li
+        *ngFor="let step of steps"
+        class="stepper__step"
+        [ngClass]="step.vClass"
       >
-      </app-stepper>
-    </div>
-
-    <div class="method__footer">
-      <button class="method__button">
-        {{ buttonText }}
-      </button>
-    </div>
+        <div class="stepper__step-image"></div>
+        <div class="stepper__step-indicator">
+          <div class="stepper__step-circle"></div>
+          <div class="stepper__step-line"></div>
+        </div>
+        <div class="stepper__step-text">
+          <div class="stepper__step-title">{{ step.title }}</div>
+          <div class="stepper__step-description">{{ step.description }}</div>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
