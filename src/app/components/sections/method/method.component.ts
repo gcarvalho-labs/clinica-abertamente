@@ -13,21 +13,21 @@ export class MethodComponent {
       title: 'Converse conosco',
       description:
         'Entre em contato para entender suas necessidades e esclarecer dúvidas.',
-      image: {src: '/images/undraw_chatting_5u5z.svg', alt: 'img1'},
+      image: {src: '/images/chat_with_us.svg', alt: 'img1'},
       vClass: 'stepper__step--left',
     },
     {
       title: 'Agende um horário',
       description:
         'Escolha o melhor dia e horário para iniciar seu atendimento.',
-      image: {src: '/images/undraw_schedule_6t8k.svg', alt: 'img1'},
+      image: {src: '/images/schedule_appointment.svg', alt: 'img1'},
       vClass: 'stepper__step--right',
     },
     {
       title: 'Escolha o seu profissional',
       description:
         'Selecione o especialista que melhor se adapta ao seu perfil.',
-      image: {src: '...', alt: 'img1'},
+      image: {src: '/images/choice_professional.svg', alt: 'img1'},
       vClass: 'stepper__step--left',
     },
     {
