@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   Component,
   ElementRef,
   HostListener,
@@ -14,12 +13,12 @@ import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent {
   @ViewChildren('btnRefs', { read: ElementRef })
   buttons!: QueryList<ElementRef>;
 
   activeIndex = 1;
-  indicatorOffset = 1;
+  indicatorLeft = 0;
   indicatorWidth = 0;
 
   isMobile = window.innerWidth <= 991;
@@ -29,24 +28,22 @@ export class HeaderComponent implements AfterViewInit {
     this.isMobile = (event.target as Window).innerWidth <= 991;
   }
 
-  ngAfterViewInit() {
-    setTimeout(() => this.updateIndicator(), 0);
-  }
-
   onItemClick(index: number): void {
     this.activeIndex = index;
     this.updateIndicator();
   }
 
   updateIndicator(): void {
-    const button = this.buttons.get(this.activeIndex)?.nativeElement;
-    const container = button?.closest('ul');
-    if (button && container) {
-      const buttonRect = button.getBoundingClientRect();
-      const containerRect = container.getBoundingClientRect();
-      this.indicatorOffset = buttonRect.left - containerRect.left;
-      this.indicatorWidth = button.offsetWidth;
-    }
+    requestAnimationFrame(() => {
+      const activeBtn = this.buttons.get(this.activeIndex)?.nativeElement;
+      const baseBtn = this.buttons.get(1)?.nativeElement;
+      if (activeBtn && baseBtn) {
+        const activeRect = activeBtn.getBoundingClientRect();
+        const baseRect = baseBtn.getBoundingClientRect();
+        this.indicatorLeft = activeRect.left - baseRect.left;
+        this.indicatorWidth = activeRect.width;
+      }
+    });
   }
 
   items = [

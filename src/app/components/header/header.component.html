@@ -15,15 +15,16 @@
           <a class="header__link" href="#" [ngClass]="item.link.vClasses">
             {{ item.link.label }}
           </a>
+          <div
+            *ngIf="i === 1"
+            class="header__indicator"
+            [ngStyle]="{
+              left: indicatorLeft + 'px',
+              width: indicatorWidth + 'px',
+            }"
+          ></div>
         </button>
       </li>
-      <div
-        class="header__indicator"
-        [ngStyle]="{
-          width: indicatorWidth + 'px',
-          transform: 'translateX(' + indicatorOffset + 'px)',
-        }"
-      ></div>
     </ul>
   </nav>
 </header>
