@@ -1,7 +1,9 @@
 import {
+  AfterViewInit,
   Component,
   ElementRef,
   HostListener,
+  OnInit,
   QueryList,
   ViewChildren,
 } from '@angular/core';
@@ -13,7 +15,7 @@ import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
   @ViewChildren('btnRefs', { read: ElementRef })
   buttons!: QueryList<ElementRef>;
 
@@ -26,6 +28,10 @@ export class HeaderComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.isMobile = (event.target as Window).innerWidth <= 991;
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => this.updateIndicator(), 0);
   }
 
   onItemClick(index: number): void {
