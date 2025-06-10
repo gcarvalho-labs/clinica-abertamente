@@ -5,15 +5,19 @@
         *ngFor="let item of items; let i = index"
         class="header__item"
         [ngClass]="item.vClasses"
-        [class.active]="i === activeIndex"
       >
         <button
           class="header__button"
           (click)="i !== 0 && i !== items.length - 1 && onItemClick(i)"
           #btnRefs
         >
-          <a class="header__link" href="#" [ngClass]="item.link.vClasses">
-            {{ item.link.label }}
+          <a
+            *ngFor="let link of item.links"
+            class="header__link"
+            href="#"
+            [ngClass]="link.vClasses"
+          >
+            {{ link.label }}
           </a>
           <div
             *ngIf="i === 1"

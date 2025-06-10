@@ -41,6 +41,10 @@
     &--right {
       position: absolute;
       right: 0;
+      .header__button{
+        display: flex;
+        gap: 15px;
+      }
     }
   }
   &__button {
@@ -58,6 +62,21 @@
     padding-bottom: 8px;
     text-decoration: none;
     color: inherit;
+    &--outline {
+      @include buttons.button(
+        $height: 44px,
+        $padding: 0 19px,
+        $font-size: 16px
+      );
+      @include buttons.button-variant(
+        $bg-color: #ffffff,
+        $text-color: #ef7445,
+        $hover-bg: #ef7445,
+        $active-bg: #ef7445,
+        $font-weight: 500,
+        $border: 1px solid #ef7445
+      );
+    }
     &--emphasis {
       @include buttons.button(
         $height: 44px,

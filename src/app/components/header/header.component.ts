@@ -55,35 +55,38 @@ export class HeaderComponent implements AfterViewInit {
   items = [
     {
       vClasses: ['header__item--left'],
-      link: { label: 'Logo', vClasses: [] },
+      links: [{ label: 'Logo', vClasses: [] }],
     },
     {
       vClasses: [],
-      link: { label: 'Serviço', vClasses: [] },
+      links: [{ label: 'Serviço', vClasses: [] }],
     },
     {
       vClasses: [],
-      link: { label: 'Equipe', vClasses: [] },
+      links: [{ label: 'Equipe', vClasses: [] }],
     },
     {
       vClasses: [],
-      link: { label: 'Metodologia', vClasses: [] },
+      links: [{ label: 'Metodologia', vClasses: [] }],
     },
     {
       vClasses: [],
-      link: { label: 'Galeria', vClasses: [] },
+      links: [{ label: 'Galeria', vClasses: [] }],
     },
     {
       vClasses: [],
-      link: { label: 'Sobre', vClasses: [] },
+      links: [{ label: 'Sobre', vClasses: [] }],
     },
     {
       vClasses: [],
-      link: { label: 'Blog', vClasses: [] },
+      links: [{ label: 'Blog', vClasses: [] }],
     },
     {
       vClasses: ['header__item--right'],
-      link: { label: 'Conversar', vClasses: ['header__link--emphasis'] },
+      links: [
+        { label: 'Login', vClasses: ['header__link--outline'] },
+        { label: 'Inscreva-se', vClasses: ['header__link--emphasis'] },
+      ],
     },
   ];
 }

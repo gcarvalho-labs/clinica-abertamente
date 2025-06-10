@@ -11,12 +11,12 @@ export class DrawerComponent {
   @Input() visible = false;
 
   items = [
-    { name: 'Início', link: '#' },
-    { name: 'Serviços', link: '#' },
+    { name: 'Início', links: '#' },
+    { name: 'Serviços', links: '#' },
     { name: 'Espaço' +
-        '', link: '#' },
-    { name: 'Equipe', link: '#' },
-    { name: 'Metodologia', link: '#' },
-    { name: 'Localização', link: '#' },
+        '', links: '#' },
+    { name: 'Equipe', links: '#' },
+    { name: 'Metodologia', links: '#' },
+    { name: 'Localização', links: '#' },
   ];
 }

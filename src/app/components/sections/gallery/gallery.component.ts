@@ -21,7 +21,7 @@ export class GalleryComponent {
       desc:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry, ' +
         'Lorem Ipsum has been, the industry standard dummy.',
-      link: 'Mais sobre',
+      links: 'Mais sobre',
     },
     {
       class: 'space__element-image',
@@ -36,7 +36,7 @@ export class GalleryComponent {
       desc:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry, ' +
         'Lorem Ipsum has been, the industry standard dummy.',
-      link: 'Mais sobre',
+      links: 'Mais sobre',
     },
     {
       class: 'space__element-info',
@@ -45,7 +45,7 @@ export class GalleryComponent {
       desc:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry, ' +
         'Lorem Ipsum has been, the industry standard dummy.',
-      link: 'Mais sobre',
+      links: 'Mais sobre',
     },
     {
       class: 'space__element-image',
@@ -60,7 +60,7 @@ export class GalleryComponent {
       desc:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry, ' +
         'Lorem Ipsum has been, the industry standard dummy.',
-      link: 'Mais sobre',
+      links: 'Mais sobre',
     },
     {
       class: 'space__element-image',
