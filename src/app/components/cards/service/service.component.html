@@ -1,17 +1,10 @@
 <div class="service">
-  <div class="service__content">
-    <div
-      style="display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 10px;"
-    >
-      <i [ngClass]="icon.class" aria-hidden="true"></i>
-      <h2 class="service__title">{{ title }}</h2>
-    </div>
-    <p class="service__description" *ngIf="description">
-      {{ description }}
-    </p>
-    <a class="service__link" *ngIf="subtitle">{{ subtitle }}</a>
+  <div class="service__header">
+    <i [ngClass]="icon.class" aria-hidden="true"></i>
+    <h2 class="service__title">{{ title }}</h2>
   </div>
+  <p class="service__description" *ngIf="description">
+    {{ description }}
+  </p>
+  <a class="service__link" *ngIf="subtitle">{{ subtitle }}</a>
 </div>
