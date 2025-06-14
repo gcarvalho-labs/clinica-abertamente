@@ -10,8 +10,8 @@ import { NgForOf } from '@angular/common';
 export class TeamComponent {
   team = [
     {
-      title: 'Kawana',
-      description: 'Especialista em TCC, ajuda no controle da ansiedade e emoções.',
+      name: 'Kawana Reis',
+      details: 'Especialista em TCC, ajuda no controle da ansiedade e emoções.',
       image: {
         src: 'images/members/member1.webp',
         alt: 'Foto do Membro 1',
@@ -19,8 +19,8 @@ export class TeamComponent {
       networks: [{}, {}, {}, {}]
     },
     {
-      title: 'Luana',
-      description: 'Psicóloga infantil e juvenil, atua no desenvolvimento emocional.',
+      name: 'Luana Martins',
+      details: 'Psicóloga infantil e juvenil, atua no desenvolvimento emocional.',
       image: {
         src: 'images/members/member2.webp',
         alt: 'Foto do Membro 2',
@@ -28,8 +28,8 @@ export class TeamComponent {
       networks: [{}, {}, {}, {}]
     },
     {
-      title: 'Mariana',
-      description: 'Oferece apoio emocional para promover equilíbrio e bem-estar.',
+      name: 'Mariana Silveira',
+      details: 'Oferece apoio emocional para promover equilíbrio e bem-estar.',
       image: {
         src: 'images/members/member3.webp',
         alt: 'Foto do Membro 3',
@@ -37,8 +37,8 @@ export class TeamComponent {
       networks: [{}, {}, {}, {}]
     },
     {
-      title: 'Maria Leticia',
-      description: 'Foca em autoconhecimento, autoestima e desenvolvimento pessoal.',
+      name: 'Maria Leticia',
+      details: 'Foca em autoconhecimento, autoestima e desenvolvimento pessoal.',
       image: {
         src: 'images/members/member4.webp',
         alt: 'Foto do Membro 4',
@@ -46,8 +46,8 @@ export class TeamComponent {
       networks: [{}, {}, {}, {}]
     },
     {
-      title: 'Layana',
-      description: 'Especialista em Terapia Sistêmica e vínculos familiares saudáveis.',
+      name: 'Layana Costa',
+      details: 'Especialista em Terapia Sistêmica e vínculos familiares saudáveis.',
       image: {
         src: 'images/members/member5.webp',
         alt: 'Foto do Membro 5',
