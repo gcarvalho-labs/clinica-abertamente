@@ -70,14 +70,8 @@
   &:hover {
     .team__member-info {
       width: calc(100% - 40px);
-      height: 170px;
+      height: 180px;
       border-radius: 18px;
-    }
-    .team__member-networks {
-      opacity: 1;
-    }
-    .team__member-details {
-      opacity: 1;
     }
   }
   &-info {
@@ -87,7 +81,7 @@
     text-align: center;
     height: 45px;
     gap: 13px;
-    padding-top: 10px;
+    padding: 10px;
     box-sizing: border-box;
     overflow: hidden;
     display: flex;
@@ -99,7 +93,16 @@
     transition:
       width 0.5s ease-in-out,
       height 0.5s ease-in-out,
+      overflow 0.5s ease-in-out,
       border-radius 0.5s ease-in-out;
+  }
+  &-line {
+    min-height: 4px;
+    max-height: 4px;
+    width: 40px;
+    border-radius: 30px;
+    background-color: #ef7445;
+    margin: auto;
   }
   &-name {
     font-size: 18px;
@@ -116,12 +119,9 @@
   }
   &-networks {
     width: 200px;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     gap: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
   }
   &-network {
     width: 28px;
@@ -131,10 +131,7 @@
   }
   &-details {
     font-size: 15px;
-    opacity: 0;
     width: 200px;
-    overflow: hidden;
-    transition: opacity 0.8s ease-in-out;
   }
   &-image {
     width: 100%;

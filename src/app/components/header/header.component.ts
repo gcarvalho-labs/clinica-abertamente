@@ -71,7 +71,7 @@ export class HeaderComponent implements AfterViewInit {
     },
     {
       vClasses: [],
-      links: [{ label: 'Galeria', vClasses: [] }],
+      links: [{ label: 'Espaço', vClasses: [] }],
     },
     {
       vClasses: [],
