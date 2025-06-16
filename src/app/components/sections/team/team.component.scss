@@ -64,7 +64,7 @@
   border-radius: 24px;
   padding: 0;
   box-sizing: border-box;
-  transition: padding 0.5s;
+  transition: padding 0.6s;
   position: relative;
   cursor: pointer;
   &:hover {
@@ -91,10 +91,10 @@
     border-radius: 30px;
     bottom: 20px;
     transition:
-      width 0.5s ease-in-out,
-      height 0.5s ease-in-out,
-      overflow 0.5s ease-in-out,
-      border-radius 0.5s ease-in-out;
+      width 0.6s ease-in-out,
+      height 0.6s ease-in-out,
+      overflow 0.6s ease-in-out,
+      border-radius 0.6s ease-in-out;
   }
   &-line {
     min-height: 4px;
@@ -137,8 +137,5 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition:
-      height 0.5s,
-      border-radius 0.5s;
   }
 }
