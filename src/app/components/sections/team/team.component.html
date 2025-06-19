@@ -9,6 +9,10 @@
     </div>
     <div class="team__carousel">
       <div class="team__member" *ngFor="let member of team; let i = index">
+        <div class="team__member-indicator">
+          <i class="fas fa-hand-pointer"></i>
+        </div>
+
         <img
           class="team__member-image"
           [src]="member.image.src"

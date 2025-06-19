@@ -75,7 +75,7 @@ export class HeaderComponent implements AfterViewInit {
     },
     {
       vClasses: [],
-      links: [{ label: 'Sobre', vClasses: [] }],
+      links: [{ label: 'Contato', vClasses: [] }],
     },
     {
       vClasses: [],
@@ -83,10 +83,7 @@ export class HeaderComponent implements AfterViewInit {
     },
     {
       vClasses: ['header__item--right'],
-      links: [
-        { label: 'Login', vClasses: ['header__link--outline'] },
-        { label: 'Inscreva-se', vClasses: ['header__link--emphasis'] },
-      ],
+      links: [{ label: 'Ver Planos', vClasses: ['header__link--emphasis'] }],
     },
   ];
 }
