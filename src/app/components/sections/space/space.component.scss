@@ -1,7 +1,6 @@
 @use 'abstracts/containers' as containers;
-@use 'abstracts/buttons' as buttons;
 
-.gallery {
+.space {
   box-sizing: border-box;
   &__container {
     box-sizing: border-box;
@@ -82,14 +81,14 @@
     }
 
     &:hover {
-      .gallery__info {
+      .space__info {
         width: 380px;
         max-height: 123px;
       }
-      .gallery__info-title {
+      .space__info-title {
         margin: 0;
       }
-      .gallery__info-description {
+      .space__info-description {
         opacity: 1;
       }
     }
