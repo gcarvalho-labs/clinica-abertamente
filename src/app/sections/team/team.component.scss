@@ -1,0 +1,54 @@
+@use '../../../styles/abstracts/containers' as containers;
+@use '../../../styles/abstracts/buttons' as buttons;
+
+.team {
+  min-height: 400px;
+  box-sizing: border-box;
+
+  &__container {
+    box-sizing: border-box;
+    @include containers.container();
+  }
+  &__label {
+    margin: 0;
+    padding: 0;
+    color: #1d6a5f;
+    font-size: 16px;
+  }
+  &__title {
+    text-align: start;
+    margin: 0;
+    font-size: 46px;
+    font-weight: normal;
+    &--emphasis {
+      color: #ef7445;
+      font-weight: 600;
+    }
+  }
+  &__paragraph {
+    margin: auto auto 20px;
+    max-width: 610px;
+    padding: 0;
+    font-size: 20px;
+    text-align: center;
+  }
+  &__carousel {
+    margin-top: 70px;
+    margin-bottom: 60px;
+    display: flex;
+    gap: 16px;
+  }
+  &__button {
+    &--primary {
+      margin: auto;
+      @include buttons.button();
+      @include buttons.button-variant(
+        $bg-color: #ef7445,
+        $text-color: #ffffff,
+        $hover-bg: #ef7445,
+        $active-bg: #ef7445,
+        $font-weight: 500
+      );
+    }
+  }
+}

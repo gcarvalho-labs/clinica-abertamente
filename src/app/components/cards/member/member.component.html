@@ -1,7 +1,18 @@
-<div
-  class="member"
-  [style.background-image]="'url(' + image + ')'"
-  [attr.aria-label]="imageAlt"
->
-
+<div class="member">
+  <div class="member__indicator">
+    <i class="fas fa-hand-pointer"></i>
+  </div>
+  <img class="member__image" [src]="photo.src" [alt]="photo.alt" />
+  <div class="member__info">
+    <div class="member__name">
+      {{ name }}
+    </div>
+    <div class="member__networks">
+      <div class="member__network" *ngFor="let network of networks"></div>
+    </div>
+    <div class="member__about">
+      {{ about }}
+    </div>
+    <div class="member__line"></div>
+  </div>
 </div>
