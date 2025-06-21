@@ -7,17 +7,13 @@
       </h2>
     </div>
     <div class="spaces__masonry">
-      <div class="space" *ngFor="let space of spaces">
-        <img
-          class="space__photo"
-          [src]="space.photo.src"
-          [alt]="space.photo.src"
-        />
-        <div class="space__info">
-          <h2 class="space__name">{{ space.name }}</h2>
-          <p class="space__about">
-            {{ space.about }}
-          </p>
+      <div class="spaces__column" *ngFor="let column of spaces">
+        <div class="spaces__element" *ngFor="let space of column">
+          <app-space
+            [name]="space.name"
+            [photo]="space.photo"
+            [about]="space.about"
+          ></app-space>
         </div>
       </div>
     </div>
