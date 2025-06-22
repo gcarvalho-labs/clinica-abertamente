@@ -75,15 +75,12 @@ export class HeaderComponent implements AfterViewInit {
     },
     {
       vClasses: [],
-      links: [{ label: 'Contato', vClasses: [] }],
-    },
-    {
-      vClasses: [],
       links: [{ label: 'Blog', vClasses: [] }],
     },
+
     {
       vClasses: ['header__item--right'],
-      links: [{ label: 'Ver Planos', vClasses: ['header__link--emphasis'] }],
+      links: [{ label: 'Contato', vClasses: ['header__link--emphasis'] }],
     },
   ];
 }
