@@ -4,15 +4,15 @@
   </div>
   <img class="member__image" [src]="photo.src" [alt]="photo.alt" />
   <div class="member__info">
-    <div class="member__name">
+    <h4 class="member__name">
       {{ name }}
-    </div>
+    </h4>
     <div class="member__networks">
       <div class="member__network" *ngFor="let network of networks"></div>
     </div>
-    <div class="member__about">
+    <p class="member__about">
       {{ about }}
-    </div>
+    </p>
     <div class="member__line"></div>
   </div>
 </div>

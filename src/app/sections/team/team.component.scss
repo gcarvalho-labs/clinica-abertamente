@@ -2,23 +2,28 @@
 @use '../../../styles/abstracts/buttons' as buttons;
 
 .team {
-  min-height: 400px;
   box-sizing: border-box;
-
   &__container {
     box-sizing: border-box;
     @include containers.container();
   }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
   &__label {
     margin: 0;
-    padding: 0;
     color: #1d6a5f;
     font-size: 16px;
+    text-align: center;
   }
   &__title {
-    text-align: start;
     margin: 0;
     font-size: 46px;
+    line-height: 32px;
     font-weight: normal;
     &--emphasis {
       color: #ef7445;

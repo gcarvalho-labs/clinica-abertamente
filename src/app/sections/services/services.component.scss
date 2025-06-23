@@ -8,18 +8,21 @@
     box-sizing: border-box;
     @include containers.container();
   }
-  &__header{
-    border-left: 4px solid #1b655a;
-    padding-left: 10px;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
   }
   &__label {
-    margin: 0 0 14px;
-    padding: 0;
+    margin: 0;
     color: #1d6a5f;
     font-size: 16px;
+    text-align: center;
   }
   &__title {
-    text-align: start;
     margin: 0;
     font-size: 46px;
     line-height: 32px;

@@ -11,19 +11,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
   }
   &__label {
     margin: 0;
     color: #1d6a5f;
     font-size: 16px;
     text-align: center;
-  }
-  &__divider {
-    height: 4px;
-    width: 68px;
-    background-color: #1b655a;
-    margin-top: 14px;
-    margin-bottom: 22px;
   }
   &__title {
     margin: 0;
@@ -110,6 +104,7 @@
       gap: 10px;
     }
     &-title {
+      margin: 0;
       height: 35px;
       font-size: 23px;
       font-weight: 600;
@@ -117,6 +112,7 @@
       align-items: center;
     }
     &-description {
+      margin: 0;
       font-size: 18px;
       padding-bottom: 20px;
       max-width: 400px;

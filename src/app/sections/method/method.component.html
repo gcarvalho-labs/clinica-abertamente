@@ -2,7 +2,6 @@
   <div class="method__container">
     <div class="method__header">
       <h3 class="method__label">METODOLOGIA</h3>
-      <div class="method__divider"></div>
       <h2 class="method__title">
         Nossa <span class="method__title--emphasis">Metodologia</span>
       </h2>
@@ -14,15 +13,19 @@
         [ngClass]="step.vClass"
       >
         <div class="stepper__step-image">
-          <img class="stepper__step-icon" [src]="step.image.src" [alt]="step.image.alt">
+          <img
+            class="stepper__step-icon"
+            [src]="step.image.src"
+            [alt]="step.image.alt"
+          />
         </div>
         <div class="stepper__step-indicator">
           <div class="stepper__step-circle"></div>
           <div class="stepper__step-line"></div>
         </div>
         <div class="stepper__step-text">
-          <div class="stepper__step-title">{{ step.title }}</div>
-          <div class="stepper__step-description">{{ step.description }}</div>
+          <h4 class="stepper__step-title">{{ step.title }}</h4>
+          <p class="stepper__step-description">{{ step.description }}</p>
         </div>
       </li>
     </ul>

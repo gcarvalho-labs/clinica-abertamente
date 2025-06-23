@@ -1,50 +1,43 @@
 <div class="contact">
   <div class="contact__container">
-    <div class="contact__top">
-      <div class="contact__left">
-        <h2 class="contact__title">Sempre aqui para ajudar você</h2>
-        <p class="contact__description">
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomized words which don't look even slightly believable.
-        </p>
-        <div class="contact__details">
-          <div class="contact__item">
-            <i class="contact__icon fas fa-map-marker-alt"></i>
-            <div class="contact__text">
-              <h3>Endereço</h3>
-              <p>R. Belo Horizonte, 1558 - Centro, Londrina - PR, 86020-061</p>
-            </div>
-          </div>
-          <div class="contact__item">
-            <i class="contact__icon fas fa-phone-alt"></i>
-            <div class="contact__text">
-              <h3>Contato</h3>
-              <p>(43) 3337-7793</p>
-            </div>
-          </div>
-          <div class="contact__item">
-            <i class="contact__icon fas fa-envelope"></i>
-            <div class="contact__text">
-              <h3>E-mail</h3>
-              <p>support{{ '@thefork.' }}com</p>
-            </div>
-          </div>
-          <div class="contact__item">
-            <i class="contact__icon fas fa-clock"></i>
-            <div class="contact__text">
-              <h3>Funcionamento</h3>
-              <p>Segunda a Sexta: 08:00–21:00<br />Sábado: 08:00–14:00</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="contact__right">
-        <img src="images/teste.png" alt="" />
-      </div>
+    <div class="contact__header">
+      <h3 class="contact__label">CONTATO</h3>
+      <h2 class="contact__title">
+        Fale <span class="contact__title--emphasis">Conosco</span>
+      </h2>
+      <p class="contact__subtitle">
+        Estamos prontos para atender você com toda a estrutura necessária.
+      </p>
     </div>
-    <div class="contact__bottom">
+    <div class="contact__content">
+      <div class="contact__info">
+        <ul class="contact__list">
+          <li class="contact__item" *ngFor="let detail of contactDetails">
+            <i class="contact__item-icon" [ngClass]="detail.icon"></i>
+            <div class="contact__item-details">
+              <h4 class="contact__item-title">{{ detail.title }}</h4>
+              <p class="contact__item-desc" [innerHTML]="detail.desc"></p>
+            </div>
+          </li>
+        </ul>
 
+        <ul class="contact__facilities">
+          <li class="contact__facilitie" *ngFor="let facility of facilities">
+            <i class="contact__facilitie-icon" [ngClass]="facility.icon"></i>
+            <h4 class="contact__facilitie-title">{{ facility.title }}</h4>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact__media">
+        <img class="contact__image" src="images/teste.png" alt="Foto da clínica" />
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6333824!3d-23.5613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQwLjciUyA0NsKwMzgnMDAuMiJX!5e0!3m2!1spt-BR!2sbr!4v1640000000000!5m2!1spt-BR!2sbr"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </div>
   </div>
 </div>

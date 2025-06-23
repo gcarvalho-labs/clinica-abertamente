@@ -29,7 +29,6 @@
     text-align: center;
     height: 45px;
     gap: 13px;
-    padding: 10px;
     box-sizing: border-box;
     overflow: hidden;
     display: flex;
@@ -98,6 +97,7 @@
   }
 
   &__name {
+    margin: 11px 0 0;
     font-size: 18px;
     font-weight: 600;
     display: flex;
@@ -123,6 +123,7 @@
     border-radius: 50%;
   }
   &__about {
+    margin: 0;
     font-size: 15px;
     width: 200px;
   }

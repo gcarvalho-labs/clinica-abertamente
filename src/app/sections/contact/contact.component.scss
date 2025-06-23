@@ -1,98 +1,139 @@
 @use '../../../styles/abstracts/containers' as containers;
-@use '../../../styles/abstracts/buttons' as buttons;
 
 .contact {
   box-sizing: border-box;
+  padding: 80px 20px;
 
   &__container {
-    box-sizing: border-box;
     @include containers.container();
-  }
-  &__top {
     display: flex;
-    gap: 40px;
+    flex-direction: column;
+    gap: 50px;
   }
-  &__bottom {
-    overflow: hidden;
-    border-radius: 30px;
-    width: 100%;
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
   }
-  &__left {
-    width: 100%;
+  &__label {
+    margin: 0;
+    color: #1d6a5f;
+    font-size: 16px;
+    text-align: center;
   }
   &__title {
-    font-size: 32px;
-    margin: 0 0 20px;
-    color: #222;
+    margin: 0;
+    font-size: 46px;
+    line-height: 32px;
+    font-weight: normal;
+    &--emphasis {
+      color: #ef7445;
+      font-weight: 600;
+    }
+  }
+  &__subtitle {
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
   }
 
-  &__description {
-    font-size: 16px;
-    color: #555;
-    margin: 0 0 30px;
-    line-height: 1.6;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1 1 350px;
   }
-  &__details {
+
+  &__list,
+  &__facilities {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
 
-  &__item {
+  &__item,
+  &__facilitie {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    transition:
+      box-shadow 0.3s,
+      border 0.3s;
+
+    &:hover {
+      border-color: #ef7445;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
   }
-  &__icon {
-    background-color: #f4eee9;
+
+  &__item-icon,
+  &__facilitie-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: #fbf1ed;
     color: #ef7445;
-    font-size: 24px;
-    width: 56px;
-    height: 56px;
+    font-size: 22px;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
   }
 
-  &__text {
+  &__item-details {
+    width: 100%;
+  }
+
+  &__item-title,
+  &__facilitie-title {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  &__item-desc {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+  }
+
+  &__media {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 20px;
+    flex: 1 1 500px;
 
-    h3 {
-      font-size: 17px;
-      margin: 0;
-      color: #222;
-    }
-    p {
-      font-size: 15px;
-      margin: 0;
-      color: #555;
-    }
-  }
-  &__right {
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    overflow: hidden;
-    border-radius: 30px;
-    img {
-      width: 100%;
-      height: 100%;
+    & .contact__image {
+      width: auto;
+      height: 425px;
+      border-radius: 20px;
       object-fit: cover;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
     }
-  }
 
-  &__button {
-    margin: auto;
-    @include buttons.button();
-    @include buttons.button-variant(
-      $bg-color: #ef7445,
-      $text-color: #ffffff,
-      $hover-bg: #ef7445,
-      $active-bg: #ef7445,
-      $font-weight: 500
-    );
+    & iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
   }
 }
