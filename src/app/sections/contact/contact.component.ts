@@ -24,9 +24,14 @@ export class ContactComponent {
       title: 'Transporte público próximo',
       desc: '',
     },
+    {
+      icon: '',
+      title: 'Duis porta porta sem',
+      desc: '',
+    },
   ];
 
-  contactDetails = [
+  details = [
     {
       icon: 'fas fa-phone',
       title: 'Telefone',
@@ -49,4 +54,3 @@ export class ContactComponent {
     },
   ];
 }
-
