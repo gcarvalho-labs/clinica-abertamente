@@ -8,6 +8,7 @@ import { TeamComponent } from './sections/team/team.component';
 import { MethodComponent } from './sections/method/method.component';
 import { ContactComponent } from './sections/contact/contact.component';
 import { FloatingButtonComponent } from './components/buttons/floating-button/floating-button.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ import { FloatingButtonComponent } from './components/buttons/floating-button/fl
     MethodComponent,
     ContactComponent,
     FloatingButtonComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
