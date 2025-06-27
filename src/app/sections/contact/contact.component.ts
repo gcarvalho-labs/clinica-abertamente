@@ -24,11 +24,6 @@ export class ContactComponent {
       title: 'Transporte público próximo',
       desc: '',
     },
-    {
-      icon: '',
-      title: 'Duis porta porta sem',
-      desc: '',
-    },
   ];
 
   details = [
@@ -50,7 +45,7 @@ export class ContactComponent {
     {
       icon: 'fas fa-clock',
       title: 'Horário',
-      desc: 'Segunda a Sexta: 08:00–21:00',
+      desc: 'Segunda a Sexta: 08:00–21:00 <br> sábado 08:00–14:00',
     },
   ];
 }

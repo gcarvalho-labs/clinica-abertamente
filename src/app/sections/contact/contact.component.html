@@ -19,7 +19,7 @@
             <i class="contact__detail-icon" [ngClass]="detail.icon"></i>
             <div class="contact__detail-content">
               <h5 class="contact__detail-title">{{ detail.title }}</h5>
-              <p class="contact__detail-desc">{{ detail.desc }}</p>
+              <p class="contact__detail-desc" [innerHTML]="detail.desc"></p>
             </div>
           </li>
         </ul>
@@ -61,7 +61,7 @@
         mental, emocional ou relacional, estaremos aqui para receber você.
       </p>
       <button class="contact__button contact__button--primary">
-        Vamos conversar
+        Conversar
       </button>
     </div>
   </div>
