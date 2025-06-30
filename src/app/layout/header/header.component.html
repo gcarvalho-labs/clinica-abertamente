@@ -1,34 +1,38 @@
 <header class="header">
-  <nav class="header__nav" *ngIf="!isMobile">
-    <ul class="header__list">
+  <nav class="header__nav">
+    <!--DESKTOP MODE-->
+    <ul class="header__list" *ngIf="!isMobile">
       <li
         *ngFor="let item of items; let i = index"
         class="header__item"
         [ngClass]="item.vClasses"
       >
-        <button
-          class="header__button"
-          (click)="i !== 0 && i !== items.length - 1 && onItemClick(i)"
-          #btnRefs
-        >
-          <a
-            *ngFor="let link of item.links"
-            class="header__link"
-            href="#"
-            [ngClass]="link.vClasses"
-          >
-            {{ link.label }}
-          </a>
-          <div
-            *ngIf="i === 1"
-            class="header__indicator"
-            [ngStyle]="{
-              left: indicatorLeft + 'px',
-              width: indicatorWidth + 'px',
-            }"
-          ></div>
-        </button>
+        <a class="header__link" href="#" (click)="onItemClick(i)" #nameRefs>
+          {{ item.name }}
+        </a>
+        <div
+          *ngIf="i === 1"
+          class="header__indicator"
+          [ngStyle]="{
+            left: indicatorLeft + 'px',
+            width: indicatorWidth + 'px',
+          }"
+        ></div>
       </li>
     </ul>
+    <!--MOBILE MODE-->
+    <ul class="header__list" *ngIf="isMobile">
+      <li class="header__item" [ngClass]="items[0].vClasses">
+        <a href="">{{ items[0].name }}</a>
+      </li>
+      <li class="header__item header__item--right">
+        <!--TOGGLE BUTTON-->
+        <ng-content select="app-toggle-button"></ng-content>
+        <!--TOGGLE BUTTON-->
+      </li>
+    </ul>
+    <!--DRAWER-->
+    <ng-content select="app-drawer"></ng-content>
+    <!--DRAWER-->
   </nav>
 </header>

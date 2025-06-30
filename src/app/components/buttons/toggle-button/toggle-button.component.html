@@ -1,21 +1,8 @@
 <button
-  class="toggle__toggle"
-  [ngClass]="{ 'toggle__toggle--active': isDrawerActive }"
+  class="toggle-button"
+  [ngClass]="{ 'toggle-button--active': isDrawerActive }"
+  (click)="onToggle()"
 >
-  <div
-    class="toggle__line"
-    [ngClass]="{
-      'toggle__line--active': isDrawerActive,
-      'toggle__line--w100': !isDrawerActive,
-      'toggle__line--w50': isDrawerActive,
-    }"
-  ></div>
-  <div
-    class="toggle__line"
-    [ngClass]="{
-      'toggle__line--active': isDrawerActive,
-      'toggle__line--w50': !isDrawerActive,
-      'toggle__line--w100': isDrawerActive,
-    }"
-  ></div>
+  <div class="toggle-button__line"></div>
+  <div class="toggle-button__line"></div>
 </button>

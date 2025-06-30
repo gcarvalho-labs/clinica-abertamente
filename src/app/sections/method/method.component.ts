@@ -1,13 +1,19 @@
-import { Component } from '@angular/core';
-import { NgClass, NgForOf } from '@angular/common';
+import { Component, HostListener } from '@angular/core';
+import { NgClass, NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-method',
   templateUrl: './method.component.html',
   styleUrls: ['./method.component.scss'],
-  imports: [NgForOf, NgClass],
+  imports: [NgForOf, NgClass, NgIf],
 })
 export class MethodComponent {
+  isMobile = window.innerWidth <= 991;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.isMobile = (event.target as Window).innerWidth <= 991;
+  }
   steps = [
     {
       title: 'Converse conosco',

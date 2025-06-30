@@ -1,5 +1,10 @@
-<app-header></app-header>
-
+<app-header [items]="headerItems">
+  <app-toggle-button
+    [isDrawerActive]="isDrawerActive"
+    (toggleDrawer)="onToggleDrawer()"
+  ></app-toggle-button>
+  <app-drawer [items]="headerItems" [isOpen]="isDrawerActive"></app-drawer>
+</app-header>
 <main class="main">
   <app-hero></app-hero>
   <div style="height: 100px"></div>

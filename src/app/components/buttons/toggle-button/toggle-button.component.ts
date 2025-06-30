@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {NgClass} from '@angular/common';
 
 @Component({
@@ -8,5 +8,10 @@ import {NgClass} from '@angular/common';
   styleUrl: './toggle-button.component.scss',
 })
 export class ToggleButtonComponent {
-  @Input() isDrawerActive: boolean = false;
+  @Input() isDrawerActive!: boolean;
+  @Output() toggleDrawer = new EventEmitter<void>();
+
+  onToggle(): void {
+    this.toggleDrawer.emit();
+  }
 }

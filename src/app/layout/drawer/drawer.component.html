@@ -1,9 +1,13 @@
-<div class="drawer" [class.visible]="visible">
-  <nav class="drawer__nav">
-    <ul class="drawer__list">
-      <li class="drawer__item" *ngFor="let item of items">
-        <a class="drawer__link" href="{{ item.links }}">{{ item.name }}</a>
-      </li>
-    </ul>
-  </nav>
+<div class="drawer" [ngClass]="{ 'drawer--active': isOpen }">
+  <ul class="drawer__list">
+    <li
+      *ngFor="let item of items"
+      class="drawer__item"
+      [ngClass]="item.vClasses"
+    >
+      <a class="drawer__link" href="#">
+        {{ item.name }}
+      </a>
+    </li>
+  </ul>
 </div>

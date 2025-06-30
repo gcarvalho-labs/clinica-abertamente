@@ -1,13 +1,20 @@
-import { Component } from '@angular/core';
-import { NgClass, NgForOf } from '@angular/common';
+import { Component, HostListener } from '@angular/core';
+import { NgClass, NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
-  imports: [NgClass, NgForOf],
+  imports: [NgClass, NgForOf, NgIf],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
+  isMobile = window.innerWidth <= 991;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.isMobile = (event.target as Window).innerWidth <= 991;
+  }
+
   facilities = [
     {
       icon: 'fas fa-parking',

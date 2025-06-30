@@ -9,6 +9,8 @@ import { MethodComponent } from './sections/method/method.component';
 import { ContactComponent } from './sections/contact/contact.component';
 import { FloatingButtonComponent } from './components/buttons/floating-button/floating-button.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { ToggleButtonComponent } from './components/buttons/toggle-button/toggle-button.component';
+import { DrawerComponent } from './layout/drawer/drawer.component';
 
 @Component({
   selector: 'app-root',
@@ -23,8 +25,43 @@ import { FooterComponent } from './layout/footer/footer.component';
     ContactComponent,
     FloatingButtonComponent,
     FooterComponent,
+    ToggleButtonComponent,
+    DrawerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent {
+  isDrawerActive = false;
+
+  onToggleDrawer(): void {
+    this.isDrawerActive = !this.isDrawerActive;
+  }
+
+  headerItems = [
+    {
+      vClasses: [],
+      name: 'Serviço',
+    },
+    {
+      vClasses: [],
+      name: 'Equipe',
+    },
+    {
+      vClasses: [],
+      name: 'Metodologia',
+    },
+    {
+      vClasses: [],
+      name: 'Espaço',
+    },
+    {
+      vClasses: [],
+      name: 'Blog',
+    },
+    {
+      name: 'Contato',
+      vClasses: ['--emphasis'],
+    },
+  ];
+}

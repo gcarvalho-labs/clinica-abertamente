@@ -2,15 +2,16 @@
 @use '../../../styles/abstracts/containers' as containers;
 
 .header {
-  height: 81px;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  height: 81px;
   z-index: 100;
-  background-color: #ffffff;
   box-sizing: border-box;
   &__nav {
+    position: relative;
+    background-color: white;
     box-sizing: border-box;
     height: 100%;
     width: 100%;
@@ -31,51 +32,25 @@
     border-bottom: 1px solid #ececec;
     box-sizing: border-box;
     position: relative;
+    &--mobile {
+      flex-direction: column;
+      border: 1px solid #ececec;
+    }
   }
   &__item {
+    position: relative;
     box-sizing: border-box;
-    &--left {
+    &--logo {
       position: absolute;
       left: 0;
     }
     &--right {
       position: absolute;
       right: 0;
-      .header__button{
+      &__button {
         display: flex;
         gap: 15px;
       }
-    }
-  }
-  &__button {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    border: none;
-    background-color: transparent;
-    font: inherit;
-  }
-  &__link {
-    box-sizing: border-box;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    text-decoration: none;
-    color: inherit;
-    &--outline {
-      @include buttons.button(
-        $height: 44px,
-        $padding: 0 19px,
-        $font-size: 16px
-      );
-      @include buttons.button-variant(
-        $bg-color: #ffffff,
-        $text-color: #ef7445,
-        $hover-bg: #ef7445,
-        $active-bg: #ef7445,
-        $font-weight: 500,
-        $border: 1px solid #ef7445
-      );
     }
     &--emphasis {
       @include buttons.button(
@@ -90,19 +65,30 @@
         $active-bg: #ef7445,
         $font-weight: 500
       );
+      &__link {
+        color: white;
+      }
     }
+  }
+  &__link {
+    box-sizing: border-box;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-decoration: none;
+    color: inherit;
   }
   &__indicator {
     position: absolute;
     left: 0;
-    bottom: -7px;
+    bottom: -6px;
     box-sizing: border-box;
     background-color: #ef7445;
     width: 100%;
-    height: 5px;
+    min-height: 4px;
+    max-height: 4px;
     border-radius: 6px;
     transition:
-      left 0.5s ease-in-out,
-      width 0.5s ease-in-out;
+      left 0.3s ease-in-out,
+      width 0.3s ease-in-out;
   }
 }

@@ -2,7 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  HostListener,
+  HostListener, Input,
   OnInit,
   QueryList,
   ViewChildren,
@@ -16,27 +16,39 @@ import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements AfterViewInit {
-  @ViewChildren('btnRefs', { read: ElementRef })
+  // Menu configuration
+  @Input() items: { name: string; vClasses?: any }[] = [];
+
+
+  // State
+  activeIndex = 1;
+  isMobile = window.innerWidth <= 991;
+
+  // DOM references
+  @ViewChildren('nameRefs', { read: ElementRef })
   buttons!: QueryList<ElementRef>;
 
-  activeIndex = 1;
+  // Indicator position
   indicatorLeft = 0;
   indicatorWidth = 0;
 
-  isMobile = window.innerWidth <= 991;
+  // Lifecycle
+  ngAfterViewInit(): void {
+    setTimeout(() => this.updateIndicator(), 0);
+  }
 
+  // Listeners
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.isMobile = (event.target as Window).innerWidth <= 991;
   }
 
-  ngAfterViewInit(): void {
-    setTimeout(() => this.updateIndicator(), 0);
-  }
 
   onItemClick(index: number): void {
-    this.activeIndex = index;
-    this.updateIndicator();
+    if (index > 0 && index < this.items.length - 1) {
+      this.activeIndex = index;
+      this.updateIndicator();
+    }
   }
 
   updateIndicator(): void {
@@ -51,36 +63,4 @@ export class HeaderComponent implements AfterViewInit {
       }
     });
   }
-
-  items = [
-    {
-      vClasses: ['header__item--left'],
-      links: [{ label: 'Logo', vClasses: [] }],
-    },
-    {
-      vClasses: [],
-      links: [{ label: 'Serviço', vClasses: [] }],
-    },
-    {
-      vClasses: [],
-      links: [{ label: 'Equipe', vClasses: [] }],
-    },
-    {
-      vClasses: [],
-      links: [{ label: 'Metodologia', vClasses: [] }],
-    },
-    {
-      vClasses: [],
-      links: [{ label: 'Espaço', vClasses: [] }],
-    },
-    {
-      vClasses: [],
-      links: [{ label: 'Blog', vClasses: [] }],
-    },
-
-    {
-      vClasses: ['header__item--right'],
-      links: [{ label: 'Contato', vClasses: ['header__link--emphasis'] }],
-    },
-  ];
 }
