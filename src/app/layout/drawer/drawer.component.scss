@@ -1,0 +1,65 @@
+@use '../../../styles/abstracts/containers' as containers;
+@use '../../../styles/abstracts/buttons' as buttons;
+
+.drawer {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 81px;
+  transform: translateY(-100%);
+  z-index: -1;
+  transition: transform 0.3s ease-in-out;
+  @include containers.container();
+
+  &--active {
+    transform: translateY(14px);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 10px;
+    padding: 10px;
+    list-style: none;
+    background-color: white;
+    border: 1px solid #ececec;
+    border-radius: 30px;
+  }
+  &__item {
+    height: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    &--emphasis {
+      @include buttons.button(
+        $height: 40px,
+        $padding: 0,
+        $font-size: 16px,
+        $width: 100%
+      );
+      @include buttons.button-variant(
+        $bg-color: #ef7445,
+        $text-color: #ffffff,
+        $hover-bg: #ef7445,
+        $active-bg: #ef7445,
+        $font-weight: 500
+      );
+      .header__link {
+        color: white;
+      }
+    }
+  }
+  &__link {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+  }
+}

@@ -1,0 +1,110 @@
+:host {
+  /****** Title ******/
+  --title-size: 20px;
+
+  /****** Description ******/
+  --description-size: 16px;
+
+  /****** Circle ******/
+  --circle-size: 32px;
+  --circle-thickness: 4px;
+  --circle-bg: #ffffff;
+  --circle-border-bg: #ef7445;
+
+  /****** Line ******/
+  --line-size: 100px;
+  --line-thickness: 4px;
+  --line-bg: #1b655a;
+
+  /****** Label ******/
+  --label-size: 100px;
+  --label-gap: 5px;
+  // Label Vertical
+  --label-v-top: 0;
+  --label-v-left: 36px;
+
+  // Label Horizontal
+  --label-h-top: 36px;
+  --label-h-left: 50%;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  &__step {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+  }
+  &__circle {
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: relative;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    background-color: var(--circle-bg);
+    border: var(--circle-thickness) solid var(--circle-border-bg);
+  }
+  &__label {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: var(--label-size);
+    display: flex;
+    flex-direction: column;
+  }
+  &__line {
+    box-sizing: border-box;
+    background-color: var(--line-bg);
+  }
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-size: var(--title-size);
+  }
+  &__description {
+    margin: 0;
+    padding: 0;
+    font-size: var(--description-size);
+  }
+  /****** Horizontal ******/
+  &-h {
+    flex-direction: row;
+
+    & .stepper__label {
+      text-align: center;
+      transform: translateX(-50%);
+      max-height: var(--label-size);
+      top: var(--label-h-top);
+      left: var(--label-h-left);
+      gap: var(--label-gap);
+    }
+
+    & .stepper__line {
+      width: auto;
+      min-width: var(--line-size);
+      height: var(--line-thickness);
+    }
+  }
+  /****** Vertical ******/
+  &-v {
+    flex-direction: column;
+
+    & .stepper__label {
+      max-width: var(--label-size);
+      top: var(--label-v-top);
+      left: var(--label-v-left);
+      gap: var(--label-gap);
+    }
+
+    & .stepper__line {
+      height: auto;
+      min-height: var(--line-size);
+      width: var(--line-thickness);
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<header class="header">
+  <nav class="header__nav">
+    <!--DESKTOP MODE-->
+    <ul class="header__list" *ngIf="!isMobile">
+      <li class="header__item header__item--logo">
+        <img [src]="logo.src" [alt]="logo.alt">
+      </li>
+      <li
+        *ngFor="let item of items; let i = index"
+        class="header__item"
+        [ngClass]="item.vClasses ? 'header__item--' + item.vClasses : ''"
+      >
+        <a class="header__link" href="#" (click)="onItemClick(i)" #nameRefs>
+          {{ item.name }}
+        </a>
+        <div
+          *ngIf="i === 1"
+          class="header__indicator"
+          [ngStyle]="{
+            left: indicatorLeft + 'px',
+            width: indicatorWidth + 'px',
+          }"
+        ></div>
+      </li>
+    </ul>
+    <!--MOBILE MODE-->
+    <ul class="header__list" *ngIf="isMobile">
+      <li class="header__item header__item--logo">
+        <img [src]="logo.src" [alt]="logo.alt">
+      </li>
+      <li class="header__item header__item--toggle">
+        <!--TOGGLE BUTTON-->
+        <ng-content select="app-toggle-button"></ng-content>
+        <!--TOGGLE BUTTON-->
+      </li>
+    </ul>
+    <!--DRAWER-->
+    <ng-content select="app-drawer"></ng-content>
+    <!--DRAWER-->
+  </nav>
+</header>

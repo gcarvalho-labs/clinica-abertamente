@@ -1,0 +1,53 @@
+// _buttons.scss
+@mixin button(
+  $height: 54px,
+  $padding: 0 32px,
+  $font-size: 18px,
+  $width: fit-content,
+  $border-radius: 30px
+) {
+  font-size: $font-size;
+  min-height: $height;
+  border: none;
+  border-radius: $border-radius;
+  padding: $padding;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $width;
+  line-height: 18px;
+  transition:
+    background-color 0.6s ease-in-out,
+    transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+}
+
+@mixin button-variant(
+  $bg-color: transparent,
+  $text-color: inherit,
+  $hover-bg: transparent,
+  $active-bg: transparent,
+  $font-weight: 500,
+  $border: none,
+  $hover-text-color: $text-color
+) {
+  background-color: $bg-color;
+  color: $text-color;
+  font-weight: $font-weight;
+  border: $border;
+
+  &:hover {
+    transform: scale(1.05);
+    color: $hover-text-color;
+    background-color: $hover-bg;
+  }
+
+  &:active {
+    background-color: $active-bg;
+    transform: scale(1);
+    transition: transform 0.08s ease-out;
+  }
+}

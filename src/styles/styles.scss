@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DM_Sans/DMSans-Italic-VariableFont.ttf') format('truetype');
+  font-weight: 100 1000;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DM_Sans/DMSans-VariableFont.ttf') format('truetype');
+  font-weight: 100 1000;
+  font-style: normal;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 81px 0 0;
+  //background-color: rgba(241, 233, 225, 0.35);
+  background-color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  box-sizing: border-box;
+}
+

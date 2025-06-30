@@ -1,0 +1,9 @@
+<div class="accordion">
+  <button class="accordion__button" (click)="toggle()">
+    <ng-content select="[accordion-header]"></ng-content>
+  </button>
+
+  <ul class="accordion__list" [@collapse]="isOpen ? 'open' : 'closed'">
+    <ng-content select="[accordion-body]"></ng-content>
+  </ul>
+</div>

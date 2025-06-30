@@ -1,0 +1,10 @@
+<div class="service">
+  <div class="service__header">
+    <i [ngClass]="icon"></i>
+    <h4 class="service__title">{{ title }}</h4>
+  </div>
+  <p class="service__description" *ngIf="description">
+    {{ description }}
+  </p>
+  <a class="service__link" *ngIf="subtitle">{{ subtitle }}</a>
+</div>

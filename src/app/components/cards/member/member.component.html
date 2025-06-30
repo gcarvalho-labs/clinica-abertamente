@@ -1,0 +1,18 @@
+<div class="member">
+  <div class="member__indicator">
+    <i class="fas fa-hand-pointer"></i>
+  </div>
+  <img class="member__image" [src]="photo.src" [alt]="photo.alt" />
+  <div class="member__info">
+    <h4 class="member__name">
+      {{ name }}
+    </h4>
+    <div class="member__networks">
+      <div class="member__network" *ngFor="let network of networks"></div>
+    </div>
+    <p class="member__about">
+      {{ about }}
+    </p>
+    <div class="member__line"></div>
+  </div>
+</div>

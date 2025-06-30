@@ -1,0 +1,41 @@
+@use '../styles/abstracts/buttons' as buttons;
+
+.toggle-button {
+  height: 44px;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid #ececec;
+  background-color: white;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+  gap: 10px;
+
+  &--active {
+    .toggle-button__line {
+      &:first-child {
+        width: 60%;
+      }
+      &:last-child {
+        width: 100%;
+      }
+    }
+  }
+  &__line {
+    background-color: #424243;
+    height: 2px;
+    border-radius: 8px;
+    transition:
+      width 0.3s ease-in-out,
+      background-color 0.3s ease-in-out;
+    &:first-child {
+      width: 100%;
+    }
+    &:last-child {
+      width: 60%;
+    }
+  }
+}

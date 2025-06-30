@@ -1,0 +1,29 @@
+# Pastas de dependências
+node_modules/
+
+# Diretórios de build e saída
+dist/
+build/
+
+# Arquivos temporários e cache
+coverage/
+.angular/
+.vscode/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de teste
+*.spec.ts
+
+# Arquivos gerados
+src/environments/*.ts
+src/**/*.generated.ts
+src/main.ts
+
+# Outros
+package-lock.json
+tsconfig*.json
+karma.conf.js

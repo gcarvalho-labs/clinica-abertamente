@@ -1,0 +1,24 @@
+<div class="team">
+  <div class="team__container">
+    <div class="team__header">
+      <h3 class="team__label">EQUIPE</h3>
+      <h2 class="team__title">
+        Nossa <span class="team__title--emphasis">Equipe</span>
+      </h2>
+    </div>
+    <div class="team__carousel">
+      <app-member
+        *ngFor="let member of team; let i = index"
+        [name]="member.name"
+        [about]="member.about"
+        [photo]="member.photo"
+        [networks]="member.networks"
+      ></app-member>
+    </div>
+
+    <p class="team__paragraph">
+      Profissionais qualificados, acolhedores e comprometidos com seu bem-estar
+      emocional. Aqui, você encontra escuta, cuidado e suporte personalizado.
+    </p>
+  </div>
+</div>

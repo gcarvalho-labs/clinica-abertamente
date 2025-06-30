@@ -1,0 +1,37 @@
+<div class="footer">
+  <div class="footer__container">
+    <div class="footer__content" *ngIf="!isMobile">
+      <div class="footer__column">
+        <div class="footer__logo">Logo</div>
+        <div class="footer__form">
+          <h3 class="footer__title">Fique por dentro de novidades</h3>
+          <div class="footer__input-group">
+            <input
+              class="footer__input"
+              type="email"
+              placeholder="Digite seu e-mail"
+            />
+            <button class="footer__button">Inscrever-se</button>
+          </div>
+        </div>
+        <p class="footer__copyright">
+          © 2025 Clínica Abertamente. Todos os direitos reservados
+        </p>
+      </div>
+      <div class="footer__column">
+        <ul class="footer__menus">
+          <li class="footer__menu" *ngFor="let menu of menus">
+            <a class="footer__link" [href]="menu.href">{{ menu.label }}</a>
+          </li>
+        </ul>
+        <ul class="footer__networks">
+          <li class="footer__network" *ngFor="let network of networks">
+            <a class="footer__network-link" [href]="network.href">
+              <i class="footer__network-icon" [ngClass]="network.iconClass"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

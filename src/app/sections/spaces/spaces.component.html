@@ -1,0 +1,28 @@
+<div class="spaces">
+  <div class="spaces__container">
+    <div class="spaces__header">
+      <h3 class="spaces__label">ESPAÇO</h3>
+      <h2 class="spaces__title">
+        Nosso <span class="spaces__title--emphasis">Espaço</span>
+      </h2>
+    </div>
+    <div class="spaces__masonry">
+      <div class="spaces__column" *ngFor="let column of spaces">
+        <div class="spaces__element" *ngFor="let space of column">
+          <app-space
+            [name]="space.name"
+            [photo]="space.photo"
+            [about]="space.about"
+          ></app-space>
+        </div>
+      </div>
+    </div>
+
+    <div class="spaces__footer">
+      <p class="spaces__paragraph">
+        Nosso ambiente é uma extensão do cuidado que temos com você, pensado
+        para promover bem-estar e tranquilidade desde o primeiro contato.
+      </p>
+    </div>
+  </div>
+</div>

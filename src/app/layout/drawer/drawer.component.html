@@ -1,0 +1,13 @@
+<div class="drawer" [ngClass]="{ 'drawer--active': isOpen }">
+  <ul class="drawer__list">
+    <li
+      *ngFor="let item of items"
+      class="drawer__item"
+      [ngClass]="item.vClasses ? 'drawer__item--' + item.vClasses : ''"
+    >
+      <a class="drawer__link" href="#">
+        {{ item.name }}
+      </a>
+    </li>
+  </ul>
+</div>

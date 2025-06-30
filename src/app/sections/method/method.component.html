@@ -1,0 +1,33 @@
+<section class="method">
+  <div class="method__container" *ngIf="!isMobile">
+    <div class="method__header">
+      <h3 class="method__label">METODOLOGIA</h3>
+      <h2 class="method__title">
+        Nossa <span class="method__title--emphasis">Metodologia</span>
+      </h2>
+    </div>
+    <ul class="stepper">
+      <li
+        *ngFor="let step of steps"
+        class="stepper__step"
+        [ngClass]="step.vClass"
+      >
+        <div class="stepper__step-image">
+          <img
+            class="stepper__step-icon"
+            [src]="step.image.src"
+            [alt]="step.image.alt"
+          />
+        </div>
+        <div class="stepper__step-indicator">
+          <div class="stepper__step-circle"></div>
+          <div class="stepper__step-line"></div>
+        </div>
+        <div class="stepper__step-text">
+          <h4 class="stepper__step-title">{{ step.title }}</h4>
+          <p class="stepper__step-description">{{ step.description }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

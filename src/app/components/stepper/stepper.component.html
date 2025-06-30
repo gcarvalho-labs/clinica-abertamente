@@ -1,0 +1,19 @@
+<div
+  class="stepper"
+  [ngClass]="{
+    'stepper-h': orientation === 'horizontal',
+    'stepper-v': orientation === 'vertical',
+  }"
+>
+  <ng-container *ngFor="let step of steps; let i = index">
+    <div class="stepper__step">
+      <div class="stepper__circle">
+        <div class="stepper__label">
+          <h2 class="stepper__title">{{ step.title }}</h2>
+          <p class="stepper__description">{{ step.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="stepper__line" *ngIf="i < 2"></div>
+  </ng-container>
+</div>

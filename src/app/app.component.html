@@ -1,0 +1,25 @@
+<app-header [logo]="headerLogo" [items]="headerItems">
+  <app-toggle-button
+    [isDrawerActive]="isDrawerActive"
+    (toggleDrawer)="onToggleDrawer()"
+  ></app-toggle-button>
+  <app-drawer [items]="headerItems" [isOpen]="isDrawerActive"></app-drawer>
+</app-header>
+<main class="main">
+  <app-hero></app-hero>
+  <div style="height: 100px"></div>
+  <app-services></app-services>
+  <div style="height: 100px"></div>
+  <app-team></app-team>
+  <div style="height: 100px"></div>
+  <app-method></app-method>
+  <div style="height: 100px"></div>
+  <app-spaces></app-spaces>
+  <div style="height: 100px"></div>
+  <app-contact></app-contact>
+  <div style="height: 100px"></div>
+</main>
+<app-floating-button></app-floating-button>
+<app-footer></app-footer>
+<div style="height: 20px"></div>
+<router-outlet></router-outlet>
