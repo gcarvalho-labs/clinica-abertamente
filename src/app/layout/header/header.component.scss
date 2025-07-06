@@ -32,10 +32,6 @@
     border-bottom: 1px solid #ececec;
     box-sizing: border-box;
     position: relative;
-    &--mobile {
-      flex-direction: column;
-      border: 1px solid #ececec;
-    }
   }
   &__item {
     position: relative;

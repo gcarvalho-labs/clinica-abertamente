@@ -1,9 +1,8 @@
 import { Component, HostListener } from '@angular/core';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-hero',
-  imports: [NgIf],
+  imports: [],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
