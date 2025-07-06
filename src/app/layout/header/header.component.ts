@@ -2,26 +2,26 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  HostListener, Input,
-  OnInit,
+  HostListener,
+  Input,
   QueryList,
   ViewChildren,
 } from '@angular/core';
-import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
+import { NgForOf, NgIf, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [NgForOf, NgClass, NgStyle, NgIf],
+  imports: [NgForOf, NgStyle, NgIf],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements AfterViewInit {
   // Menu configuration
-  @Input() items: { name: string; vClasses?: any }[] = [];
-
-
+  @Input() items: { name: string }[] = [];
+  @Input() logo!: { src: string; alt: string };
+  @Input() button!: { name: string };
   // State
-  activeIndex = 1;
+  activeIndex = 0;
   isMobile = window.innerWidth <= 991;
 
   // DOM references
@@ -43,12 +43,9 @@ export class HeaderComponent implements AfterViewInit {
     this.isMobile = (event.target as Window).innerWidth <= 991;
   }
 
-
   onItemClick(index: number): void {
-    if (index > 0 && index < this.items.length - 1) {
-      this.activeIndex = index;
-      this.updateIndicator();
-    }
+    this.activeIndex = index;
+    this.updateIndicator();
   }
 
   updateIndicator(): void {

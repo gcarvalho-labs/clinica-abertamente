@@ -38,30 +38,29 @@ export class AppComponent {
     this.isDrawerActive = !this.isDrawerActive;
   }
 
-  headerItems = [
+  navLogo = {
+    src: '',
+    alt: 'Logo'
+  }
+  navButton = {
+    name: 'Contato',
+  };
+  navItems = [
     {
-      vClasses: [],
       name: 'Serviço',
     },
     {
-      vClasses: [],
       name: 'Equipe',
     },
     {
-      vClasses: [],
       name: 'Metodologia',
     },
     {
-      vClasses: [],
       name: 'Espaço',
     },
     {
-      vClasses: [],
       name: 'Blog',
     },
-    {
-      name: 'Contato',
-      vClasses: ['--emphasis'],
-    },
   ];
+
 }

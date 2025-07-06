@@ -3,6 +3,8 @@
   [ngClass]="{ 'toggle-button--active': isDrawerActive }"
   (click)="onToggle()"
 >
-  <div class="toggle-button__line"></div>
-  <div class="toggle-button__line"></div>
+  <i
+    class="toggle-button__icon fa"
+    [ngClass]="isDrawerActive ? 'fa-xmark' : 'fa-bars'"
+  ></i>
 </button>

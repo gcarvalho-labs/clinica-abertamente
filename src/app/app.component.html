@@ -1,9 +1,13 @@
-<app-header [items]="headerItems">
+<app-header [button]="navButton" [logo]="navLogo" [items]="navItems">
   <app-toggle-button
     [isDrawerActive]="isDrawerActive"
     (toggleDrawer)="onToggleDrawer()"
   ></app-toggle-button>
-  <app-drawer [items]="headerItems" [isOpen]="isDrawerActive"></app-drawer>
+  <app-drawer
+    [button]="navButton"
+    [items]="navItems"
+    [isOpen]="isDrawerActive"
+  ></app-drawer>
 </app-header>
 <main class="main">
   <app-hero></app-hero>
