@@ -1,10 +1,11 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { MemberComponent } from '../../components/cards/member/member.component';
+import { RevealOnScrollDirective } from '../../diretives/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-team',
-  imports: [NgForOf, MemberComponent],
+  imports: [NgForOf, MemberComponent, RevealOnScrollDirective],
   templateUrl: './team.component.html',
   styleUrl: './team.component.scss',
 })
@@ -23,8 +24,7 @@ export class TeamComponent {
   }
 
   setActiveMember(index: number): void {
-    this.activeMemberIndex =
-      this.activeMemberIndex === index ? null : index;
+    this.activeMemberIndex = this.activeMemberIndex === index ? null : index;
   }
 
   // controle do gesto
@@ -118,8 +118,7 @@ export class TeamComponent {
      ========================= */
   private applyTranslate(offset: number): void {
     const base = -this.activeIndex * this.cardWidth;
-    this.carousel.nativeElement.style.transform =
-      `translateX(${base + offset}px)`;
+    this.carousel.nativeElement.style.transform = `translateX(${base + offset}px)`;
   }
 
   private animateToIndex(): void {

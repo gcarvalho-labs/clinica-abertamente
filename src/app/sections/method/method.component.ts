@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { StepperComponent } from '../../components/stepper/stepper.component';
+import { RevealOnScrollDirective } from '../../diretives/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-method',
-  imports: [StepperComponent],
+  imports: [StepperComponent, RevealOnScrollDirective],
   templateUrl: './method.component.html',
   styleUrl: './method.component.scss',
 })

@@ -2,6 +2,8 @@
 @use '../../../styles/abstracts/buttons' as buttons;
 
 .footer {
+  box-sizing: border-box;
+  margin-bottom: 20px;
   &__container {
     box-sizing: border-box;
     height: 100%;

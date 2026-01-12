@@ -8,9 +8,20 @@ $radius: 20px;
 
 .contact {
   box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   background-color: $color-bg;
   color: #333;
-
+  margin-bottom: 100px;
   &__container {
     box-sizing: border-box;
     display: flex;

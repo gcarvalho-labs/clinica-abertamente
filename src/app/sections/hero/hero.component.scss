@@ -3,7 +3,18 @@
 
 .hero {
   box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   width: 100%;
+  margin-bottom: 100px;
   &__container {
     box-sizing: border-box;
     width: 100%;

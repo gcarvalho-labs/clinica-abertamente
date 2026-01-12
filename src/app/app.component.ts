@@ -35,11 +35,17 @@ import { FloatingButtonComponent } from './components/buttons/floating-button/fl
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements AfterViewInit {
+  private lenis!: Lenis;
   constructor(private zone: NgZone) {}
 
   ngAfterViewInit(): void {
+    // 🔒 Impede o browser de restaurar scroll no refresh
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
     this.zone.runOutsideAngular(() => {
-      const lenis = new Lenis({
+      this.lenis = new Lenis({
         duration: 1.1,
         easing: (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
         smoothWheel: true,
@@ -48,11 +54,16 @@ export class AppComponent implements AfterViewInit {
       });
 
       const raf = (time: number) => {
-        lenis.raf(time);
+        this.lenis.raf(time);
         requestAnimationFrame(raf);
       };
 
       requestAnimationFrame(raf);
+
+      // 🔑 Correção do scroll inicial
+      requestAnimationFrame(() => {
+        this.lenis.scrollTo(0, { immediate: true });
+      });
     });
   }
 
@@ -61,13 +72,25 @@ export class AppComponent implements AfterViewInit {
   onToggleDrawer(): void {
     this.isDrawerActive = !this.isDrawerActive;
   }
+
+  scrollToSection(sectionId: string): void {
+    this.isDrawerActive = false;
+
+    const element = document.getElementById(sectionId);
+    if (!element) return;
+
+    this.lenis.scrollTo(element, { offset: -132 });
+  }
+
   navLogo = {
     src: 'images/header/logo.png',
     alt: 'Logo',
   };
+
   navButton = {
     name: 'Contato',
   };
+
   navItems = [
     {
       name: 'Serviços',

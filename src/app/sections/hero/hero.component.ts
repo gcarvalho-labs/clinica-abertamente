@@ -1,8 +1,9 @@
 import { Component, HostListener } from '@angular/core';
+import { RevealOnScrollDirective } from '../../diretives/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  imports: [RevealOnScrollDirective],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })

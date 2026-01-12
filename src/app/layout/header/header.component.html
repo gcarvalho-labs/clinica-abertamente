@@ -3,12 +3,20 @@
     <!--DESKTOP MODE-->
     <ul class="header__list" *ngIf="!isMobile">
       <li class="header__item header__item--left">
-        <a class="header__link" href="#">
+        <a
+          class="header__link"
+          href="#"
+          (click)="$event.preventDefault(); onButtonClick('Hero')"
+        >
           <img src="images/Logo.png" [alt]="logo.alt" style="width: 85px" />
         </a>
       </li>
       <li *ngFor="let item of items; let i = index" class="header__item">
-        <a class="header__link" href="#" (click)="onItemClick(i)" #nameRefs>
+        <a
+          class="header__link"
+          href="#"
+          (click)="$event.preventDefault(); onItemClick(i, item.name)"
+        >
           {{ item.name }}
         </a>
 
@@ -18,7 +26,11 @@
         ></div>
       </li>
       <li class="header__item header__item--right header__item--emphasis">
-        <a class="header__link" href="#">
+        <a
+          class="header__link"
+          href="#"
+          (click)="$event.preventDefault(); onButtonClick(button.name)"
+        >
           {{ button.name }}
         </a>
       </li>

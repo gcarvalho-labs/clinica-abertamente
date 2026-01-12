@@ -2,8 +2,18 @@
 
 .spaces {
   box-sizing: border-box;
-  @include containers.container();
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  margin-bottom: 100px;
+  @include containers.container();
   &__header {
     display: flex;
     flex-direction: column;

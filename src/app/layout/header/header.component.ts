@@ -1,4 +1,10 @@
-import { Component, HostListener, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  Output,
+} from '@angular/core';
 import { NgForOf, NgIf, NgClass } from '@angular/common';
 
 @Component({
@@ -11,6 +17,7 @@ export class HeaderComponent {
   @Input() items: { name: string }[] = [];
   @Input() logo!: { src: string; alt: string };
   @Input() button!: { name: string };
+  @Output() navigateToSection = new EventEmitter<string>();
 
   activeIndex = 0;
   isMobile = window.innerWidth <= 991;
@@ -20,7 +27,29 @@ export class HeaderComponent {
     this.isMobile = (event.target as Window).innerWidth <= 991;
   }
 
-  onItemClick(index: number): void {
+  onItemClick(index: number, itemName: string): void {
     this.activeIndex = index;
+
+    const sectionId = this.sectionIdMap[itemName];
+    if (sectionId) {
+      this.navigateToSection.emit(sectionId);
+    }
   }
+
+  onButtonClick(itemName: string): void {
+    const sectionId = this.sectionIdMap[itemName];
+    if (sectionId) {
+      this.navigateToSection.emit(sectionId);
+    }
+  }
+
+  private sectionIdMap: Record<string, string> = {
+    Hero: 'hero',
+    Serviços: 'services',
+    Equipe: 'team',
+    Metodologia: 'method',
+    Espaço: 'spaces',
+    Blog: 'blog',
+    Contato: 'contact',
+  };
 }

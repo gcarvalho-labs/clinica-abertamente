@@ -1,9 +1,10 @@
 import { Component, HostListener } from '@angular/core';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
+import { RevealOnScrollDirective } from '../../diretives/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-contact',
-  imports: [NgClass, NgForOf],
+  imports: [NgClass, NgForOf, RevealOnScrollDirective],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
