@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Input } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { NgForOf } from '@angular/common';
 
 @Component({
@@ -12,4 +12,12 @@ export class MemberComponent {
   @Input() about?: string;
   @Input() networks!: string[];
   @Input() photo!: { src: string; alt: string };
+
+  @Input() active = false;
+  @Output() activate = new EventEmitter<void>();
+
+  onClick(event: Event): void {
+    event.stopPropagation();
+    this.activate.emit();
+  }
 }

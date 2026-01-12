@@ -2,7 +2,6 @@
 @use '../../../styles/abstracts/buttons' as buttons;
 
 .footer {
-  height: 319px;
   &__container {
     box-sizing: border-box;
     height: 100%;
@@ -10,26 +9,55 @@
   }
   &__content {
     box-sizing: border-box;
-    border: 1px solid #ececec;
-    //background-color: #f6f7f9;
+    background-color: #f8f7f6;
+    border: 1px solid #f1f0ee;
     border-radius: 30px;
     height: 100%;
     width: 100%;
     display: flex;
+    flex-direction: column;
     padding: 50px;
     justify-content: space-between;
+    @media (max-width: 991px) {
+      gap: 40px;
+      padding: 30px;
+    }
   }
-  &__column {
+  &__row {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    &:nth-child(1) {
+      margin-bottom: 36px;
+    }
+    @media (max-width: 991px) {
+      &:nth-child(1) {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 0;
+      }
+    }
+    @media (max-width: 991px) {
+      &:nth-child(2) {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 30px;
+      }
+    }
   }
   //Parte de Formulário:
   &__title {
     margin: 0;
     padding: 0;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 540;
+  }
+  &__newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  &__logo {
+    margin-bottom: 30px;
   }
   &__form {
     display: flex;
@@ -39,30 +67,43 @@
   &__input-group {
     display: flex;
     gap: 10px;
+    @media (max-width: 435px) {
+      flex-direction: column;
+    }
   }
   &__copyright {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: end;
+    @media (max-width: 991px) {
+      text-align: center;
+    }
   }
   &__input {
+    box-sizing: border-box;
     margin: 0;
     padding: 0 19px;
     height: 44px;
     border-radius: 30px;
-    border: none;
+    border: 1px solid #f4f2ee;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: start;
-    background-color: #ececec;
+    background-color: #ffffff;
     font-size: 15px;
     &:focus {
       outline: none;
     }
+    &:focus-visible {
+      outline: none;
+      border-color: #f1af97;
+    }
     &::placeholder {
-      font-size: 15px;
+      font-size: 16px;
     }
   }
   &__button {
@@ -74,6 +115,9 @@
       $active-bg: #ef7445,
       $font-weight: 500
     );
+    @media (max-width: 435px) {
+      width: 100%;
+    }
   }
   //Parte de Navegação:
   &__menus {
@@ -87,6 +131,9 @@
   }
   &__menu {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    outline: none;
     &:hover {
       .footer__link {
         color: #ef7445;
@@ -97,6 +144,7 @@
     text-decoration: none;
     color: inherit;
     font-weight: 500;
+    font-size: 16px;
   }
   &__networks {
     list-style: none;
@@ -107,20 +155,23 @@
   }
   &__network {
     cursor: pointer;
-    min-width: 40px;
-    min-height: 40px;
-    max-width: 40px;
-    max-height: 40px;
+    min-width: 42px;
+    min-height: 42px;
+    max-width: 42px;
+    max-height: 42px;
     border-radius: 50%;
-    border: 1px solid #1b655a;
+    border: 1px solid #e89473;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #1b655a;
+    background-color: transparent;
     transition:
-      background-color 0.5s ease-in-out,
-      transform 0.5s cubic-bezier(0.25, 1.5, 0.5, 1);
+      background-color 0.4s ease-in-out,
+      transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    outline: none;
     &-link {
       width: 100%;
       height: 100%;
@@ -132,15 +183,14 @@
       align-items: center;
     }
     &-icon {
-      color: white;
+      color: #ed794d;
       font-size: 18px;
     }
     &:hover {
-      transform: scale(1.10);
-    }
-    &:active {
-      transform: scale(1);
-      transition: transform 0.05s ease-out;
+      background-color: #ed794d;
+      .footer__network-icon {
+        color: #ffffff;
+      }
     }
   }
 }

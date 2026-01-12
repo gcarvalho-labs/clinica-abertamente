@@ -1,19 +1,55 @@
-<div
-  class="stepper"
-  [ngClass]="{
-    'stepper-h': orientation === 'horizontal',
-    'stepper-v': orientation === 'vertical',
-  }"
->
-  <ng-container *ngFor="let step of steps; let i = index">
-    <div class="stepper__step">
-      <div class="stepper__circle">
-        <div class="stepper__label">
-          <h2 class="stepper__title">{{ step.title }}</h2>
-          <p class="stepper__description">{{ step.description }}</p>
-        </div>
+<ul class="stepper">
+  <li class="stepper__step" *ngFor="let step of steps; let i = index">
+    <!-- STEP PAR (imagem | indicador | texto) -->
+    <ng-container *ngIf="i % 2 === 0">
+      <div class="stepper__image-container">
+        <img
+          class="stepper__image stepper__image--end"
+          [src]="step.image.src"
+          [alt]="step.image.alt"
+        />
       </div>
-    </div>
-    <div class="stepper__line" *ngIf="i < 2"></div>
-  </ng-container>
-</div>
+
+      <div class="stepper__indicator">
+        <div class="stepper__indicator-circle"></div>
+        <div
+          class="stepper__indicator-line"
+          *ngIf="i < steps.length - 1"
+        ></div>
+      </div>
+
+      <div class="stepper__text-container">
+        <h4 class="stepper__title">{{ step.title }}</h4>
+        <p class="stepper__description">{{ step.description }}</p>
+      </div>
+    </ng-container>
+
+    <!-- STEP ÍMPAR (texto | indicador | imagem) -->
+    <ng-container *ngIf="i % 2 !== 0">
+      <div class="stepper__text-container">
+        <h4 class="stepper__title stepper__title--end">
+          {{ step.title }}
+        </h4>
+        <p class="stepper__description stepper__description--end">
+          {{ step.description }}
+        </p>
+      </div>
+
+      <div class="stepper__indicator">
+        <div class="stepper__indicator-circle"></div>
+        <div
+          class="stepper__indicator-line"
+          *ngIf="i < steps.length - 1"
+        ></div>
+      </div>
+
+      <div class="stepper__image-container">
+        <img
+          class="stepper__image"
+          [src]="step.image.src"
+          [alt]="step.image.alt"
+        />
+      </div>
+    </ng-container>
+  </li>
+</ul>

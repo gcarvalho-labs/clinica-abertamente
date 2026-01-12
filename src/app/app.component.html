@@ -1,10 +1,24 @@
-<app-header [logo]="headerLogo" [items]="headerItems">
+<app-header [button]="navButton" [logo]="navLogo" [items]="navItems">
   <app-toggle-button
     [isDrawerActive]="isDrawerActive"
     (toggleDrawer)="onToggleDrawer()"
   ></app-toggle-button>
-  <app-drawer [items]="headerItems" [isOpen]="isDrawerActive"></app-drawer>
+  <app-drawer
+    [button]="navButton"
+    [items]="navItems"
+    [isOpen]="isDrawerActive"
+  ></app-drawer>
 </app-header>
+<div
+  (keydown.enter)="onToggleDrawer()"
+  (keydown.space)="onToggleDrawer()"
+  tabindex="0"
+  role="button"
+  aria-label="Fechar menu"
+  class="drawer-backdrop"
+  [class.drawer-backdrop--active]="isDrawerActive"
+  (click)="onToggleDrawer()"
+></div>
 <main class="main">
   <app-hero></app-hero>
   <div style="height: 100px"></div>
@@ -15,6 +29,8 @@
   <app-method></app-method>
   <div style="height: 100px"></div>
   <app-spaces></app-spaces>
+  <div style="height: 100px"></div>
+  <app-blog></app-blog>
   <div style="height: 100px"></div>
   <app-contact></app-contact>
   <div style="height: 100px"></div>

@@ -32,7 +32,8 @@
   $active-bg: transparent,
   $font-weight: 500,
   $border: none,
-  $hover-text-color: $text-color
+  $hover-text-color: $text-color,
+  $transform: scale(0.95)
 ) {
   background-color: $bg-color;
   color: $text-color;
@@ -40,14 +41,13 @@
   border: $border;
 
   &:hover {
-    transform: scale(1.05);
+    transform: $transform;
     color: $hover-text-color;
     background-color: $hover-bg;
   }
 
   &:active {
     background-color: $active-bg;
-    transform: scale(1);
-    transition: transform 0.08s ease-out;
+    transition: transform 0.08s ease-in-out;
   }
 }

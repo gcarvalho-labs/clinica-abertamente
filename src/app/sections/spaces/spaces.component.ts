@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { NgForOf } from '@angular/common';
-import { SpaceComponent } from '../../components/cards/space/space.component';
 
 @Component({
   selector: 'app-spaces',
-  imports: [NgForOf, SpaceComponent],
+  imports: [],
   templateUrl: './spaces.component.html',
   styleUrl: './spaces.component.scss',
 })

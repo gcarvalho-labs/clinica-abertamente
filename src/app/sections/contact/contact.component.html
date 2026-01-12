@@ -1,68 +1,76 @@
 <div class="contact">
-  <div class="contact__container" *ngIf="!isMobile">
+  <div class="contact__container">
     <div class="contact__header">
       <h3 class="contact__label">CONTATO</h3>
       <h2 class="contact__title">
         Fale <span class="contact__title--emphasis">Conosco</span>
       </h2>
     </div>
-
-    <div class="contact__section">
-      <div class="contact__content">
-        <h4 class="contact__content-title">Fale com nossa equipe agora</h4>
-        <p class="contact__content-desc">
-          Estamos à disposição para tirar dúvidas, explicar nossos serviços,
-          informar horários e ajudar você a dar o primeiro passo.
-        </p>
-        <ul class="contact__details">
-          <li class="contact__detail" *ngFor="let detail of details">
-            <i class="contact__detail-icon" [ngClass]="detail.icon"></i>
-            <div class="contact__detail-content">
-              <h5 class="contact__detail-title">{{ detail.title }}</h5>
-              <p class="contact__detail-desc" [innerHTML]="detail.desc"></p>
-            </div>
-          </li>
-        </ul>
+    <div class="contact__body">
+      <div class="contact__section">
+        <div class="contact__content">
+          <h4 class="contact__content-title">Informações para contato</h4>
+          <p class="contact__content-desc">
+            Estamos à disposição para tirar dúvidas, explicar nossos serviços,
+            informar horários e ajudar você a dar o primeiro passo.
+          </p>
+          <img
+            class="contact__image contact__image--mobile"
+            src="images/teste.png"
+            alt="foto"
+          />
+          <ul class="contact__details">
+            <li class="contact__detail" *ngFor="let detail of details">
+              <i class="contact__detail-icon" [ngClass]="detail.icon"></i>
+              <div class="contact__detail-content">
+                <h5 class="contact__detail-title">{{ detail.title }}</h5>
+                <p class="contact__detail-desc" [innerHTML]="detail.desc"></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <img
+          class="contact__image contact__image--desktop"
+          src="images/teste.png"
+          alt="foto"
+        />
       </div>
-      <img class="contact__image" src="images/teste.png" alt="foto" />
-    </div>
 
-    <div class="contact__divider"></div>
+      <div class="contact__section">
+        <iframe
+          class="contact__map contact__map--desktop"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.302505012962!2d-51.1663137!3d-23.3094531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb436e70e0f7d1%3A0x22eeb321a413d8f2!2sR.%20Belo%20Horizonte%2C%201558%20-%20Centro%2C%20Londrina%20-%20PR%2C%2086020-061!5e0!3m2!1spt-BR!2sbr!4v1719341451632!5m2!1spt-BR!2sbr"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
 
-    <div class="contact__section">
-      <iframe
-        class="contact__map"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.302505012962!2d-51.1663137!3d-23.3094531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb436e70e0f7d1%3A0x22eeb321a413d8f2!2sR.%20Belo%20Horizonte%2C%201558%20-%20Centro%2C%20Londrina%20-%20PR%2C%2086020-061!5e0!3m2!1spt-BR!2sbr!4v1719341451632!5m2!1spt-BR!2sbr"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      >
-      </iframe>
-
-      <div class="contact__content">
-        <h4 class="contact__content-title">Facilidades para seu conforto</h4>
-        <p class="contact__content-desc">
-          A clínica oferece estacionamento gratuito, acesso facilitado para
-          cadeirantes e transporte público bem próximo.
-        </p>
-        <ul class="contact__facilities">
-          <li class="contact__facility" *ngFor="let facility of facilities">
-            <i class="contact__facility-icon" [ngClass]="facility.icon"></i>
-            <h5 class="contact__facility-title">{{ facility.title }}</h5>
-          </li>
-        </ul>
+        <div class="contact__content">
+          <h4 class="contact__content-title">Facilidades para seu conforto</h4>
+          <p class="contact__content-desc">
+            Estamos situados em uma rua ampla, com estacionamento público e
+            gratuito, além de acesso para cadeirantes e transporte público
+            próximo.
+          </p>
+          <iframe
+            class="contact__map contact__map--mobile"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.302505012962!2d-51.1663137!3d-23.3094531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb436e70e0f7d1%3A0x22eeb321a413d8f2!2sR.%20Belo%20Horizonte%2C%201558%20-%20Centro%2C%20Londrina%20-%20PR%2C%2086020-061!5e0!3m2!1spt-BR!2sbr!4v1719341451632!5m2!1spt-BR!2sbr"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+          <ul class="contact__facilities">
+            <li class="contact__facility" *ngFor="let facility of facilities">
+              <i class="contact__facility-icon" [ngClass]="facility.icon"></i>
+              <h5 class="contact__facility-title">{{ facility.title }}</h5>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-
-    <div class="contact__footer">
-      <p class="contact__paragraph">
-        Se você busca um espaço seguro e profissional para cuidar da saúde
-        mental, emocional ou relacional, estaremos aqui para receber você.
-      </p>
-      <button class="contact__button contact__button--primary">
-        Conversar
-      </button>
     </div>
   </div>
 </div>

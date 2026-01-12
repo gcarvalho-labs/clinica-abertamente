@@ -1,28 +1,38 @@
-<div class="spaces">
-  <div class="spaces__container">
-    <div class="spaces__header">
-      <h3 class="spaces__label">ESPAÇO</h3>
-      <h2 class="spaces__title">
-        Nosso <span class="spaces__title--emphasis">Espaço</span>
-      </h2>
-    </div>
-    <div class="spaces__masonry">
-      <div class="spaces__column" *ngFor="let column of spaces">
-        <div class="spaces__element" *ngFor="let space of column">
-          <app-space
-            [name]="space.name"
-            [photo]="space.photo"
-            [about]="space.about"
-          ></app-space>
-        </div>
+<section class="spaces">
+  <div class="spaces__header">
+    <h3 class="spaces__label">ESPAÇO</h3>
+    <h2 class="spaces__title">
+      Nosso <span class="spaces__title--emphasis">Espaço</span>
+    </h2>
+  </div>
+
+  <div class="spaces__layout">
+    <!-- Imagens principais -->
+    <div class="spaces__main-visual">
+      <div class="spaces__image spaces__image--main">
+        <img src="" alt="img 1" />
+      </div>
+      <div class="spaces__image spaces__image--main">
+        <img src="" alt="img 2" />
       </div>
     </div>
 
-    <div class="spaces__footer">
-      <p class="spaces__paragraph">
-        Nosso ambiente é uma extensão do cuidado que temos com você, pensado
-        para promover bem-estar e tranquilidade desde o primeiro contato.
-      </p>
+    <!-- Imagens secundárias -->
+    <div class="spaces__side-visuals">
+      <div class="spaces__image spaces__image--side">
+        <img src="" alt="img 3" />
+      </div>
+      <div class="spaces__image spaces__image--side">
+        <img src="" alt="img 4" />
+      </div>
+      <div class="spaces__image spaces__image--side">
+        <img src="" alt="img 5" />
+      </div>
     </div>
   </div>
-</div>
+
+  <p class="spaces__paragraph">
+    Ambiente pensado para acolher, transmitir tranquilidade e oferecer
+    um espaço seguro desde o primeiro contato.
+  </p>
+</section>

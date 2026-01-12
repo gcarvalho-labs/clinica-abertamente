@@ -9,6 +9,8 @@
   height: 81px;
   z-index: 100;
   box-sizing: border-box;
+  background-color: white;
+  //border-bottom: 1px solid #ede9e1;
   &__nav {
     position: relative;
     background-color: white;
@@ -18,7 +20,8 @@
     @include containers.container();
   }
   &__list {
-    //border-bottom: 2px solid #ececec;
+    //border-bottom: 1px solid #ede9e1;
+    //box-sizing: border-box; desativado por causa da borda
     padding: 0;
     margin: 0;
     list-style: none;
@@ -29,28 +32,18 @@
     gap: 40px;
     width: 100%;
     height: 100%;
-    border-bottom: 1px solid #ececec;
-    box-sizing: border-box;
     position: relative;
-    &--mobile {
-      flex-direction: column;
-      border: 1px solid #ececec;
-    }
   }
   &__item {
-    position: relative;
     box-sizing: border-box;
-    &--logo {
+    position: relative;
+    &--left {
       position: absolute;
       left: 0;
     }
-    &--toggle {
+    &--right {
       position: absolute;
       right: 0;
-      &__button {
-        display: flex;
-        gap: 15px;
-      }
     }
     &--emphasis {
       @include buttons.button(
@@ -59,14 +52,13 @@
         $font-size: 16px
       );
       @include buttons.button-variant(
-        $bg-color: #ef7445,
-        $text-color: #ffffff,
-        $hover-bg: #ef7445,
-        $active-bg: #ef7445,
-        $font-weight: 500
+        $bg-color: white,
+        $text-color: #ef7445,
+        $hover-bg: rgba(239, 116, 69, 0.08),
+        $active-bg: rgba(239, 116, 69, 0.16),
+        $font-weight: 500,
+        $border: 1px solid #ef7445
       );
-      position: absolute;
-      right: 0;
       &__link {
         color: white;
       }
@@ -78,6 +70,9 @@
     padding-bottom: 8px;
     text-decoration: none;
     color: inherit;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    outline: none;
   }
   &__indicator {
     position: absolute;
@@ -89,8 +84,12 @@
     min-height: 4px;
     max-height: 4px;
     border-radius: 6px;
-    transition:
-      left 0.3s ease-in-out,
-      width 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease-in-out;
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }

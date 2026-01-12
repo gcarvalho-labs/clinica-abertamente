@@ -10,4 +10,5 @@ import { NgClass, NgForOf } from '@angular/common';
 export class DrawerComponent {
   @Input() isOpen = false;
   @Input() items: { name: string; vClasses?: any }[] = [];
+  @Input() button!: { name: string; };
 }

@@ -6,14 +6,36 @@
         Nossa <span class="team__title--emphasis">Equipe</span>
       </h2>
     </div>
-    <div class="team__carousel">
-      <app-member
-        *ngFor="let member of team; let i = index"
-        [name]="member.name"
-        [about]="member.about"
-        [photo]="member.photo"
-        [networks]="member.networks"
-      ></app-member>
+
+    <div class="team__controls">
+      <button class="team__control-button" (click)="scrollLeft()">
+        <i class="fa-solid fa-angle-left team__control-icon"></i>
+      </button>
+
+      <button class="team__control-button" (click)="scrollRight()">
+        <i class="fa-solid fa-angle-right team__control-icon"></i>
+      </button>
+    </div>
+
+    <div class="team__carousel-container">
+      <div
+        class="team__carousel"
+        #carousel
+        (pointerdown)="onPointerDown($event)"
+        (pointermove)="onPointerMove($event)"
+        (pointerup)="onPointerUp($event)"
+        (pointercancel)="onPointerCancel($event)"
+      >
+        <app-member
+          *ngFor="let member of team; let i = index"
+          [name]="member.name"
+          [about]="member.about"
+          [photo]="member.photo"
+          [networks]="member.networks"
+          [active]="activeMemberIndex === i"
+          (activate)="setActiveMember(i)"
+        ></app-member>
+      </div>
     </div>
 
     <p class="team__paragraph">

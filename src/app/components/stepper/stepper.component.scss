@@ -1,110 +1,107 @@
-:host {
-  /****** Title ******/
-  --title-size: 20px;
-
-  /****** Description ******/
-  --description-size: 16px;
-
-  /****** Circle ******/
-  --circle-size: 32px;
-  --circle-thickness: 4px;
-  --circle-bg: #ffffff;
-  --circle-border-bg: #ef7445;
-
-  /****** Line ******/
-  --line-size: 100px;
-  --line-thickness: 4px;
-  --line-bg: #1b655a;
-
-  /****** Label ******/
-  --label-size: 100px;
-  --label-gap: 5px;
-  // Label Vertical
-  --label-v-top: 0;
-  --label-v-left: 36px;
-
-  // Label Horizontal
-  --label-h-top: 36px;
-  --label-h-left: 50%;
-}
-
 .stepper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  flex-direction: column;
+
   &__step {
     display: flex;
-    flex-direction: column;
-    position: relative;
-    box-sizing: border-box;
-  }
-  &__circle {
-    border-radius: 50%;
-    box-sizing: border-box;
-    position: relative;
-    width: var(--circle-size);
-    height: var(--circle-size);
-    background-color: var(--circle-bg);
-    border: var(--circle-thickness) solid var(--circle-border-bg);
-  }
-  &__label {
-    position: absolute;
-    margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    width: var(--label-size);
+    margin: 0;
+  }
+
+  &__indicator {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 35px;
+    margin-left: 20px;
+    margin-right: 20px;
+    @media (max-width: 504px) {
+      width: 28px;
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+    &-circle {
+      box-sizing: border-box;
+      border: 5px solid #ef7445;
+      min-height: 35px;
+      min-width: 35px;
+      max-height: 35px;
+      max-width: 35px;
+      background-color: white;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      @media (max-width: 504px) {
+        border-width: 4px;
+        min-height: 28px;
+        min-width: 28px;
+        max-height: 28px;
+        max-width: 28px;
+      }
+    }
+    &-line {
+      width: 5px;
+      height: 100%;
+      min-height: 100px;
+      background-color: #1b655a;
+      @media (max-width: 504px) {
+        width: 4px;
+      }
+    }
   }
-  &__line {
+
+  &__text-container {
+    width: 100%;
+    //background: bisque;
+    padding-bottom: 35px;
     box-sizing: border-box;
-    background-color: var(--line-bg);
   }
+
   &__title {
-    margin: 0;
-    padding: 0;
-    font-size: var(--title-size);
+    margin: 0 0 10px;
+    font-size: 23px;
+    font-weight: 600;
+    @media (max-width: 431px) {
+      font-size: 18px;
+    }
+    &--end {
+      text-align: end;
+    }
   }
+
   &__description {
     margin: 0;
-    padding: 0;
-    font-size: var(--description-size);
-  }
-  /****** Horizontal ******/
-  &-h {
-    flex-direction: row;
-
-    & .stepper__label {
-      text-align: center;
-      transform: translateX(-50%);
-      max-height: var(--label-size);
-      top: var(--label-h-top);
-      left: var(--label-h-left);
-      gap: var(--label-gap);
+    font-size: 18px;
+    max-width: 400px;
+    //background-color: #a5c3bf;
+    @media (max-width: 431px) {
+      font-size: 14px;
     }
-
-    & .stepper__line {
-      width: auto;
-      min-width: var(--line-size);
-      height: var(--line-thickness);
+    &--end {
+      text-align: end;
+      float: right;
     }
   }
-  /****** Vertical ******/
-  &-v {
-    flex-direction: column;
 
-    & .stepper__label {
-      max-width: var(--label-size);
-      top: var(--label-v-top);
-      left: var(--label-v-left);
-      gap: var(--label-gap);
+  &__image {
+    width: 450px;
+    max-width: 100%;
+    height: auto;
+    &-container {
+      padding-bottom: 35px;
+      box-sizing: border-box;
+      width: 100%;
+      //background-color: pink;
     }
-
-    & .stepper__line {
-      height: auto;
-      min-height: var(--line-size);
-      width: var(--line-thickness);
+    &--end {
+      float: right;
     }
   }
 }

@@ -1,0 +1,118 @@
+@use '../../../styles/abstracts/containers' as containers;
+@use '../../../styles/abstracts/buttons' as buttons;
+
+.blog {
+  &__container {
+    box-sizing: border-box;
+    @include containers.container();
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 30px;
+    margin-bottom: 30px;
+    @media (max-width: 991px) {
+      align-items: center;
+      margin-bottom: 0;
+    }
+  }
+  &__header-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    @media (max-width: 991px) {
+      gap: 30px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__label {
+    margin: 0;
+    color: #1d6a5f;
+    border: 1px solid #1b655a;
+    border-radius: 30px;
+    padding: 0 18px;
+    width: fit-content;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+  }
+  &__title {
+    margin: 0;
+    font-size: 46px;
+    line-height: 40px;
+    font-weight: normal;
+    @media (max-width: 991px) {
+      text-align: center;
+    }
+    @media (max-width: 375px) {
+      font-size: 40px;
+    }
+    &--emphasis {
+      color: #ef7445;
+      font-weight: 600;
+    }
+  }
+  &__paragraph {
+    margin: 22px auto;
+    max-width: 610px;
+    padding: 0;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #f7f7f5;
+    border: 1px solid #f1f0ee;
+    padding: 50px;
+    border-radius: 30px;
+    gap: 32px;
+    @media (max-width: 767px) {
+      padding: 30px;
+    }
+    @media (max-width: 430px) {
+      padding: 30px 10px 10px;
+    }
+  }
+
+  &__posts {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-height: 44px;
+    min-width: 100px;
+    @include buttons.button($height: 44px, $padding: 0 19px, $font-size: 16px);
+    &--primary-outline {
+      @include buttons.button-variant(
+        $bg-color: transparent,
+        $text-color: #ef7445,
+        $hover-bg: rgba(239, 116, 69, 0.08),
+        $active-bg: rgba(239, 116, 69, 0.16),
+        $font-weight: 500,
+        $border: 1px solid #ef7445
+      );
+    }
+  }
+}

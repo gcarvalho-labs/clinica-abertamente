@@ -14,45 +14,48 @@
   }
 }
 
-.container {
-  box-sizing: border-box;
-  @include containers.container();
-}
-
-.chat-wrapper {
+.floating-button {
+  pointer-events: none; // não intercepta cliques
   z-index: 1;
   position: fixed;
   bottom: 20px;
   left: 0;
   width: 100%;
-  pointer-events: none;
-}
-
-.chat {
-  margin-left: auto;
-  position: relative;
-  height: 50px;
-  width: 50px;
-  box-sizing: border-box;
-  border-radius: 50%;
-  background-color: #25d366;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  &::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: #25d366;
-    border-radius: 50%;
-    z-index: 0;
-    animation: pulse 2s infinite;
+  text-decoration: none;
+  &__container {
+    box-sizing: border-box;
+    @include containers.container();
   }
-  i {
+  &__link {
+    pointer-events: auto; // intercepta apenas no botão
+    padding: 0;
+    text-decoration: none;
+    margin: 0 0 0 auto;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: #25d366;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: #25d366;
+      border-radius: 50%;
+      z-index: 0;
+      animation: pulse 2s infinite;
+    }
+
+  }
+  &__icon {
     position: relative;
     z-index: 1;
     font-size: 30px;

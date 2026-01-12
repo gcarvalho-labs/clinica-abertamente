@@ -3,7 +3,7 @@ import { NgClass, NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
-  imports: [NgClass, NgForOf, NgIf],
+  imports: [NgClass, NgForOf],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })

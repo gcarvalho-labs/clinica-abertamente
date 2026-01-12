@@ -7,4 +7,10 @@
     {{ description }}
   </p>
   <a class="service__link" *ngIf="subtitle">{{ subtitle }}</a>
+  <img
+    class="service__image"
+    [ngClass]="imageClass"
+    [src]="image.src"
+    [alt]="image.alt"
+  />
 </div>

@@ -11,5 +11,7 @@ export class ServiceComponent {
   @Input() title!: string;
   @Input() description?: string;
   @Input() subtitle!: string;
-  @Input() icon!: string ;
+  @Input() icon!: string;
+  @Input() image!: { src: string; alt: string };
+  @Input() imageClass!: string;
 }

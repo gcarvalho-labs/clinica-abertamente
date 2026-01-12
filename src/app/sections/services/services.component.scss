@@ -19,10 +19,11 @@
   &__label {
     margin: 0;
     color: #1d6a5f;
+    background-color: white;
     border: 1px solid #1b655a;
     border-radius: 30px;
     padding: 0 18px;
-    height: 34px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,35 +40,70 @@
       color: #ef7445;
       font-weight: 600;
     }
+    @media (max-width: 375px) {
+      font-size: 40px;
+    }
   }
   &__grid {
+    margin-top: 60px;
+    margin-bottom: 60px;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 20px;
     justify-content: center;
     align-items: stretch;
-    margin-top: 70px;
-    margin-bottom: 60px;
+
+    @media (max-width: 408px) {
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    }
+    @media (max-width: 385px) {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    @media (max-width: 375px) {
+      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    }
+    @media (max-width: 370px) {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
   }
 
   &__paragraph {
-    margin: auto auto 20px;
+    margin: auto auto 22px;
     max-width: 610px;
     padding: 0;
     font-size: 20px;
     text-align: center;
   }
+  &__buttons{
+    display: flex;
+    margin: auto;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
   &__button {
     &--primary {
-      margin: auto;
       @include buttons.button();
       @include buttons.button-variant(
         $bg-color: #ef7445,
         $text-color: #ffffff,
-        $hover-bg: #ef7445,
-        $active-bg: #ef7445,
-        $font-weight: 500
+        $hover-bg: #e87144,
+        $active-bg: #e87144,
+        $font-weight: 500,
+        $border: 1px solid #ef7445
+      );
+    }
+    &--primary-outline {
+      @include buttons.button();
+      @include buttons.button-variant(
+        $bg-color: white,
+        $text-color: #ef7445,
+        $hover-bg: rgba(239, 116, 69, 0.08),
+        $active-bg: rgba(239, 116, 69, 0.16),
+        $font-weight: 500,
+        $border: 1px solid #ef7445
       );
     }
   }

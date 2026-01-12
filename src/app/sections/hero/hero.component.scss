@@ -3,34 +3,75 @@
 
 .hero {
   box-sizing: border-box;
-  background-color: #fefbf9;
+  width: 100%;
   &__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-sizing: border-box;
+    width: 100%;
     @include containers.container();
   }
   &__carousel {
+    //background-color: #f6f6f3;
+    //background-color: #f6f7f9;
+    background-color: #f8f7f6;
+    border: 1px solid #f1f0ee;
+    border-radius: 30px;
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     text-align: start;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 36px;
     width: 100%;
+    @media (max-width: 1135px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
   }
   &__left {
     display: flex;
     flex-direction: column;
     gap: 40px;
     max-width: 650px;
+    @media (max-width: 1200px) {
+      max-width: 555px;
+    }
+    @media (max-width: 1135px) {
+      max-width: 555px;
+    }
+    @media (max-width: 430px) {
+      gap: 35px;
+    }
+    @media (max-width: 375px) {
+      gap: 30px;
+    }
   }
   &__right {
+    box-sizing: border-box;
+    display: flex;
+    padding: 0;
+    margin: 0;
     width: 400px;
-    height: auto;
+    height: 100%;
+    @media (max-width: 460px) {
+      width: 350px;
+    }
+    @media (max-width: 430px) {
+      width: 340px;
+    }
+    @media (max-width: 420px) {
+      width: 330px;
+    }
+    @media (max-width: 390px) {
+      width: 320px;
+    }
+    @media (max-width: 380px) {
+      width: 300px;
+    }
+    @media (max-width: 370px) {
+      width: 290px;
+    }
   }
   &__image {
     width: 100%;
@@ -41,6 +82,27 @@
     padding: 0;
     font-size: 64px;
     font-weight: 600;
+    color: #1c1c1c;
+    @media (max-width: 1200px) {
+      font-size: 54px;
+    }
+    @media (max-width: 460px) {
+      font-size: 50px;
+    }
+    @media (max-width: 460px) {
+      font-size: 50px;
+    }
+    @media (max-width: 575px) {
+      font-size: 45px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    @media (max-width: 575px) {
+      font-size: 40px;
+    }
+    @media (max-width: 375px) {
+      font-size: 35px;
+    }
   }
   &__paragraph {
     margin: 0;
@@ -48,22 +110,100 @@
     padding: 0 0 0 10px;
     border-left: 4px solid #1d6a5f;
     font-weight: 420;
+    color: #1c1c1c;
+    @media (max-width: 1200px) {
+      font-size: 22px;
+    }
+    @media (max-width: 1135px) {
+      padding: 0;
+      border-left: none;
+    }
+    @media (max-width: 767px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    @media (max-width: 575px) {
+      font-size: 20px;
+    }
+    @media (max-width: 430px) {
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+    @media (max-width: 390px) {
+      font-size: 19px;
+    }
+    @media (max-width: 375px) {
+      font-size: 18px;
+    }
+    @media (max-width: 360px) {
+      font-size: 17px;
+    }
   }
-  &__emph-secondary {
-    color: #1d6a5f;
-    font-weight: 550;
-  }
-  &__emph-primary {
+  &__text-primary {
     color: #ef7445;
+  }
+  &__text-secondary {
+    color: #1d6a5f;
+  }
+  &__text-strong {
+    font-weight: 550;
   }
   &__buttons {
     display: flex;
     flex-direction: row;
     justify-content: start;
     gap: 15px;
+    @media (max-width: 1135px) {
+      justify-content: center;
+    }
   }
   &__button {
-    @include buttons.button();
+    text-decoration: none;
+    box-sizing: border-box;
+    @include buttons.button(
+      $height: 54px,
+      $padding: 0 32px,
+      $font-size: 18px,
+      $width: fit-content,
+      $border-radius: 30px
+    );
+    @media (max-width: 767px) {
+      @include buttons.button(
+        $height: 48px,
+        $padding: 0 24px,
+        $font-size: 17px,
+        $width: fit-content,
+        $border-radius: 30px
+      );
+    }
+    @media (max-width: 575px) {
+      @include buttons.button(
+        $height: 46px,
+        $padding: 0 20px,
+        $font-size: 17px,
+        $width: fit-content,
+        $border-radius: 30px
+      );
+    }
+    @media (max-width: 390px) {
+      @include buttons.button(
+        $height: 44px,
+        $padding: 0 18px,
+        $font-size: 17px,
+        $width: fit-content,
+        $border-radius: 30px
+      );
+    }
+    @media (max-width: 380px) {
+      @include buttons.button(
+        $height: 42px,
+        $padding: 0 16px,
+        $font-size: 16px,
+        $width: fit-content,
+        $border-radius: 30px
+      );
+    }
+
     &--primary {
       @include buttons.button-variant(
         $bg-color: #ef7445,
@@ -72,51 +212,72 @@
         $active-bg: #ef7445,
         $font-weight: 500
       );
+      @media (max-width: 390px) {
+        @include buttons.button-variant(
+          $bg-color: #ef7445,
+          $text-color: #ffffff,
+          $hover-bg: #ef7445,
+          $active-bg: #ef7445,
+          $font-weight: 430
+        );
+      }
     }
+
     &--secondary {
       @include buttons.button-variant(
-        $bg-color: #1b655a,
-        $text-color: #ffffff,
-        $hover-bg: #1b655a,
-        $active-bg: #1b655a,
-        $font-weight: 500
+        $bg-color: transparent,
+        $text-color: #1d6a5f,
+        $hover-bg: #e6f6f2,
+        $active-bg: #e6f6f2,
+        $font-weight: 500,
+        $border: 1px solid #1d6a5f
       );
+      @media (max-width: 390px) {
+        @include buttons.button-variant(
+          $bg-color: transparent,
+          $text-color: #1d6a5f,
+          $hover-bg: #e6f6f2,
+          $active-bg: #e6f6f2,
+          $font-weight: 430,
+          $border: 1px solid #1d6a5f
+        );
+      }
     }
   }
-  &__nav-button {
-    @include buttons.button($height: 42px, $padding: 10px, $font-size: 16px);
-    @include buttons.button-variant(
-      $bg-color: #a5c3bf,
-      $text-color: inherit,
-      $hover-bg: #1b655a,
-      $active-bg: #1b655a,
-      $font-weight: 500,
-      $border: none,
-    );
-    min-height: 42px;
-    min-width: 42px;
-    box-sizing: border-box;
-    border-radius: 50%;
-    img {
-      width: 20px;
-      height: 20px;
-    }
-  }
-  &__indexes{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 50px;
-    display: flex;
-    gap: 10px;
-  }
-  &__index{
-    width: 26px;
-    height: 8px;
-    background-color: #a5c3bf;
-    border-radius: 8px;
-    &--active{
-      background-color: #1b655a;
-    }
-  }
+  //&__nav-button {
+  //  @include buttons.button($height: 42px, $padding: 10px, $font-size: 16px);
+  //  @include buttons.button-variant(
+  //    $bg-color: #a5c3bf,
+  //    $text-color: inherit,
+  //    $hover-bg: #1b655a,
+  //    $active-bg: #1b655a,
+  //    $font-weight: 500,
+  //    $border: none
+  //  );
+  //  min-height: 42px;
+  //  min-width: 42px;
+  //  box-sizing: border-box;
+  //  border-radius: 50%;
+  //  img {
+  //    width: 20px;
+  //    height: 20px;
+  //  }
+  //}
+  //&__indexes {
+  //  position: absolute;
+  //  left: 50%;
+  //  transform: translateX(-50%);
+  //  bottom: 50px;
+  //  display: flex;
+  //  gap: 10px;
+  //}
+  //&__index {
+  //  width: 26px;
+  //  height: 8px;
+  //  background-color: #a5c3bf;
+  //  border-radius: 8px;
+  //  &--active {
+  //    background-color: #1b655a;
+  //  }
+  //}
 }

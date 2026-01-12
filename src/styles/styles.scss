@@ -11,14 +11,26 @@
   font-weight: 100 1000;
   font-style: normal;
 }
-
 body {
   position: relative;
   margin: 0;
-  padding: 81px 0 0;
-  //background-color: rgba(241, 233, 225, 0.35);
+  padding: 82px 0 0;
   background-color: #ffffff;
   font-family: 'DM Sans', sans-serif;
   box-sizing: border-box;
+}
+
+
+/* Lenis */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 

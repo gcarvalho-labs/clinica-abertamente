@@ -1,0 +1,48 @@
+<section class="blog">
+  <div class="blog__container">
+    <div class="blog__content">
+      <div class="blog__header">
+        <h3 class="blog__label">NOSSO BLOG</h3>
+        <div class="blog__header-row">
+          <h2 class="blog__title">Conteúdo mais recente publicado</h2>
+          <button class="blog__button blog__button--primary-outline">
+            Blog
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="blog__posts">
+        <app-post
+          image="images/blog/post2.png"
+          imageAlt="Imagem do blog 2"
+          title="A importância do autocuidado emocional"
+          description="Reflexões sobre práticas simples que ajudam a manter o equilíbrio emocional ao longo da vida."
+          authorName="Pedro Ribeiro"
+          [authorImage]="{
+            src: 'images/blog/author.png',
+            alt: 'imgAutor',
+          }"
+          date="15 Dez, 2025"
+          readTime="7 min de leitura"
+        ></app-post>
+
+        <app-post
+          image="images/blog/post1.png"
+          imageAlt="Imagem do blog 1"
+          title="Como a ansiedade se manifesta no dia a dia"
+          description="Entenda sinais comuns da ansiedade e como eles podem aparecer na rotina, nas relações e no trabalho."
+          authorName="Pedro Ribeiro"
+          [authorImage]="{
+            src: 'images/blog/author.png',
+            alt: 'imgAutor',
+          }"
+          date="15 Dez, 2025"
+          readTime="8 min de leitura"
+        ></app-post>
+
+
+      </div>
+    </div>
+  </div>
+</section>

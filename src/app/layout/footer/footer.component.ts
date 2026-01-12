@@ -1,9 +1,9 @@
 import { Component, HostListener } from '@angular/core';
-import { NgClass, NgForOf, NgIf } from '@angular/common';
+import { NgClass, NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
-  imports: [NgForOf, NgClass, NgIf],
+  imports: [NgForOf, NgClass],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })

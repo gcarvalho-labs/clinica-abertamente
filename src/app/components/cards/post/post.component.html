@@ -1,0 +1,28 @@
+<div class="post">
+  <div class="post__image-container">
+    <img class="post__image" [src]="image" [alt]="imageAlt" />
+  </div>
+
+  <div class="post__text-container">
+    <div class="post__header">
+      <h4 class="post__title">{{ title }}</h4>
+      <p class="post__description">{{ description }}</p>
+    </div>
+
+    <div class="post__author">
+      <div class="post__author-avatar">
+        <img class="post__author-image" [src]="authorImage.src" [alt]="authorImage.alt" />
+      </div>
+
+      <div class="post__author-info">
+        <p class="post__author-name">{{ authorName }}</p>
+
+        <div class="post__author-meta">
+          <span>{{ date }}</span>
+          <span class="post__author-separator"></span>
+          <span>{{ readTime }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
