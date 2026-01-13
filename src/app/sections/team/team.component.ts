@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { MemberComponent } from '../../components/cards/member/member.component';
-import { RevealOnScrollDirective } from '../../diretives/reveal-on-scroll.directive';
+import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-team',

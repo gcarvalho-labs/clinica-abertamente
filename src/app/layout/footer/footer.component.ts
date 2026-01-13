@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { NgClass, NgForOf } from '@angular/common';
 
 @Component({
@@ -7,8 +7,13 @@ import { NgClass, NgForOf } from '@angular/common';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
-export class FooterComponent {
-  isMobile = window.innerWidth <= 991;
+export class FooterComponent implements OnInit {
+  isMobile = false;
+
+  ngOnInit(): void {
+    if (typeof window === 'undefined') return;
+    this.isMobile = window.innerWidth <= 991;
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {

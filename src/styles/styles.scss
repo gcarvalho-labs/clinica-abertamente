@@ -34,3 +34,8 @@ html.lenis {
   overflow: hidden;
 }
 
+/* Fallback SSR / no-JS */
+app-root:not(.hydrated) [appRevealOnScroll] {
+  opacity: 1;
+  transform: none;
+}

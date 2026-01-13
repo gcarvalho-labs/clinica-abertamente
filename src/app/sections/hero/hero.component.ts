@@ -1,5 +1,5 @@
-import { Component, HostListener } from '@angular/core';
-import { RevealOnScrollDirective } from '../../diretives/reveal-on-scroll.directive';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-hero',
@@ -7,8 +7,14 @@ import { RevealOnScrollDirective } from '../../diretives/reveal-on-scroll.direct
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
-export class HeroComponent {
-  isMobile = window.innerWidth <= 991;
+export class HeroComponent implements OnInit{
+  isMobile = false;
+
+  ngOnInit(): void {
+    if (typeof window === 'undefined') return;
+    this.isMobile = window.innerWidth <= 991;
+  }
+
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {

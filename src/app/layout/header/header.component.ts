@@ -2,7 +2,7 @@ import {
   Component,
   EventEmitter,
   HostListener,
-  Input,
+  Input, OnInit,
   Output,
 } from '@angular/core';
 import { NgForOf, NgIf, NgClass } from '@angular/common';
@@ -13,14 +13,19 @@ import { NgForOf, NgIf, NgClass } from '@angular/common';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   @Input() items: { name: string }[] = [];
   @Input() logo!: { src: string; alt: string };
   @Input() button!: { name: string };
   @Output() navigateToSection = new EventEmitter<string>();
 
   activeIndex = 0;
-  isMobile = window.innerWidth <= 991;
+  isMobile = false;
+
+  ngOnInit(): void {
+    if (typeof window === 'undefined') return;
+    this.isMobile = window.innerWidth <= 991;
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {

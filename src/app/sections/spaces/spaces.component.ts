@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RevealOnScrollDirective } from '../../diretives/reveal-on-scroll.directive';
+import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-spaces',

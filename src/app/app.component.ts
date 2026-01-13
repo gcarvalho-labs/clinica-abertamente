@@ -10,7 +10,6 @@ import { ContactComponent } from './sections/contact/contact.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ToggleButtonComponent } from './components/buttons/toggle-button/toggle-button.component';
 import { DrawerComponent } from './layout/drawer/drawer.component';
-import Lenis from '@studio-freight/lenis';
 import { BlogComponent } from './sections/blog/blog.component';
 import { FloatingButtonComponent } from './components/buttons/floating-button/floating-button.component';
 
@@ -35,15 +34,18 @@ import { FloatingButtonComponent } from './components/buttons/floating-button/fl
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements AfterViewInit {
-  private lenis!: Lenis;
+  private lenis: any;
   constructor(private zone: NgZone) {}
 
   ngAfterViewInit(): void {
+    if (typeof window === 'undefined') return;
     // 🔒 Impede o browser de restaurar scroll no refresh
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
+    document.querySelector('app-root')?.classList.add('hydrated');
 
+    import('@studio-freight/lenis').then(({ default: Lenis }) => {
     this.zone.runOutsideAngular(() => {
       this.lenis = new Lenis({
         duration: 1.1,
@@ -64,6 +66,7 @@ export class AppComponent implements AfterViewInit {
       requestAnimationFrame(() => {
         this.lenis.scrollTo(0, { immediate: true });
       });
+    });
     });
   }
 

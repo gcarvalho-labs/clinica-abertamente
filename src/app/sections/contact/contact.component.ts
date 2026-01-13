@@ -1,6 +1,6 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
-import { RevealOnScrollDirective } from '../../diretives/reveal-on-scroll.directive';
+import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-contact',
@@ -8,8 +8,13 @@ import { RevealOnScrollDirective } from '../../diretives/reveal-on-scroll.direct
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {
-  isMobile = window.innerWidth <= 991;
+export class ContactComponent implements OnInit {
+  isMobile = false;
+
+  ngOnInit(): void {
+    if (typeof window === 'undefined') return;
+    this.isMobile = window.innerWidth <= 991;
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
