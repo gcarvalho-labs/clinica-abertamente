@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/app.component.scss"],
-  "sourcesContent": [".drawer-backdrop {\r\n  position: fixed;\r\n  inset: 0;\r\n  background-color: rgba(0, 0, 0, 0.35);\r\n  opacity: 0;\r\n  visibility: hidden;\r\n  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;\r\n  z-index: 90;\r\n}\r\n\r\n.drawer-backdrop--active {\r\n  opacity: 1;\r\n  visibility: visible;\r\n}\r\n"],
-  "mappings": ";AAAA,CAAA;AACE,YAAA;AACA,SAAA;AACA,oBAAA,KAAA,CAAA,EAAA,CAAA,EAAA,CAAA,EAAA;AACA,WAAA;AACA,cAAA;AACA,cAAA,QAAA,KAAA,WAAA,EAAA,WAAA,KAAA;AACA,WAAA;;AAGF,CAAA;AACE,WAAA;AACA,cAAA;;",
-  "names": []
-}
