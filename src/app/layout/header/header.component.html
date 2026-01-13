@@ -8,7 +8,11 @@
           href="#"
           (click)="$event.preventDefault(); onButtonClick('Hero')"
         >
-          <img src="images/Logo.png" [alt]="logo.alt" style="width: 85px" />
+          <img
+            src="images/Logo.png"
+            [alt]="logo.alt"
+            style="width: 85px; height: auto"
+          />
         </a>
       </li>
       <li *ngFor="let item of items; let i = index" class="header__item">
@@ -39,7 +43,11 @@
     <ul class="header__list" *ngIf="isMobile">
       <li class="header__item header__item--left">
         <a class="header__link" href="">
-          <img src="images/Logo.png" [alt]="logo.alt" style="width: 85px" />
+          <img
+            src="images/Logo.png"
+            [alt]="logo.alt"
+            style="width: 85px; height: auto"
+          />
         </a>
       </li>
       <li class="header__item header__item--right">
