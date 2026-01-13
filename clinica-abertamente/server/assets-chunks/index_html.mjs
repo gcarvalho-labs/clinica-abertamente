@@ -1,0 +1,2836 @@
+export default `<!DOCTYPE html><html lang="pt-br"><head>
+    <meta charset="utf-8">
+    <title>Clínica Abertamente</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <link rel="stylesheet" href="styles.css"><style ng-app-id="ng">
+
+.drawer-backdrop[_ngcontent-ng-c3665638741] {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 90;
+}
+.drawer-backdrop--active[_ngcontent-ng-c3665638741] {
+  opacity: 1;
+  visibility: visible;
+}
+/*# sourceMappingURL=/app.component.css.map */</style><style ng-app-id="ng">
+
+.header[_ngcontent-ng-c4075399327] {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 81px;
+  z-index: 100;
+  box-sizing: border-box;
+  background-color: white;
+}
+.header__nav[_ngcontent-ng-c4075399327] {
+  position: relative;
+  background-color: white;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .header__nav[_ngcontent-ng-c4075399327] {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .header__nav[_ngcontent-ng-c4075399327] {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .header__nav[_ngcontent-ng-c4075399327] {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .header__nav[_ngcontent-ng-c4075399327] {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .header__nav[_ngcontent-ng-c4075399327] {
+    max-width: 1420px;
+  }
+}
+.header__list[_ngcontent-ng-c4075399327] {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.header__item[_ngcontent-ng-c4075399327] {
+  box-sizing: border-box;
+  position: relative;
+}
+.header__item--left[_ngcontent-ng-c4075399327] {
+  position: absolute;
+  left: 0;
+}
+.header__item--right[_ngcontent-ng-c4075399327] {
+  position: absolute;
+  right: 0;
+}
+.header__item--emphasis[_ngcontent-ng-c4075399327] {
+  font-size: 16px;
+  min-height: 44px;
+  border: none;
+  border-radius: 30px;
+  padding: 0 19px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  line-height: 18px;
+  transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+  background-color: white;
+  color: #ef7445;
+  font-weight: 500;
+  border: 1px solid #ef7445;
+}
+.header__item--emphasis[_ngcontent-ng-c4075399327]:hover {
+  transform: scale(0.95);
+  color: #ef7445;
+  background-color: rgba(239, 116, 69, 0.08);
+}
+.header__item--emphasis[_ngcontent-ng-c4075399327]:active {
+  background-color: rgba(239, 116, 69, 0.16);
+  transition: transform 0.08s ease-in-out;
+}
+.header__item--emphasis__link[_ngcontent-ng-c4075399327] {
+  color: white;
+}
+.header__link[_ngcontent-ng-c4075399327] {
+  box-sizing: border-box;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+}
+.header__indicator[_ngcontent-ng-c4075399327] {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  box-sizing: border-box;
+  background-color: #ef7445;
+  width: 100%;
+  min-height: 4px;
+  max-height: 4px;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease-in-out;
+}
+.header__indicator--visible[_ngcontent-ng-c4075399327] {
+  opacity: 1;
+  visibility: visible;
+}
+/*# sourceMappingURL=/header.component.css.map */</style><style ng-app-id="ng">
+
+.toggle-button[_ngcontent-ng-c3886778358] {
+  height: 44px;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid #ede9e1;
+  background-color: #f9f8f6;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+.toggle-button--active[_ngcontent-ng-c3886778358]   .toggle-button__line[_ngcontent-ng-c3886778358]:first-child {
+  width: 60%;
+}
+.toggle-button--active[_ngcontent-ng-c3886778358]   .toggle-button__line[_ngcontent-ng-c3886778358]:last-child {
+  width: 100%;
+}
+.toggle-button__line[_ngcontent-ng-c3886778358] {
+  background-color: #323233;
+  height: 2px;
+  border-radius: 8px;
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.toggle-button__line[_ngcontent-ng-c3886778358]:first-child {
+  width: 100%;
+}
+.toggle-button__line[_ngcontent-ng-c3886778358]:last-child {
+  width: 60%;
+}
+/*# sourceMappingURL=/toggle-button.component.css.map */</style><style ng-app-id="ng">
+
+.drawer[_ngcontent-ng-c4082130107] {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 81px;
+  transform: translateY(-100%);
+  z-index: -1;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .drawer[_ngcontent-ng-c4082130107] {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .drawer[_ngcontent-ng-c4082130107] {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .drawer[_ngcontent-ng-c4082130107] {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .drawer[_ngcontent-ng-c4082130107] {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .drawer[_ngcontent-ng-c4082130107] {
+    max-width: 1420px;
+  }
+}
+.drawer--active[_ngcontent-ng-c4082130107] {
+  transform: translateY(14px);
+}
+.drawer__list[_ngcontent-ng-c4082130107] {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  background-color: white;
+  border-radius: 25px;
+}
+.drawer__item[_ngcontent-ng-c4082130107] {
+  height: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.drawer__item[_ngcontent-ng-c4082130107]:not(:last-child, :first-child) {
+  border-top: 1px solid #ede9e1;
+}
+.drawer__item[_ngcontent-ng-c4082130107]:first-child {
+  padding-top: 0;
+}
+.drawer__item--emphasis[_ngcontent-ng-c4082130107] {
+  box-sizing: border-box;
+  font-size: 16px;
+  min-height: 40px;
+  border: none;
+  border-radius: 30px;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  line-height: 18px;
+  transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+  background-color: white;
+  color: #ef7445;
+  font-weight: 500;
+  border: 1px solid #ef7445;
+}
+.drawer__item--emphasis[_ngcontent-ng-c4082130107]:hover {
+  transform: scale(0.95);
+  color: #ef7445;
+  background-color: rgba(239, 116, 69, 0.08);
+}
+.drawer__item--emphasis[_ngcontent-ng-c4082130107]:active {
+  background-color: rgba(239, 116, 69, 0.16);
+  transition: transform 0.08s ease-in-out;
+}
+.drawer__item--emphasis[_ngcontent-ng-c4082130107]   .header__link[_ngcontent-ng-c4082130107] {
+  color: white;
+}
+.drawer__link[_ngcontent-ng-c4082130107] {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+}
+/*# sourceMappingURL=/drawer.component.css.map */</style><style ng-app-id="ng">
+
+.hero[_ngcontent-ng-c167873010] {
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  width: 100%;
+  margin-bottom: 100px;
+}
+.hero.is-visible[_ngcontent-ng-c167873010] {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero__container[_ngcontent-ng-c167873010] {
+  box-sizing: border-box;
+  width: 100%;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .hero__container[_ngcontent-ng-c167873010] {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .hero__container[_ngcontent-ng-c167873010] {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .hero__container[_ngcontent-ng-c167873010] {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .hero__container[_ngcontent-ng-c167873010] {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .hero__container[_ngcontent-ng-c167873010] {
+    max-width: 1420px;
+  }
+}
+.hero__carousel[_ngcontent-ng-c167873010] {
+  background-color: #f8f7f6;
+  border: 1px solid #f1f0ee;
+  border-radius: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+  padding-top: 36px;
+  width: 100%;
+}
+@media (max-width: 1135px) {
+  .hero__carousel[_ngcontent-ng-c167873010] {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}
+.hero__left[_ngcontent-ng-c167873010] {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 650px;
+}
+@media (max-width: 1200px) {
+  .hero__left[_ngcontent-ng-c167873010] {
+    max-width: 555px;
+  }
+}
+@media (max-width: 1135px) {
+  .hero__left[_ngcontent-ng-c167873010] {
+    max-width: 555px;
+  }
+}
+@media (max-width: 430px) {
+  .hero__left[_ngcontent-ng-c167873010] {
+    gap: 35px;
+  }
+}
+@media (max-width: 375px) {
+  .hero__left[_ngcontent-ng-c167873010] {
+    gap: 30px;
+  }
+}
+.hero__right[_ngcontent-ng-c167873010] {
+  box-sizing: border-box;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 400px;
+  height: 100%;
+}
+@media (max-width: 460px) {
+  .hero__right[_ngcontent-ng-c167873010] {
+    width: 350px;
+  }
+}
+@media (max-width: 430px) {
+  .hero__right[_ngcontent-ng-c167873010] {
+    width: 340px;
+  }
+}
+@media (max-width: 420px) {
+  .hero__right[_ngcontent-ng-c167873010] {
+    width: 330px;
+  }
+}
+@media (max-width: 390px) {
+  .hero__right[_ngcontent-ng-c167873010] {
+    width: 320px;
+  }
+}
+@media (max-width: 380px) {
+  .hero__right[_ngcontent-ng-c167873010] {
+    width: 300px;
+  }
+}
+@media (max-width: 370px) {
+  .hero__right[_ngcontent-ng-c167873010] {
+    width: 290px;
+  }
+}
+.hero__image[_ngcontent-ng-c167873010] {
+  width: 100%;
+  height: 100%;
+}
+.hero__title[_ngcontent-ng-c167873010] {
+  margin: 0;
+  padding: 0;
+  font-size: 64px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+@media (max-width: 1200px) {
+  .hero__title[_ngcontent-ng-c167873010] {
+    font-size: 54px;
+  }
+}
+@media (max-width: 460px) {
+  .hero__title[_ngcontent-ng-c167873010] {
+    font-size: 50px;
+  }
+}
+@media (max-width: 460px) {
+  .hero__title[_ngcontent-ng-c167873010] {
+    font-size: 50px;
+  }
+}
+@media (max-width: 575px) {
+  .hero__title[_ngcontent-ng-c167873010] {
+    font-size: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 575px) {
+  .hero__title[_ngcontent-ng-c167873010] {
+    font-size: 40px;
+  }
+}
+@media (max-width: 375px) {
+  .hero__title[_ngcontent-ng-c167873010] {
+    font-size: 35px;
+  }
+}
+.hero__paragraph[_ngcontent-ng-c167873010] {
+  margin: 0;
+  font-size: 24px;
+  padding: 0 0 0 10px;
+  border-left: 4px solid #1d6a5f;
+  font-weight: 420;
+  color: #1c1c1c;
+}
+@media (max-width: 1200px) {
+  .hero__paragraph[_ngcontent-ng-c167873010] {
+    font-size: 22px;
+  }
+}
+@media (max-width: 1135px) {
+  .hero__paragraph[_ngcontent-ng-c167873010] {
+    padding: 0;
+    border-left: none;
+  }
+}
+@media (max-width: 767px) {
+  .hero__paragraph[_ngcontent-ng-c167873010] {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 575px) {
+  .hero__paragraph[_ngcontent-ng-c167873010] {
+    font-size: 20px;
+  }
+}
+@media (max-width: 430px) {
+  .hero__paragraph[_ngcontent-ng-c167873010] {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+@media (max-width: 390px) {
+  .hero__paragraph[_ngcontent-ng-c167873010] {
+    font-size: 19px;
+  }
+}
+@media (max-width: 375px) {
+  .hero__paragraph[_ngcontent-ng-c167873010] {
+    font-size: 18px;
+  }
+}
+@media (max-width: 360px) {
+  .hero__paragraph[_ngcontent-ng-c167873010] {
+    font-size: 17px;
+  }
+}
+.hero__text-primary[_ngcontent-ng-c167873010] {
+  color: #ef7445;
+}
+.hero__text-secondary[_ngcontent-ng-c167873010] {
+  color: #1d6a5f;
+}
+.hero__text-strong[_ngcontent-ng-c167873010] {
+  font-weight: 550;
+}
+.hero__buttons[_ngcontent-ng-c167873010] {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 15px;
+}
+@media (max-width: 1135px) {
+  .hero__buttons[_ngcontent-ng-c167873010] {
+    justify-content: center;
+  }
+}
+.hero__button[_ngcontent-ng-c167873010] {
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 18px;
+  min-height: 54px;
+  border: none;
+  border-radius: 30px;
+  padding: 0 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  line-height: 18px;
+  transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+}
+@media (max-width: 767px) {
+  .hero__button[_ngcontent-ng-c167873010] {
+    font-size: 17px;
+    min-height: 48px;
+    border: none;
+    border-radius: 30px;
+    padding: 0 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    line-height: 18px;
+    transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    outline: none;
+  }
+}
+@media (max-width: 575px) {
+  .hero__button[_ngcontent-ng-c167873010] {
+    font-size: 17px;
+    min-height: 46px;
+    border: none;
+    border-radius: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    line-height: 18px;
+    transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    outline: none;
+  }
+}
+@media (max-width: 390px) {
+  .hero__button[_ngcontent-ng-c167873010] {
+    font-size: 17px;
+    min-height: 44px;
+    border: none;
+    border-radius: 30px;
+    padding: 0 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    line-height: 18px;
+    transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    outline: none;
+  }
+}
+@media (max-width: 380px) {
+  .hero__button[_ngcontent-ng-c167873010] {
+    font-size: 16px;
+    min-height: 42px;
+    border: none;
+    border-radius: 30px;
+    padding: 0 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    line-height: 18px;
+    transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    outline: none;
+  }
+}
+.hero__button--primary[_ngcontent-ng-c167873010] {
+  background-color: #ef7445;
+  color: #ffffff;
+  font-weight: 500;
+  border: none;
+}
+.hero__button--primary[_ngcontent-ng-c167873010]:hover {
+  transform: scale(0.95);
+  color: #ffffff;
+  background-color: #ef7445;
+}
+.hero__button--primary[_ngcontent-ng-c167873010]:active {
+  background-color: #ef7445;
+  transition: transform 0.08s ease-in-out;
+}
+@media (max-width: 390px) {
+  .hero__button--primary[_ngcontent-ng-c167873010] {
+    background-color: #ef7445;
+    color: #ffffff;
+    font-weight: 430;
+    border: none;
+  }
+  .hero__button--primary[_ngcontent-ng-c167873010]:hover {
+    transform: scale(0.95);
+    color: #ffffff;
+    background-color: #ef7445;
+  }
+  .hero__button--primary[_ngcontent-ng-c167873010]:active {
+    background-color: #ef7445;
+    transition: transform 0.08s ease-in-out;
+  }
+}
+.hero__button--secondary[_ngcontent-ng-c167873010] {
+  background-color: transparent;
+  color: #1d6a5f;
+  font-weight: 500;
+  border: 1px solid #1d6a5f;
+}
+.hero__button--secondary[_ngcontent-ng-c167873010]:hover {
+  transform: scale(0.95);
+  color: #1d6a5f;
+  background-color: #e6f6f2;
+}
+.hero__button--secondary[_ngcontent-ng-c167873010]:active {
+  background-color: #e6f6f2;
+  transition: transform 0.08s ease-in-out;
+}
+@media (max-width: 390px) {
+  .hero__button--secondary[_ngcontent-ng-c167873010] {
+    background-color: transparent;
+    color: #1d6a5f;
+    font-weight: 430;
+    border: 1px solid #1d6a5f;
+  }
+  .hero__button--secondary[_ngcontent-ng-c167873010]:hover {
+    transform: scale(0.95);
+    color: #1d6a5f;
+    background-color: #e6f6f2;
+  }
+  .hero__button--secondary[_ngcontent-ng-c167873010]:active {
+    background-color: #e6f6f2;
+    transition: transform 0.08s ease-in-out;
+  }
+}
+/*# sourceMappingURL=/hero.component.css.map */</style><style ng-app-id="ng">
+
+.services[_ngcontent-ng-c1118500774] {
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom: 100px;
+}
+.services.is-visible[_ngcontent-ng-c1118500774] {
+  opacity: 1;
+  transform: translateY(0);
+}
+.services__container[_ngcontent-ng-c1118500774] {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .services__container[_ngcontent-ng-c1118500774] {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .services__container[_ngcontent-ng-c1118500774] {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .services__container[_ngcontent-ng-c1118500774] {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .services__container[_ngcontent-ng-c1118500774] {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .services__container[_ngcontent-ng-c1118500774] {
+    max-width: 1420px;
+  }
+}
+.services__header[_ngcontent-ng-c1118500774] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.services__label[_ngcontent-ng-c1118500774] {
+  margin: 0;
+  color: #1d6a5f;
+  background-color: white;
+  border: 1px solid #1b655a;
+  border-radius: 30px;
+  padding: 0 18px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+}
+.services__title[_ngcontent-ng-c1118500774] {
+  margin: 0;
+  font-size: 46px;
+  line-height: 32px;
+  font-weight: normal;
+}
+.services__title--emphasis[_ngcontent-ng-c1118500774] {
+  color: #ef7445;
+  font-weight: 600;
+}
+@media (max-width: 375px) {
+  .services__title[_ngcontent-ng-c1118500774] {
+    font-size: 40px;
+  }
+}
+.services__grid[_ngcontent-ng-c1118500774] {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+}
+@media (max-width: 408px) {
+  .services__grid[_ngcontent-ng-c1118500774] {
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  }
+}
+@media (max-width: 385px) {
+  .services__grid[_ngcontent-ng-c1118500774] {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+@media (max-width: 375px) {
+  .services__grid[_ngcontent-ng-c1118500774] {
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  }
+}
+@media (max-width: 370px) {
+  .services__grid[_ngcontent-ng-c1118500774] {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+.services__paragraph[_ngcontent-ng-c1118500774] {
+  margin: auto auto 22px;
+  max-width: 610px;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+}
+.services__buttons[_ngcontent-ng-c1118500774] {
+  display: flex;
+  margin: auto;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.services__button--primary[_ngcontent-ng-c1118500774] {
+  font-size: 18px;
+  min-height: 54px;
+  border: none;
+  border-radius: 30px;
+  padding: 0 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  line-height: 18px;
+  transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+  background-color: #ef7445;
+  color: #ffffff;
+  font-weight: 500;
+  border: 1px solid #ef7445;
+}
+.services__button--primary[_ngcontent-ng-c1118500774]:hover {
+  transform: scale(0.95);
+  color: #ffffff;
+  background-color: #e87144;
+}
+.services__button--primary[_ngcontent-ng-c1118500774]:active {
+  background-color: #e87144;
+  transition: transform 0.08s ease-in-out;
+}
+.services__button--primary-outline[_ngcontent-ng-c1118500774] {
+  font-size: 18px;
+  min-height: 54px;
+  border: none;
+  border-radius: 30px;
+  padding: 0 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  line-height: 18px;
+  transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+  background-color: white;
+  color: #ef7445;
+  font-weight: 500;
+  border: 1px solid #ef7445;
+}
+.services__button--primary-outline[_ngcontent-ng-c1118500774]:hover {
+  transform: scale(0.95);
+  color: #ef7445;
+  background-color: rgba(239, 116, 69, 0.08);
+}
+.services__button--primary-outline[_ngcontent-ng-c1118500774]:active {
+  background-color: rgba(239, 116, 69, 0.16);
+  transition: transform 0.08s ease-in-out;
+}
+/*# sourceMappingURL=/services.component.css.map */</style><style ng-app-id="ng">
+
+.team[_ngcontent-ng-c4214481489] {
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom: 100px;
+}
+.team.is-visible[_ngcontent-ng-c4214481489] {
+  opacity: 1;
+  transform: translateY(0);
+}
+.team__container[_ngcontent-ng-c4214481489] {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .team__container[_ngcontent-ng-c4214481489] {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .team__container[_ngcontent-ng-c4214481489] {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .team__container[_ngcontent-ng-c4214481489] {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .team__container[_ngcontent-ng-c4214481489] {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .team__container[_ngcontent-ng-c4214481489] {
+    max-width: 1420px;
+  }
+}
+.team__header[_ngcontent-ng-c4214481489] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.team__label[_ngcontent-ng-c4214481489] {
+  margin: 0;
+  color: #1d6a5f;
+  border: 1px solid #1b655a;
+  border-radius: 30px;
+  padding: 0 18px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+}
+.team__title[_ngcontent-ng-c4214481489] {
+  margin: 0;
+  font-size: 46px;
+  line-height: 32px;
+  font-weight: normal;
+}
+.team__title--emphasis[_ngcontent-ng-c4214481489] {
+  color: #ef7445;
+  font-weight: 600;
+}
+@media (max-width: 375px) {
+  .team__title[_ngcontent-ng-c4214481489] {
+    font-size: 40px;
+  }
+}
+.team__paragraph[_ngcontent-ng-c4214481489] {
+  margin: auto auto 20px;
+  max-width: 610px;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+}
+.team__carousel-container[_ngcontent-ng-c4214481489] {
+  margin-bottom: 60px;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+.team__carousel[_ngcontent-ng-c4214481489] {
+  display: flex;
+  gap: 16px;
+  will-change: transform;
+  touch-action: pan-y;
+}
+.team__controls[_ngcontent-ng-c4214481489] {
+  display: none;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+@media (min-width: 740px) and (max-width: 1400px) {
+  .team__controls[_ngcontent-ng-c4214481489] {
+    display: flex;
+  }
+}
+.team__control-button[_ngcontent-ng-c4214481489] {
+  min-width: 70px;
+  max-width: 70px;
+  font-size: 16px;
+  min-height: 35px;
+  border: none;
+  border-radius: 30px;
+  padding: 0 19px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  line-height: 18px;
+  transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+  background-color: white;
+  color: #ef7445;
+  font-weight: 500;
+  border: 1px solid #ef7445;
+}
+.team__control-button[_ngcontent-ng-c4214481489]:hover {
+  transform: scale(0.95);
+  color: #ef7445;
+  background-color: rgba(239, 116, 69, 0.08);
+}
+.team__control-button[_ngcontent-ng-c4214481489]:active {
+  background-color: rgba(239, 116, 69, 0.16);
+  transition: transform 0.08s ease-in-out;
+}
+.team__control-icon[_ngcontent-ng-c4214481489] {
+  color: #ef7445;
+  font-size: 17px;
+}
+/*# sourceMappingURL=/team.component.css.map */</style><style ng-app-id="ng">
+
+.method[_ngcontent-ng-c3875870653] {
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom: 100px;
+}
+.method.is-visible[_ngcontent-ng-c3875870653] {
+  opacity: 1;
+  transform: translateY(0);
+}
+.method__container[_ngcontent-ng-c3875870653] {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .method__container[_ngcontent-ng-c3875870653] {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .method__container[_ngcontent-ng-c3875870653] {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .method__container[_ngcontent-ng-c3875870653] {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .method__container[_ngcontent-ng-c3875870653] {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .method__container[_ngcontent-ng-c3875870653] {
+    max-width: 1420px;
+  }
+}
+.method__header[_ngcontent-ng-c3875870653] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.method__label[_ngcontent-ng-c3875870653] {
+  margin: 0;
+  color: #1d6a5f;
+  border: 1px solid #1b655a;
+  border-radius: 30px;
+  padding: 0 18px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+}
+.method__title[_ngcontent-ng-c3875870653] {
+  margin: 0;
+  font-size: 46px;
+  line-height: 32px;
+  font-weight: normal;
+}
+@media (max-width: 375px) {
+  .method__title[_ngcontent-ng-c3875870653] {
+    font-size: 40px;
+  }
+}
+.method__title--emphasis[_ngcontent-ng-c3875870653] {
+  color: #ef7445;
+  font-weight: 600;
+}
+.method__paragraph[_ngcontent-ng-c3875870653] {
+  margin: 22px auto;
+  max-width: 610px;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+}
+.method__button[_ngcontent-ng-c3875870653] {
+  margin: 0 auto;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 18px;
+  min-height: 54px;
+  border: none;
+  border-radius: 30px;
+  padding: 0 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  line-height: 18px;
+  transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+}
+.method__button--primary[_ngcontent-ng-c3875870653] {
+  background-color: #ef7445;
+  color: #ffffff;
+  font-weight: 500;
+  border: none;
+}
+.method__button--primary[_ngcontent-ng-c3875870653]:hover {
+  transform: scale(0.95);
+  color: #ffffff;
+  background-color: #ef7445;
+}
+.method__button--primary[_ngcontent-ng-c3875870653]:active {
+  background-color: #ef7445;
+  transition: transform 0.08s ease-in-out;
+}
+/*# sourceMappingURL=/method.component.css.map */</style><style ng-app-id="ng">
+
+.spaces[_ngcontent-ng-c1761990998] {
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom: 100px;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.spaces.is-visible[_ngcontent-ng-c1761990998] {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (min-width: 576px) {
+  .spaces[_ngcontent-ng-c1761990998] {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .spaces[_ngcontent-ng-c1761990998] {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .spaces[_ngcontent-ng-c1761990998] {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .spaces[_ngcontent-ng-c1761990998] {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .spaces[_ngcontent-ng-c1761990998] {
+    max-width: 1420px;
+  }
+}
+.spaces__header[_ngcontent-ng-c1761990998] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.spaces__label[_ngcontent-ng-c1761990998] {
+  margin: 0;
+  color: #1d6a5f;
+  border: 1px solid #1b655a;
+  border-radius: 30px;
+  padding: 0 18px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+.spaces__title[_ngcontent-ng-c1761990998] {
+  margin: 0;
+  font-size: 46px;
+  font-weight: normal;
+  line-height: 32px;
+}
+.spaces__title--emphasis[_ngcontent-ng-c1761990998] {
+  color: #ef7445;
+  font-weight: 600;
+}
+@media (max-width: 375px) {
+  .spaces__title[_ngcontent-ng-c1761990998] {
+    font-size: 40px;
+  }
+}
+.spaces__layout[_ngcontent-ng-c1761990998] {
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .spaces__layout[_ngcontent-ng-c1761990998] {
+    grid-template-columns: 1fr;
+  }
+}
+.spaces__main-visual[_ngcontent-ng-c1761990998] {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+.spaces__side-visuals[_ngcontent-ng-c1761990998] {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .spaces__side-visuals[_ngcontent-ng-c1761990998] {
+    flex-direction: row;
+  }
+}
+.spaces__image[_ngcontent-ng-c1761990998] {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: #f7f7f5;
+  border: 1px solid #f1f0ee;
+}
+.spaces__image--main[_ngcontent-ng-c1761990998] {
+  height: 100%;
+}
+@media (max-width: 900px) {
+  .spaces__image--main[_ngcontent-ng-c1761990998] {
+    height: 320px;
+  }
+}
+.spaces__image--side[_ngcontent-ng-c1761990998] {
+  height: 130px;
+}
+@media (max-width: 900px) {
+  .spaces__image--side[_ngcontent-ng-c1761990998] {
+    height: 160px;
+  }
+}
+.spaces__paragraph[_ngcontent-ng-c1761990998] {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.4;
+}
+/*# sourceMappingURL=/spaces.component.css.map */</style><style ng-app-id="ng">
+
+.blog[_ngcontent-ng-c616170692] {
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom: 100px;
+}
+.blog.is-visible[_ngcontent-ng-c616170692] {
+  opacity: 1;
+  transform: translateY(0);
+}
+.blog__container[_ngcontent-ng-c616170692] {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .blog__container[_ngcontent-ng-c616170692] {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .blog__container[_ngcontent-ng-c616170692] {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .blog__container[_ngcontent-ng-c616170692] {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .blog__container[_ngcontent-ng-c616170692] {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .blog__container[_ngcontent-ng-c616170692] {
+    max-width: 1420px;
+  }
+}
+.blog__header[_ngcontent-ng-c616170692] {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+@media (max-width: 991px) {
+  .blog__header[_ngcontent-ng-c616170692] {
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+.blog__header-row[_ngcontent-ng-c616170692] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .blog__header-row[_ngcontent-ng-c616170692] {
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.blog__label[_ngcontent-ng-c616170692] {
+  margin: 0;
+  color: #1d6a5f;
+  border: 1px solid #1b655a;
+  border-radius: 30px;
+  padding: 0 18px;
+  width: fit-content;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+}
+.blog__title[_ngcontent-ng-c616170692] {
+  margin: 0;
+  font-size: 46px;
+  line-height: 40px;
+  font-weight: normal;
+}
+@media (max-width: 991px) {
+  .blog__title[_ngcontent-ng-c616170692] {
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .blog__title[_ngcontent-ng-c616170692] {
+    font-size: 40px;
+  }
+}
+.blog__title--emphasis[_ngcontent-ng-c616170692] {
+  color: #ef7445;
+  font-weight: 600;
+}
+.blog__paragraph[_ngcontent-ng-c616170692] {
+  margin: 22px auto;
+  max-width: 610px;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+}
+.blog__content[_ngcontent-ng-c616170692] {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #f7f7f5;
+  border: 1px solid #f1f0ee;
+  padding: 50px;
+  border-radius: 30px;
+  gap: 32px;
+}
+@media (max-width: 767px) {
+  .blog__content[_ngcontent-ng-c616170692] {
+    padding: 30px;
+  }
+}
+@media (max-width: 430px) {
+  .blog__content[_ngcontent-ng-c616170692] {
+    padding: 30px 10px 10px;
+  }
+}
+.blog__posts[_ngcontent-ng-c616170692] {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+@media (max-width: 992px) {
+  .blog__posts[_ngcontent-ng-c616170692] {
+    flex-direction: column;
+  }
+}
+.blog__button[_ngcontent-ng-c616170692] {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-height: 44px;
+  min-width: 100px;
+  font-size: 16px;
+  min-height: 44px;
+  border: none;
+  border-radius: 30px;
+  padding: 0 19px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  line-height: 18px;
+  transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+}
+.blog__button--primary-outline[_ngcontent-ng-c616170692] {
+  background-color: transparent;
+  color: #ef7445;
+  font-weight: 500;
+  border: 1px solid #ef7445;
+}
+.blog__button--primary-outline[_ngcontent-ng-c616170692]:hover {
+  transform: scale(0.95);
+  color: #ef7445;
+  background-color: rgba(239, 116, 69, 0.08);
+}
+.blog__button--primary-outline[_ngcontent-ng-c616170692]:active {
+  background-color: rgba(239, 116, 69, 0.16);
+  transition: transform 0.08s ease-in-out;
+}
+/*# sourceMappingURL=/blog.component.css.map */</style><style ng-app-id="ng">
+
+.contact[_ngcontent-ng-c2514427347] {
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  background-color: #ffffff;
+  color: #333;
+  margin-bottom: 100px;
+}
+.contact.is-visible[_ngcontent-ng-c2514427347] {
+  opacity: 1;
+  transform: translateY(0);
+}
+.contact__container[_ngcontent-ng-c2514427347] {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .contact__container[_ngcontent-ng-c2514427347] {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .contact__container[_ngcontent-ng-c2514427347] {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .contact__container[_ngcontent-ng-c2514427347] {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .contact__container[_ngcontent-ng-c2514427347] {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .contact__container[_ngcontent-ng-c2514427347] {
+    max-width: 1420px;
+  }
+}
+.contact__header[_ngcontent-ng-c2514427347] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.contact__body[_ngcontent-ng-c2514427347] {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+.contact__label[_ngcontent-ng-c2514427347] {
+  margin: 0;
+  color: #1d6a5f;
+  border: 1px solid #1b655a;
+  border-radius: 30px;
+  padding: 0 18px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+}
+.contact__title[_ngcontent-ng-c2514427347] {
+  margin: 0;
+  font-size: 46px;
+  line-height: 32px;
+  font-weight: normal;
+}
+.contact__title--emphasis[_ngcontent-ng-c2514427347] {
+  color: #ef7445;
+  font-weight: 600;
+}
+@media (max-width: 375px) {
+  .contact__title[_ngcontent-ng-c2514427347] {
+    font-size: 40px;
+  }
+}
+.contact__section[_ngcontent-ng-c2514427347] {
+  display: flex;
+  flex-direction: row;
+  height: 450px;
+  gap: 60px;
+}
+@media (max-width: 992px) {
+  .contact__section[_ngcontent-ng-c2514427347] {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+}
+.contact__content[_ngcontent-ng-c2514427347] {
+  flex: 1;
+  min-width: 0;
+}
+.contact__content-title[_ngcontent-ng-c2514427347] {
+  margin: 0 0 20px;
+  font-size: 27px;
+  line-height: 32px;
+  font-weight: normal;
+}
+@media (max-width: 992px) {
+  .contact__content-title[_ngcontent-ng-c2514427347] {
+    text-align: center;
+  }
+}
+.contact__content-desc[_ngcontent-ng-c2514427347] {
+  margin: 0 0 30px;
+  font-size: 18px;
+  max-width: 610px;
+}
+@media (max-width: 992px) {
+  .contact__content-desc[_ngcontent-ng-c2514427347] {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+.contact__details[_ngcontent-ng-c2514427347] {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact__detail[_ngcontent-ng-c2514427347] {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.contact__detail-icon[_ngcontent-ng-c2514427347] {
+  width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  background-color: #fbf1ed;
+  border: 1px solid #f8d3c4;
+  color: #ef7445;
+  font-size: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.contact__detail-content[_ngcontent-ng-c2514427347] {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.contact__detail-title[_ngcontent-ng-c2514427347] {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+.contact__detail-desc[_ngcontent-ng-c2514427347] {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+.contact__facilities[_ngcontent-ng-c2514427347] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact__facility[_ngcontent-ng-c2514427347] {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease;
+}
+.contact__facility-icon[_ngcontent-ng-c2514427347] {
+  width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  background-color: #edfbf9;
+  border: 1px solid #b9d5d2;
+  color: #1b655a;
+  font-size: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.contact__facility-title[_ngcontent-ng-c2514427347] {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+.contact__image[_ngcontent-ng-c2514427347] {
+  border-radius: 20px;
+  background-color: #ddd;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  object-fit: cover;
+}
+.contact__image--mobile[_ngcontent-ng-c2514427347] {
+  display: none;
+}
+@media (max-width: 992px) {
+  .contact__image--mobile[_ngcontent-ng-c2514427347] {
+    display: block;
+    width: 100%;
+    margin-bottom: 45px;
+  }
+}
+.contact__image--desktop[_ngcontent-ng-c2514427347] {
+  display: block;
+}
+@media (max-width: 992px) {
+  .contact__image--desktop[_ngcontent-ng-c2514427347] {
+    display: none;
+  }
+}
+.contact__map[_ngcontent-ng-c2514427347] {
+  border-radius: 20px;
+  background-color: #ddd;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  object-fit: cover;
+}
+.contact__map--mobile[_ngcontent-ng-c2514427347] {
+  display: none;
+}
+@media (max-width: 992px) {
+  .contact__map--mobile[_ngcontent-ng-c2514427347] {
+    width: 100%;
+    display: block;
+    margin-bottom: 45px;
+    height: 450px;
+  }
+}
+.contact__map--desktop[_ngcontent-ng-c2514427347] {
+  display: block;
+}
+@media (max-width: 992px) {
+  .contact__map--desktop[_ngcontent-ng-c2514427347] {
+    display: none;
+  }
+}
+.contact__divider[_ngcontent-ng-c2514427347] {
+  width: 100%;
+  height: 1px;
+  background: #ececec;
+  margin-bottom: 60px;
+}
+.contact__paragraph[_ngcontent-ng-c2514427347] {
+  margin: 0 auto;
+  max-width: 610px;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+}
+.contact__button--primary[_ngcontent-ng-c2514427347] {
+  margin: 0 auto;
+  font-size: 18px;
+  min-height: 54px;
+  border: none;
+  border-radius: 30px;
+  padding: 0 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  line-height: 18px;
+  transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+  background-color: #ef7445;
+  color: #ffffff;
+  font-weight: 500;
+  border: none;
+}
+.contact__button--primary[_ngcontent-ng-c2514427347]:hover {
+  transform: scale(0.95);
+  color: #ffffff;
+  background-color: #ef7445;
+}
+.contact__button--primary[_ngcontent-ng-c2514427347]:active {
+  background-color: #ef7445;
+  transition: transform 0.08s ease-in-out;
+}
+/*# sourceMappingURL=/contact.component.css.map */</style><style ng-app-id="ng">
+
+@keyframes _ngcontent-ng-c1240515941_pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+.floating-button[_ngcontent-ng-c1240515941] {
+  pointer-events: none;
+  z-index: 1;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-decoration: none;
+}
+.floating-button__container[_ngcontent-ng-c1240515941] {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .floating-button__container[_ngcontent-ng-c1240515941] {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .floating-button__container[_ngcontent-ng-c1240515941] {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .floating-button__container[_ngcontent-ng-c1240515941] {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .floating-button__container[_ngcontent-ng-c1240515941] {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .floating-button__container[_ngcontent-ng-c1240515941] {
+    max-width: 1420px;
+  }
+}
+.floating-button__link[_ngcontent-ng-c1240515941] {
+  pointer-events: auto;
+  padding: 0;
+  text-decoration: none;
+  margin: 0 0 0 auto;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #25d366;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.floating-button__link[_ngcontent-ng-c1240515941]::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #25d366;
+  border-radius: 50%;
+  z-index: 0;
+  animation: _ngcontent-ng-c1240515941_pulse 2s infinite;
+}
+.floating-button__icon[_ngcontent-ng-c1240515941] {
+  position: relative;
+  z-index: 1;
+  font-size: 30px;
+  color: white;
+}
+/*# sourceMappingURL=/floating-button.component.css.map */</style><style ng-app-id="ng">
+
+.footer[_ngcontent-ng-c57142235] {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.footer__container[_ngcontent-ng-c57142235] {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .footer__container[_ngcontent-ng-c57142235] {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .footer__container[_ngcontent-ng-c57142235] {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .footer__container[_ngcontent-ng-c57142235] {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .footer__container[_ngcontent-ng-c57142235] {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .footer__container[_ngcontent-ng-c57142235] {
+    max-width: 1420px;
+  }
+}
+.footer__content[_ngcontent-ng-c57142235] {
+  box-sizing: border-box;
+  background-color: #f8f7f6;
+  border: 1px solid #f1f0ee;
+  border-radius: 30px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  justify-content: space-between;
+}
+@media (max-width: 991px) {
+  .footer__content[_ngcontent-ng-c57142235] {
+    gap: 40px;
+    padding: 30px;
+  }
+}
+.footer__row[_ngcontent-ng-c57142235] {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__row[_ngcontent-ng-c57142235]:nth-child(1) {
+  margin-bottom: 36px;
+}
+@media (max-width: 991px) {
+  .footer__row[_ngcontent-ng-c57142235]:nth-child(1) {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 991px) {
+  .footer__row[_ngcontent-ng-c57142235]:nth-child(2) {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+  }
+}
+.footer__title[_ngcontent-ng-c57142235] {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 540;
+}
+.footer__newsletter[_ngcontent-ng-c57142235] {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.footer__logo[_ngcontent-ng-c57142235] {
+  margin-bottom: 30px;
+}
+.footer__form[_ngcontent-ng-c57142235] {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.footer__input-group[_ngcontent-ng-c57142235] {
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 435px) {
+  .footer__input-group[_ngcontent-ng-c57142235] {
+    flex-direction: column;
+  }
+}
+.footer__copyright[_ngcontent-ng-c57142235] {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: end;
+}
+@media (max-width: 991px) {
+  .footer__copyright[_ngcontent-ng-c57142235] {
+    text-align: center;
+  }
+}
+.footer__input[_ngcontent-ng-c57142235] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 19px;
+  height: 44px;
+  border-radius: 30px;
+  border: 1px solid #f4f2ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+  background-color: #ffffff;
+  font-size: 15px;
+}
+.footer__input[_ngcontent-ng-c57142235]:focus {
+  outline: none;
+}
+.footer__input[_ngcontent-ng-c57142235]:focus-visible {
+  outline: none;
+  border-color: #f1af97;
+}
+.footer__input[_ngcontent-ng-c57142235]::placeholder {
+  font-size: 16px;
+}
+.footer__button[_ngcontent-ng-c57142235] {
+  font-size: 16px;
+  min-height: 44px;
+  border: none;
+  border-radius: 30px;
+  padding: 0 19px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  line-height: 18px;
+  transition: background-color 0.6s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+  background-color: #ef7445;
+  color: #ffffff;
+  font-weight: 500;
+  border: none;
+}
+.footer__button[_ngcontent-ng-c57142235]:hover {
+  transform: scale(0.95);
+  color: #ffffff;
+  background-color: #ef7445;
+}
+.footer__button[_ngcontent-ng-c57142235]:active {
+  background-color: #ef7445;
+  transition: transform 0.08s ease-in-out;
+}
+@media (max-width: 435px) {
+  .footer__button[_ngcontent-ng-c57142235] {
+    width: 100%;
+  }
+}
+.footer__menus[_ngcontent-ng-c57142235] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  gap: 35px;
+}
+.footer__menu[_ngcontent-ng-c57142235] {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+}
+.footer__menu[_ngcontent-ng-c57142235]:hover   .footer__link[_ngcontent-ng-c57142235] {
+  color: #ef7445;
+}
+.footer__link[_ngcontent-ng-c57142235] {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  font-size: 16px;
+}
+.footer__networks[_ngcontent-ng-c57142235] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+  display: flex;
+}
+.footer__network[_ngcontent-ng-c57142235] {
+  cursor: pointer;
+  min-width: 42px;
+  min-height: 42px;
+  max-width: 42px;
+  max-height: 42px;
+  border-radius: 50%;
+  border: 1px solid #e89473;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: background-color 0.4s ease-in-out, transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+}
+.footer__network-link[_ngcontent-ng-c57142235] {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer__network-icon[_ngcontent-ng-c57142235] {
+  color: #ed794d;
+  font-size: 18px;
+}
+.footer__network[_ngcontent-ng-c57142235]:hover {
+  background-color: #ed794d;
+}
+.footer__network[_ngcontent-ng-c57142235]:hover   .footer__network-icon[_ngcontent-ng-c57142235] {
+  color: #ffffff;
+}
+/*# sourceMappingURL=/footer.component.css.map */</style><style ng-app-id="ng">
+
+.stepper[_ngcontent-ng-c1085230729] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.stepper__step[_ngcontent-ng-c1085230729] {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.stepper__indicator[_ngcontent-ng-c1085230729] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 504px) {
+  .stepper__indicator[_ngcontent-ng-c1085230729] {
+    width: 28px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+.stepper__indicator-circle[_ngcontent-ng-c1085230729] {
+  box-sizing: border-box;
+  border: 5px solid #ef7445;
+  min-height: 35px;
+  min-width: 35px;
+  max-height: 35px;
+  max-width: 35px;
+  background-color: white;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+@media (max-width: 504px) {
+  .stepper__indicator-circle[_ngcontent-ng-c1085230729] {
+    border-width: 4px;
+    min-height: 28px;
+    min-width: 28px;
+    max-height: 28px;
+    max-width: 28px;
+  }
+}
+.stepper__indicator-line[_ngcontent-ng-c1085230729] {
+  width: 5px;
+  height: 100%;
+  min-height: 100px;
+  background-color: #1b655a;
+}
+@media (max-width: 504px) {
+  .stepper__indicator-line[_ngcontent-ng-c1085230729] {
+    width: 4px;
+  }
+}
+.stepper__text-container[_ngcontent-ng-c1085230729] {
+  width: 100%;
+  padding-bottom: 35px;
+  box-sizing: border-box;
+}
+.stepper__title[_ngcontent-ng-c1085230729] {
+  margin: 0 0 10px;
+  font-size: 23px;
+  font-weight: 600;
+}
+@media (max-width: 431px) {
+  .stepper__title[_ngcontent-ng-c1085230729] {
+    font-size: 18px;
+  }
+}
+.stepper__title--end[_ngcontent-ng-c1085230729] {
+  text-align: end;
+}
+.stepper__description[_ngcontent-ng-c1085230729] {
+  margin: 0;
+  font-size: 18px;
+  max-width: 400px;
+}
+@media (max-width: 431px) {
+  .stepper__description[_ngcontent-ng-c1085230729] {
+    font-size: 14px;
+  }
+}
+.stepper__description--end[_ngcontent-ng-c1085230729] {
+  text-align: end;
+  float: right;
+}
+.stepper__image[_ngcontent-ng-c1085230729] {
+  width: 450px;
+  max-width: 100%;
+  height: auto;
+}
+.stepper__image-container[_ngcontent-ng-c1085230729] {
+  padding-bottom: 35px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.stepper__image--end[_ngcontent-ng-c1085230729] {
+  float: right;
+}
+/*# sourceMappingURL=/stepper.component.css.map */</style><style ng-app-id="ng">
+
+.post[_ngcontent-ng-c1976707584] {
+  background-color: #ffffff;
+  flex: 1;
+  min-width: 0;
+  border-radius: 20px;
+  padding: 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+.post[_ngcontent-ng-c1976707584]:hover {
+  background-color: #fae7df;
+}
+.post[_ngcontent-ng-c1976707584]:hover   .post__image[_ngcontent-ng-c1976707584] {
+  transform: scale(1.05);
+}
+.post[_ngcontent-ng-c1976707584]:hover   .post__title[_ngcontent-ng-c1976707584] {
+  color: #000000;
+}
+.post[_ngcontent-ng-c1976707584]:hover   .post__description[_ngcontent-ng-c1976707584] {
+  color: #3c3e41;
+}
+.post[_ngcontent-ng-c1976707584]:hover   .post__author-name[_ngcontent-ng-c1976707584] {
+  color: #000000;
+}
+.post__image-container[_ngcontent-ng-c1976707584] {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.post__image[_ngcontent-ng-c1976707584] {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.post__text-container[_ngcontent-ng-c1976707584] {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 16px;
+  font-size: 14px;
+  color: #333;
+}
+.post__header[_ngcontent-ng-c1976707584] {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.post__title[_ngcontent-ng-c1976707584] {
+  font-size: 20px;
+  font-weight: 420;
+  margin: 10px 0;
+  color: #414141;
+  transition: color 0.3s ease;
+}
+.post__description[_ngcontent-ng-c1976707584] {
+  font-size: 16px;
+  max-width: 550px;
+  font-weight: 300;
+  margin: 0 0 10px;
+  color: #717171;
+  transition: color 0.3s ease;
+}
+.post__author[_ngcontent-ng-c1976707584] {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+}
+.post__author-avatar[_ngcontent-ng-c1976707584] {
+  min-width: 44px;
+  min-height: 44px;
+  max-width: 44px;
+  max-height: 44px;
+  border-radius: 50%;
+  background-color: #97979a;
+  flex-shrink: 0;
+}
+.post__author-image[_ngcontent-ng-c1976707584] {
+  width: 100%;
+  height: 100%;
+}
+.post__author-info[_ngcontent-ng-c1976707584] {
+  display: flex;
+  flex-direction: column;
+  height: 44px;
+  justify-content: space-evenly;
+  align-items: start;
+}
+.post__author-name[_ngcontent-ng-c1976707584] {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #424242;
+  transition: color 0.3s ease;
+}
+.post__author-meta[_ngcontent-ng-c1976707584] {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #717171;
+  font-weight: 400;
+}
+.post__author-separator[_ngcontent-ng-c1976707584] {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #716f6f;
+}
+/*# sourceMappingURL=/post.component.css.map */</style><style ng-app-id="ng">
+
+.service[_ngcontent-ng-c3755128666] {
+  overflow: hidden;
+  position: relative;
+  background-color: #f8f7f6;
+  border: 1px solid #f1f0ee;
+  box-sizing: border-box;
+  border-radius: 24px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  min-width: 340px;
+  max-width: 100%;
+  height: 275px;
+  transition: transform 0.5s ease;
+}
+@media (max-width: 480px) {
+  .service[_ngcontent-ng-c3755128666] {
+    padding: 29px;
+  }
+}
+@media (max-width: 430px) {
+  .service[_ngcontent-ng-c3755128666] {
+    padding: 28px;
+  }
+}
+@media (max-width: 420px) {
+  .service[_ngcontent-ng-c3755128666] {
+    padding: 26px;
+  }
+}
+@media (max-width: 408px) {
+  .service[_ngcontent-ng-c3755128666] {
+    padding: 22px;
+    min-width: 330px;
+  }
+}
+@media (max-width: 400px) {
+  .service[_ngcontent-ng-c3755128666] {
+    padding: 21px;
+    min-width: 320px;
+  }
+}
+@media (max-width: 385px) {
+  .service[_ngcontent-ng-c3755128666] {
+    padding: 20px;
+    min-width: 310px;
+  }
+}
+@media (max-width: 375px) {
+  .service[_ngcontent-ng-c3755128666] {
+    padding: 19px;
+    min-width: 300px;
+    height: 260px;
+  }
+}
+@media (max-width: 370px) {
+  .service[_ngcontent-ng-c3755128666] {
+    padding: 18px;
+  }
+}
+.service[_ngcontent-ng-c3755128666]:hover {
+  transform: translateY(-8px);
+}
+.service[_ngcontent-ng-c3755128666]   i[_ngcontent-ng-c3755128666] {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background-color: #f7f7f5;
+  border: 1px solid #ed794d;
+  color: #ed794d;
+  font-size: 24px;
+  padding-left: 1px;
+  padding-top: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+@media (max-width: 480px) {
+  .service[_ngcontent-ng-c3755128666]   i[_ngcontent-ng-c3755128666] {
+    width: 50px;
+    height: 50px;
+    font-size: 23px;
+  }
+}
+@media (max-width: 430px) {
+  .service[_ngcontent-ng-c3755128666]   i[_ngcontent-ng-c3755128666] {
+    width: 47px;
+    height: 47px;
+    font-size: 22px;
+  }
+}
+@media (max-width: 375px) {
+  .service[_ngcontent-ng-c3755128666]   i[_ngcontent-ng-c3755128666] {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+.service__header[_ngcontent-ng-c3755128666] {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+.service__title[_ngcontent-ng-c3755128666] {
+  font-weight: 600;
+  font-size: 23px;
+  padding: 0;
+  margin: 0;
+  color: #1c1c1c;
+}
+@media (max-width: 480px) {
+  .service__title[_ngcontent-ng-c3755128666] {
+    font-size: 22px;
+  }
+}
+@media (max-width: 475px) {
+  .service__title[_ngcontent-ng-c3755128666] {
+    font-size: 20px;
+  }
+}
+@media (max-width: 375px) {
+  .service__title[_ngcontent-ng-c3755128666] {
+    font-size: 19px;
+  }
+}
+.service__description[_ngcontent-ng-c3755128666] {
+  font-size: 18px;
+  height: 100%;
+  padding: 0;
+  margin: 0 0 10px;
+  text-align: start;
+  color: #1c1c1c;
+  font-weight: 400;
+}
+@media (max-width: 480px) {
+  .service__description[_ngcontent-ng-c3755128666] {
+    font-size: 17px;
+  }
+}
+@media (max-width: 375px) {
+  .service__description[_ngcontent-ng-c3755128666] {
+    font-size: 16px;
+  }
+}
+.service__link[_ngcontent-ng-c3755128666] {
+  cursor: pointer;
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1d6a5f;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+@media (max-width: 480px) {
+  .service__link[_ngcontent-ng-c3755128666] {
+    font-size: 17px;
+  }
+}
+@media (max-width: 370px) {
+  .service__link[_ngcontent-ng-c3755128666] {
+    font-size: 16px;
+  }
+}
+.service__link[_ngcontent-ng-c3755128666]:hover {
+  text-decoration: underline;
+}
+.service__image[_ngcontent-ng-c3755128666] {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: auto;
+}
+.service__image--1[_ngcontent-ng-c3755128666] {
+  width: 240px;
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .service__image--1[_ngcontent-ng-c3755128666] {
+    width: 200px;
+  }
+}
+@media (max-width: 414px) {
+  .service__image--1[_ngcontent-ng-c3755128666] {
+    width: 220px;
+  }
+}
+.service__image--2[_ngcontent-ng-c3755128666] {
+  width: 260px;
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .service__image--2[_ngcontent-ng-c3755128666] {
+    width: 220px;
+  }
+}
+@media (max-width: 442px) {
+  .service__image--2[_ngcontent-ng-c3755128666] {
+    width: 230px;
+  }
+}
+@media (max-width: 360px) {
+  .service__image--2[_ngcontent-ng-c3755128666] {
+    width: 220px;
+  }
+}
+.service__image--3[_ngcontent-ng-c3755128666] {
+  width: 225px;
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .service__image--3[_ngcontent-ng-c3755128666] {
+    width: 200px;
+  }
+}
+@media (max-width: 445px) {
+  .service__image--3[_ngcontent-ng-c3755128666] {
+    width: 200px;
+  }
+}
+.service__image--4[_ngcontent-ng-c3755128666] {
+  width: 290px;
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .service__image--4[_ngcontent-ng-c3755128666] {
+    width: 250px;
+  }
+}
+@media (max-width: 475px) {
+  .service__image--4[_ngcontent-ng-c3755128666] {
+    width: 280px;
+  }
+}
+.service__image--5[_ngcontent-ng-c3755128666] {
+  width: 230px;
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .service__image--5[_ngcontent-ng-c3755128666] {
+    width: 200px;
+  }
+}
+@media (max-width: 433px) {
+  .service__image--5[_ngcontent-ng-c3755128666] {
+    width: 210px;
+  }
+}
+@media (max-width: 375px) {
+  .service__image--5[_ngcontent-ng-c3755128666] {
+    width: 190px;
+  }
+}
+.service__image--6[_ngcontent-ng-c3755128666] {
+  width: 260px;
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .service__image--6[_ngcontent-ng-c3755128666] {
+    width: 220px;
+  }
+}
+@media (max-width: 412px) {
+  .service__image--6[_ngcontent-ng-c3755128666] {
+    width: 240px;
+  }
+}
+@media (max-width: 390px) {
+  .service__image--6[_ngcontent-ng-c3755128666] {
+    width: 230px;
+  }
+}
+@media (max-width: 380px) {
+  .service__image--6[_ngcontent-ng-c3755128666] {
+    width: 220px;
+  }
+}
+/*# sourceMappingURL=/service.component.css.map */</style><style ng-app-id="ng">
+
+.member[_ngcontent-ng-c3687386498] {
+  position: relative;
+  width: 100%;
+  height: 408px;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: #ffffff;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+@media (max-width: 1400px) {
+  .member[_ngcontent-ng-c3687386498] {
+    width: 300px;
+  }
+}
+.member.is-active[_ngcontent-ng-c3687386498]   .member__overlay[_ngcontent-ng-c3687386498] {
+  height: 160px;
+}
+.member.is-active[_ngcontent-ng-c3687386498]   .member__icon[_ngcontent-ng-c3687386498] {
+  rotate: 180deg;
+}
+@media (min-width: 1400px) and (hover: hover) and (pointer: fine) {
+  .member[_ngcontent-ng-c3687386498]:hover   .member__overlay[_ngcontent-ng-c3687386498] {
+    height: 160px;
+  }
+  .member[_ngcontent-ng-c3687386498]:hover   .member__icon[_ngcontent-ng-c3687386498] {
+    rotate: 180deg;
+  }
+}
+.member__image[_ngcontent-ng-c3687386498] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.member__overlay[_ngcontent-ng-c3687386498] {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  overflow: hidden;
+  height: 34px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: height 0.5s ease-in-out;
+}
+.member__name[_ngcontent-ng-c3687386498] {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: #000000;
+}
+.member__icon[_ngcontent-ng-c3687386498] {
+  text-align: center;
+  font-size: 14px;
+  color: #000000;
+  transition: rotate 0.5s ease-in-out;
+}
+.member__network[_ngcontent-ng-c3687386498] {
+  min-width: 28px;
+  min-height: 28px;
+  max-width: 28px;
+  max-height: 28px;
+  border-radius: 50%;
+  border: 1px solid #ed794d;
+  background-color: white;
+}
+.member__networks[_ngcontent-ng-c3687386498] {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.member__about[_ngcontent-ng-c3687386498] {
+  text-align: center;
+  margin-bottom: 8px;
+}
+/*# sourceMappingURL=/member.component.css.map */</style></head>
+  <body><!--nghm--><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
+</script><script>window.__jsaction_bootstrap(document.body,"ng",["click","pointerdown","pointermove","pointerup","pointercancel"],[]);</script>
+    <app-root ng-version="19.2.18" _nghost-ng-c3665638741="" ngh="10" ng-server-context="ssg"><app-header _ngcontent-ng-c3665638741="" _nghost-ng-c4075399327="" ng-reflect-button="[object Object]" ng-reflect-logo="[object Object]" ng-reflect-items="[object Object],[object Object" ngh="0"><header _ngcontent-ng-c4075399327="" class="header"><nav _ngcontent-ng-c4075399327="" class="header__nav"><ul _ngcontent-ng-c4075399327="" class="header__list"><li _ngcontent-ng-c4075399327="" class="header__item header__item--left"><a _ngcontent-ng-c4075399327="" href="#" class="header__link" jsaction="click:;"><img _ngcontent-ng-c4075399327="" src="images/Logo.png" style="width: 85px;" alt="Logo"></a></li><li _ngcontent-ng-c4075399327="" class="header__item"><a _ngcontent-ng-c4075399327="" href="#" class="header__link" jsaction="click:;"> Serviços </a><div _ngcontent-ng-c4075399327="" class="header__indicator header__indicator--visible" ng-reflect-ng-class="[object Object]"></div></li><li _ngcontent-ng-c4075399327="" class="header__item"><a _ngcontent-ng-c4075399327="" href="#" class="header__link" jsaction="click:;"> Equipe </a><div _ngcontent-ng-c4075399327="" class="header__indicator" ng-reflect-ng-class="[object Object]"></div></li><li _ngcontent-ng-c4075399327="" class="header__item"><a _ngcontent-ng-c4075399327="" href="#" class="header__link" jsaction="click:;"> Metodologia </a><div _ngcontent-ng-c4075399327="" class="header__indicator" ng-reflect-ng-class="[object Object]"></div></li><li _ngcontent-ng-c4075399327="" class="header__item"><a _ngcontent-ng-c4075399327="" href="#" class="header__link" jsaction="click:;"> Espaço </a><div _ngcontent-ng-c4075399327="" class="header__indicator" ng-reflect-ng-class="[object Object]"></div></li><li _ngcontent-ng-c4075399327="" class="header__item"><a _ngcontent-ng-c4075399327="" href="#" class="header__link" jsaction="click:;"> Blog </a><div _ngcontent-ng-c4075399327="" class="header__indicator" ng-reflect-ng-class="[object Object]"></div></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><li _ngcontent-ng-c4075399327="" class="header__item header__item--right header__item--emphasis"><a _ngcontent-ng-c4075399327="" href="#" class="header__link" jsaction="click:;"> Contato </a></li></ul><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><app-drawer _ngcontent-ng-c3665638741="" _nghost-ng-c4082130107="" ng-reflect-button="[object Object]" ng-reflect-items="[object Object],[object Object" ng-reflect-is-open="false" ngh="1"><div _ngcontent-ng-c4082130107="" class="drawer" ng-reflect-ng-class="[object Object]"><ul _ngcontent-ng-c4082130107="" class="drawer__list"><li _ngcontent-ng-c4082130107="" class="drawer__item"><a _ngcontent-ng-c4082130107="" href="#" class="drawer__link"> Serviços </a></li><li _ngcontent-ng-c4082130107="" class="drawer__item"><a _ngcontent-ng-c4082130107="" href="#" class="drawer__link"> Equipe </a></li><li _ngcontent-ng-c4082130107="" class="drawer__item"><a _ngcontent-ng-c4082130107="" href="#" class="drawer__link"> Metodologia </a></li><li _ngcontent-ng-c4082130107="" class="drawer__item"><a _ngcontent-ng-c4082130107="" href="#" class="drawer__link"> Espaço </a></li><li _ngcontent-ng-c4082130107="" class="drawer__item"><a _ngcontent-ng-c4082130107="" href="#" class="drawer__link"> Blog </a></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><li _ngcontent-ng-c4082130107="" class="drawer__item drawer__item--emphasis"><a _ngcontent-ng-c4082130107="" href="#" class="drawer__link"> Contato </a></li></ul></div></app-drawer></nav></header></app-header><div _ngcontent-ng-c3665638741="" tabindex="0" role="button" aria-label="Fechar menu" class="drawer-backdrop" jsaction="click:;"></div><main _ngcontent-ng-c3665638741="" class="main"><app-hero _ngcontent-ng-c3665638741="" _nghost-ng-c167873010="" ngh="2"><section _ngcontent-ng-c167873010="" id="hero" apprevealonscroll="" class="hero"><div _ngcontent-ng-c167873010="" class="hero__container"><div _ngcontent-ng-c167873010="" class="hero__carousel"><div _ngcontent-ng-c167873010="" class="hero__left"><h1 _ngcontent-ng-c167873010="" class="hero__title"> Cuidar da mente pode transformar <span _ngcontent-ng-c167873010="" class="hero__text-primary hero__text-strong">uma vida</span></h1><p _ngcontent-ng-c167873010="" class="hero__paragraph"> Psicologia centrada em você, para promover seu <span _ngcontent-ng-c167873010="" class="hero__text-secondary hero__text-strong">equilíbrio emocional</span> do jeito certo </p><div _ngcontent-ng-c167873010="" class="hero__buttons"><a _ngcontent-ng-c167873010="" href="https://wa.me/554399599130?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="hero__button hero__button--primary">Conversar</a><a _ngcontent-ng-c167873010="" class="hero__button hero__button--secondary"> Como funciona? </a></div></div><div _ngcontent-ng-c167873010="" class="hero__right"><img _ngcontent-ng-c167873010="" src="images/hero/hero2.png" alt="" class="hero__image"></div></div></div></section></app-hero><app-services _ngcontent-ng-c3665638741="" _nghost-ng-c1118500774="" ngh="4"><section _ngcontent-ng-c1118500774="" id="services" apprevealonscroll="" class="services"><div _ngcontent-ng-c1118500774="" class="services__container"><div _ngcontent-ng-c1118500774="" class="services__header"><h3 _ngcontent-ng-c1118500774="" class="services__label">SERVIÇO</h3><h2 _ngcontent-ng-c1118500774="" class="services__title"> Nossos <span _ngcontent-ng-c1118500774="" class="services__title--emphasis">Serviços</span></h2></div><div _ngcontent-ng-c1118500774="" class="services__grid"><app-service _ngcontent-ng-c1118500774="" _nghost-ng-c3755128666="" ng-reflect-title="Psicoterapia Individual" ng-reflect-description="Atendimento personalizado para" ng-reflect-subtitle="Ler mais &gt;" ng-reflect-icon="fa-solid fa-user" ng-reflect-image="[object Object]" ng-reflect-image-class="service__image--1" ngh="3"><div _ngcontent-ng-c3755128666="" class="service"><div _ngcontent-ng-c3755128666="" class="service__header"><i _ngcontent-ng-c3755128666="" ng-reflect-ng-class="fa-solid fa-user" class="fa-solid fa-user"></i><h4 _ngcontent-ng-c3755128666="" class="service__title">Psicoterapia Individual</h4></div><p _ngcontent-ng-c3755128666="" class="service__description"> Atendimento personalizado para ajudar a lidar com desafios emocionais, ansiedade e autoconhecimento. </p><!--bindings={
+  "ng-reflect-ng-if": "Atendimento personalizado para"
+}--><a _ngcontent-ng-c3755128666="" class="service__link">Ler mais &gt;</a><!--bindings={
+  "ng-reflect-ng-if": "Ler mais >"
+}--><img _ngcontent-ng-c3755128666="" class="service__image service__image--1" ng-reflect-ng-class="service__image--1" src="" alt=""></div></app-service><app-service _ngcontent-ng-c1118500774="" _nghost-ng-c3755128666="" ng-reflect-title="Terapia de Casal" ng-reflect-description="Fortaleça sua relação com apoi" ng-reflect-subtitle="Ler mais &gt;" ng-reflect-icon="fa-solid fa-people-arrows" ng-reflect-image="[object Object]" ng-reflect-image-class="service__image--2" ngh="3"><div _ngcontent-ng-c3755128666="" class="service"><div _ngcontent-ng-c3755128666="" class="service__header"><i _ngcontent-ng-c3755128666="" ng-reflect-ng-class="fa-solid fa-people-arrows" class="fa-solid fa-people-arrows"></i><h4 _ngcontent-ng-c3755128666="" class="service__title">Terapia de Casal</h4></div><p _ngcontent-ng-c3755128666="" class="service__description"> Fortaleça sua relação com apoio profissional para comunicação, resolução de conflitos e reconexão emocional. </p><!--bindings={
+  "ng-reflect-ng-if": "Fortaleça sua relação com apoi"
+}--><a _ngcontent-ng-c3755128666="" class="service__link">Ler mais &gt;</a><!--bindings={
+  "ng-reflect-ng-if": "Ler mais >"
+}--><img _ngcontent-ng-c3755128666="" class="service__image service__image--2" ng-reflect-ng-class="service__image--2" src="" alt=""></div></app-service><app-service _ngcontent-ng-c1118500774="" _nghost-ng-c3755128666="" ng-reflect-title="Psicoterapia Online" ng-reflect-description="Sessões terapêuticas acessívei" ng-reflect-subtitle="Ler mais &gt;" ng-reflect-icon="fa-solid fa-laptop" ng-reflect-image="[object Object]" ng-reflect-image-class="service__image--3" ngh="3"><div _ngcontent-ng-c3755128666="" class="service"><div _ngcontent-ng-c3755128666="" class="service__header"><i _ngcontent-ng-c3755128666="" ng-reflect-ng-class="fa-solid fa-laptop" class="fa-solid fa-laptop"></i><h4 _ngcontent-ng-c3755128666="" class="service__title">Psicoterapia Online</h4></div><p _ngcontent-ng-c3755128666="" class="service__description"> Sessões terapêuticas acessíveis de qualquer lugar, garantindo suporte emocional com flexibilidade e comodidade. </p><!--bindings={
+  "ng-reflect-ng-if": "Sessões terapêuticas acessívei"
+}--><a _ngcontent-ng-c3755128666="" class="service__link">Ler mais &gt;</a><!--bindings={
+  "ng-reflect-ng-if": "Ler mais >"
+}--><img _ngcontent-ng-c3755128666="" class="service__image service__image--3" ng-reflect-ng-class="service__image--3" src="" alt=""></div></app-service><app-service _ngcontent-ng-c1118500774="" _nghost-ng-c3755128666="" ng-reflect-title="Orientação Vocacional" ng-reflect-description="Descubra sua vocação com teste" ng-reflect-subtitle="Ler mais &gt;" ng-reflect-icon="fa-solid fa-compass" ng-reflect-image="[object Object]" ng-reflect-image-class="service__image--4" ngh="3"><div _ngcontent-ng-c3755128666="" class="service"><div _ngcontent-ng-c3755128666="" class="service__header"><i _ngcontent-ng-c3755128666="" ng-reflect-ng-class="fa-solid fa-compass" class="fa-solid fa-compass"></i><h4 _ngcontent-ng-c3755128666="" class="service__title">Orientação Vocacional</h4></div><p _ngcontent-ng-c3755128666="" class="service__description"> Descubra sua vocação com testes e aconselhamento profissional para uma escolha de carreira mais assertiva. </p><!--bindings={
+  "ng-reflect-ng-if": "Descubra sua vocação com teste"
+}--><a _ngcontent-ng-c3755128666="" class="service__link">Ler mais &gt;</a><!--bindings={
+  "ng-reflect-ng-if": "Ler mais >"
+}--><img _ngcontent-ng-c3755128666="" class="service__image service__image--4" ng-reflect-ng-class="service__image--4" src="" alt=""></div></app-service><app-service _ngcontent-ng-c1118500774="" _nghost-ng-c3755128666="" ng-reflect-title="Psicopedagogia" ng-reflect-description="Apoio especializado para super" ng-reflect-subtitle="Ler mais &gt;" ng-reflect-icon="fa-solid fa-book-open-reader" ng-reflect-image="[object Object]" ng-reflect-image-class="service__image--5" ngh="3"><div _ngcontent-ng-c3755128666="" class="service"><div _ngcontent-ng-c3755128666="" class="service__header"><i _ngcontent-ng-c3755128666="" ng-reflect-ng-class="fa-solid fa-book-open-reader" class="fa-solid fa-book-open-reader"></i><h4 _ngcontent-ng-c3755128666="" class="service__title">Psicopedagogia</h4></div><p _ngcontent-ng-c3755128666="" class="service__description"> Apoio especializado para superar dificuldades de aprendizagem e melhorar o desempenho acadêmico. </p><!--bindings={
+  "ng-reflect-ng-if": "Apoio especializado para super"
+}--><a _ngcontent-ng-c3755128666="" class="service__link">Ler mais &gt;</a><!--bindings={
+  "ng-reflect-ng-if": "Ler mais >"
+}--><img _ngcontent-ng-c3755128666="" class="service__image service__image--5" ng-reflect-ng-class="service__image--5" src="" alt=""></div></app-service><app-service _ngcontent-ng-c1118500774="" _nghost-ng-c3755128666="" ng-reflect-title="Terapia Infantil" ng-reflect-description="Acompanhamento terapêutico par" ng-reflect-subtitle="Ler mais &gt;" ng-reflect-icon="fa-solid fa-child-reaching" ng-reflect-image="[object Object]" ng-reflect-image-class="service__image--6" ngh="3"><div _ngcontent-ng-c3755128666="" class="service"><div _ngcontent-ng-c3755128666="" class="service__header"><i _ngcontent-ng-c3755128666="" ng-reflect-ng-class="fa-solid fa-child-reaching" class="fa-solid fa-child-reaching"></i><h4 _ngcontent-ng-c3755128666="" class="service__title">Terapia Infantil</h4></div><p _ngcontent-ng-c3755128666="" class="service__description"> Acompanhamento terapêutico para ajudar crianças a lidarem com emoções, comportamento e relações sociais. </p><!--bindings={
+  "ng-reflect-ng-if": "Acompanhamento terapêutico par"
+}--><a _ngcontent-ng-c3755128666="" class="service__link">Ler mais &gt;</a><!--bindings={
+  "ng-reflect-ng-if": "Ler mais >"
+}--><img _ngcontent-ng-c3755128666="" class="service__image service__image--6" ng-reflect-ng-class="service__image--6" src="" alt=""></div></app-service><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--></div><p _ngcontent-ng-c1118500774="" class="services__paragraph"> Soluções completas em saúde mental para promover bem-estar, desenvolvimento pessoal e profissional. </p><div _ngcontent-ng-c1118500774="" class="services__buttons"><button _ngcontent-ng-c1118500774="" class="services__button services__button--primary"> Conversar </button><button _ngcontent-ng-c1118500774="" class="services__button services__button--primary-outline"> Ver todos </button></div></div></section></app-services><app-team _ngcontent-ng-c3665638741="" _nghost-ng-c4214481489="" ngh="6"><section _ngcontent-ng-c4214481489="" id="team" apprevealonscroll="" class="team"><div _ngcontent-ng-c4214481489="" class="team__container"><div _ngcontent-ng-c4214481489="" class="team__header"><h3 _ngcontent-ng-c4214481489="" class="team__label">EQUIPE</h3><h2 _ngcontent-ng-c4214481489="" class="team__title"> Nossa <span _ngcontent-ng-c4214481489="" class="team__title--emphasis">Equipe</span></h2></div><div _ngcontent-ng-c4214481489="" class="team__controls"><button _ngcontent-ng-c4214481489="" class="team__control-button" jsaction="click:;"><i _ngcontent-ng-c4214481489="" class="fa-solid fa-angle-left team__control-icon"></i></button><button _ngcontent-ng-c4214481489="" class="team__control-button" jsaction="click:;"><i _ngcontent-ng-c4214481489="" class="fa-solid fa-angle-right team__control-icon"></i></button></div><div _ngcontent-ng-c4214481489="" class="team__carousel-container"><div _ngcontent-ng-c4214481489="" class="team__carousel" jsaction="pointerdown:;pointermove:;pointerup:;pointercancel:;"><app-member _ngcontent-ng-c4214481489="" _nghost-ng-c3687386498="" ng-reflect-name="Lorem Ipsum" ng-reflect-about="Pellentesque nec eros arcu. Nu" ng-reflect-photo="[object Object]" ng-reflect-networks=",," ng-reflect-active="false" ngh="5"><div _ngcontent-ng-c3687386498="" role="button" tabindex="0" class="member" jsaction="click:;"><img _ngcontent-ng-c3687386498="" class="member__image" src="images/members/member1.webp" alt="Foto do Membro 1"><div _ngcontent-ng-c3687386498="" class="member__overlay"><h4 _ngcontent-ng-c3687386498="" class="member__name">Lorem Ipsum</h4><i _ngcontent-ng-c3687386498="" class="fa-sharp-duotone fa-solid fa-chevron-up member__icon"></i><div _ngcontent-ng-c3687386498="" class="member__about"> Pellentesque nec eros arcu. Nulla placerat augue lacinia vitae. </div><div _ngcontent-ng-c3687386498="" class="member__networks"><div _ngcontent-ng-c3687386498="" class="member__network"></div><div _ngcontent-ng-c3687386498="" class="member__network"></div><div _ngcontent-ng-c3687386498="" class="member__network"></div><!--bindings={
+  "ng-reflect-ng-for-of": ",,"
+}--></div></div></div></app-member><app-member _ngcontent-ng-c4214481489="" _nghost-ng-c3687386498="" ng-reflect-name="Lorem Ipsum" ng-reflect-about="Cras id varius nisl. Sed mauri" ng-reflect-photo="[object Object]" ng-reflect-networks=",," ng-reflect-active="false" ngh="5"><div _ngcontent-ng-c3687386498="" role="button" tabindex="0" class="member" jsaction="click:;"><img _ngcontent-ng-c3687386498="" class="member__image" src="images/members/member2.webp" alt="Foto do Membro 2"><div _ngcontent-ng-c3687386498="" class="member__overlay"><h4 _ngcontent-ng-c3687386498="" class="member__name">Lorem Ipsum</h4><i _ngcontent-ng-c3687386498="" class="fa-sharp-duotone fa-solid fa-chevron-up member__icon"></i><div _ngcontent-ng-c3687386498="" class="member__about"> Cras id varius nisl. Sed mauris id congue laoreet etiam eget. </div><div _ngcontent-ng-c3687386498="" class="member__networks"><div _ngcontent-ng-c3687386498="" class="member__network"></div><div _ngcontent-ng-c3687386498="" class="member__network"></div><div _ngcontent-ng-c3687386498="" class="member__network"></div><!--bindings={
+  "ng-reflect-ng-for-of": ",,"
+}--></div></div></div></app-member><app-member _ngcontent-ng-c4214481489="" _nghost-ng-c3687386498="" ng-reflect-name="Lorem Ipsum" ng-reflect-about="Sed rhoncus mauris id congue l" ng-reflect-photo="[object Object]" ng-reflect-networks=",," ng-reflect-active="false" ngh="5"><div _ngcontent-ng-c3687386498="" role="button" tabindex="0" class="member" jsaction="click:;"><img _ngcontent-ng-c3687386498="" class="member__image" src="images/members/member3.webp" alt="Foto do Membro 3"><div _ngcontent-ng-c3687386498="" class="member__overlay"><h4 _ngcontent-ng-c3687386498="" class="member__name">Lorem Ipsum</h4><i _ngcontent-ng-c3687386498="" class="fa-sharp-duotone fa-solid fa-chevron-up member__icon"></i><div _ngcontent-ng-c3687386498="" class="member__about"> Sed rhoncus mauris id congue laoreet. Nulla ut, pretium metus. </div><div _ngcontent-ng-c3687386498="" class="member__networks"><div _ngcontent-ng-c3687386498="" class="member__network"></div><div _ngcontent-ng-c3687386498="" class="member__network"></div><div _ngcontent-ng-c3687386498="" class="member__network"></div><!--bindings={
+  "ng-reflect-ng-for-of": ",,"
+}--></div></div></div></app-member><app-member _ngcontent-ng-c4214481489="" _nghost-ng-c3687386498="" ng-reflect-name="Lorem Ipsum" ng-reflect-about="Etiam ultrices mi id neque tem" ng-reflect-photo="[object Object]" ng-reflect-networks=",," ng-reflect-active="false" ngh="5"><div _ngcontent-ng-c3687386498="" role="button" tabindex="0" class="member" jsaction="click:;"><img _ngcontent-ng-c3687386498="" class="member__image" src="images/members/member4.webp" alt="Foto do Membro 4"><div _ngcontent-ng-c3687386498="" class="member__overlay"><h4 _ngcontent-ng-c3687386498="" class="member__name">Lorem Ipsum</h4><i _ngcontent-ng-c3687386498="" class="fa-sharp-duotone fa-solid fa-chevron-up member__icon"></i><div _ngcontent-ng-c3687386498="" class="member__about"> Etiam ultrices mi id neque tempor, eget faucibus nulla tristique. </div><div _ngcontent-ng-c3687386498="" class="member__networks"><div _ngcontent-ng-c3687386498="" class="member__network"></div><div _ngcontent-ng-c3687386498="" class="member__network"></div><div _ngcontent-ng-c3687386498="" class="member__network"></div><!--bindings={
+  "ng-reflect-ng-for-of": ",,"
+}--></div></div></div></app-member><app-member _ngcontent-ng-c4214481489="" _nghost-ng-c3687386498="" ng-reflect-name="Lorem Ipsum" ng-reflect-about="Aliquam volutpat faucibus est " ng-reflect-photo="[object Object]" ng-reflect-networks=",," ng-reflect-active="false" ngh="5"><div _ngcontent-ng-c3687386498="" role="button" tabindex="0" class="member" jsaction="click:;"><img _ngcontent-ng-c3687386498="" class="member__image" src="images/members/member5.webp" alt="Foto do Membro 5"><div _ngcontent-ng-c3687386498="" class="member__overlay"><h4 _ngcontent-ng-c3687386498="" class="member__name">Lorem Ipsum</h4><i _ngcontent-ng-c3687386498="" class="fa-sharp-duotone fa-solid fa-chevron-up member__icon"></i><div _ngcontent-ng-c3687386498="" class="member__about"> Aliquam volutpat faucibus est at condimentum. Nam consequat a eget quam. </div><div _ngcontent-ng-c3687386498="" class="member__networks"><div _ngcontent-ng-c3687386498="" class="member__network"></div><div _ngcontent-ng-c3687386498="" class="member__network"></div><div _ngcontent-ng-c3687386498="" class="member__network"></div><!--bindings={
+  "ng-reflect-ng-for-of": ",,"
+}--></div></div></div></app-member><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--></div></div><p _ngcontent-ng-c4214481489="" class="team__paragraph"> Profissionais qualificados, acolhedores e comprometidos com seu bem-estar emocional. Aqui, você encontra escuta, cuidado e suporte personalizado. </p></div></section></app-team><app-method _ngcontent-ng-c3665638741="" _nghost-ng-c3875870653="" ngh="2"><section _ngcontent-ng-c3875870653="" id="method" apprevealonscroll="" class="method"><div _ngcontent-ng-c3875870653="" class="method__container"><div _ngcontent-ng-c3875870653="" class="method__header"><h3 _ngcontent-ng-c3875870653="" class="method__label">METODOLOGIA</h3><h2 _ngcontent-ng-c3875870653="" class="method__title"> Nossa <span _ngcontent-ng-c3875870653="" class="method__title--emphasis">Metodologia</span></h2></div><app-stepper _ngcontent-ng-c3875870653="" _nghost-ng-c1085230729="" ng-reflect-steps="[object Object],[object Object" ngh="7"><ul _ngcontent-ng-c1085230729="" class="stepper"><li _ngcontent-ng-c1085230729="" class="stepper__step"><div _ngcontent-ng-c1085230729="" class="stepper__image-container"><img _ngcontent-ng-c1085230729="" class="stepper__image stepper__image--end" src="images/steps/step1.svg" alt="img1"></div><div _ngcontent-ng-c1085230729="" class="stepper__indicator"><div _ngcontent-ng-c1085230729="" class="stepper__indicator-circle"></div><div _ngcontent-ng-c1085230729="" class="stepper__indicator-line"></div><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></div><div _ngcontent-ng-c1085230729="" class="stepper__text-container"><h4 _ngcontent-ng-c1085230729="" class="stepper__title">Converse conosco</h4><p _ngcontent-ng-c1085230729="" class="stepper__description">Entre em contato com a nossa equipe para conversar sobre suas necessidades, esclarecer dúvidas e entender como podemos te ajudar da melhor forma.</p></div><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></li><li _ngcontent-ng-c1085230729="" class="stepper__step"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><div _ngcontent-ng-c1085230729="" class="stepper__text-container"><h4 _ngcontent-ng-c1085230729="" class="stepper__title stepper__title--end"> Agende um horário </h4><p _ngcontent-ng-c1085230729="" class="stepper__description stepper__description--end"> Escolha o dia e horário que for mais conveniente para você iniciar seu atendimento com tranquilidade e sem pressa. </p></div><div _ngcontent-ng-c1085230729="" class="stepper__indicator"><div _ngcontent-ng-c1085230729="" class="stepper__indicator-circle"></div><div _ngcontent-ng-c1085230729="" class="stepper__indicator-line"></div><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></div><div _ngcontent-ng-c1085230729="" class="stepper__image-container"><img _ngcontent-ng-c1085230729="" class="stepper__image" src="images/steps/step2.svg" alt="img2"></div><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></li><li _ngcontent-ng-c1085230729="" class="stepper__step"><div _ngcontent-ng-c1085230729="" class="stepper__image-container"><img _ngcontent-ng-c1085230729="" class="stepper__image stepper__image--end" src="images/steps/step3.svg" alt="img3"></div><div _ngcontent-ng-c1085230729="" class="stepper__indicator"><div _ngcontent-ng-c1085230729="" class="stepper__indicator-circle"></div><div _ngcontent-ng-c1085230729="" class="stepper__indicator-line"></div><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></div><div _ngcontent-ng-c1085230729="" class="stepper__text-container"><h4 _ngcontent-ng-c1085230729="" class="stepper__title">Escolha um profissional</h4><p _ngcontent-ng-c1085230729="" class="stepper__description">Conheça os nossos especialistas e escolha aquele que você sentir mais afinidade, garantindo um atendimento que realmente faça sentido para você.</p></div><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></li><li _ngcontent-ng-c1085230729="" class="stepper__step"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><div _ngcontent-ng-c1085230729="" class="stepper__text-container"><h4 _ngcontent-ng-c1085230729="" class="stepper__title stepper__title--end"> Inicie seu processo </h4><p _ngcontent-ng-c1085230729="" class="stepper__description stepper__description--end"> Dê início à sua jornada com um plano de acompanhamento pensado especialmente para você, respeitando seus objetivos e seu momento. </p></div><div _ngcontent-ng-c1085230729="" class="stepper__indicator"><div _ngcontent-ng-c1085230729="" class="stepper__indicator-circle"></div><div _ngcontent-ng-c1085230729="" class="stepper__indicator-line"></div><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></div><div _ngcontent-ng-c1085230729="" class="stepper__image-container"><img _ngcontent-ng-c1085230729="" class="stepper__image" src="images/steps/step4.svg" alt="img4"></div><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></li><li _ngcontent-ng-c1085230729="" class="stepper__step"><div _ngcontent-ng-c1085230729="" class="stepper__image-container"><img _ngcontent-ng-c1085230729="" class="stepper__image stepper__image--end" src="images/steps/step5.svg" alt="img5"></div><div _ngcontent-ng-c1085230729="" class="stepper__indicator"><div _ngcontent-ng-c1085230729="" class="stepper__indicator-circle"></div><div _ngcontent-ng-c1085230729="" class="stepper__indicator-line"></div><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></div><div _ngcontent-ng-c1085230729="" class="stepper__text-container"><h4 _ngcontent-ng-c1085230729="" class="stepper__title">Evolua no seu ritmo</h4><p _ngcontent-ng-c1085230729="" class="stepper__description">Com o apoio do seu psicólogo, você irá perceber conquistas e avanços no seu próprio tempo, desenvolvendo bem-estar, autoconhecimento e mais equilíbrio emocional.</p></div><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></li><li _ngcontent-ng-c1085230729="" class="stepper__step"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><div _ngcontent-ng-c1085230729="" class="stepper__text-container"><h4 _ngcontent-ng-c1085230729="" class="stepper__title stepper__title--end"> Esteja preparado para seguir </h4><p _ngcontent-ng-c1085230729="" class="stepper__description stepper__description--end"> Ao final do processo, você se sentirá mais confiante e preparado para lidar com os desafios da vida, com mais clareza, autonomia e equilíbrio. </p></div><div _ngcontent-ng-c1085230729="" class="stepper__indicator"><div _ngcontent-ng-c1085230729="" class="stepper__indicator-circle"></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div _ngcontent-ng-c1085230729="" class="stepper__image-container"><img _ngcontent-ng-c1085230729="" class="stepper__image" src="images/steps/step6.svg" alt="img6"></div><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--></ul></app-stepper><p _ngcontent-ng-c3875870653="" class="method__paragraph">Ficou com alguma dúvida? Vamos conversar.</p><a _ngcontent-ng-c3875870653="" href="https://wa.me/554399599130?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="method__button method__button--primary">Conversar</a></div></section></app-method><app-spaces _ngcontent-ng-c3665638741="" _nghost-ng-c1761990998="" ngh="2"><section _ngcontent-ng-c1761990998="" id="spaces" apprevealonscroll="" class="spaces"><div _ngcontent-ng-c1761990998="" class="spaces__header"><h3 _ngcontent-ng-c1761990998="" class="spaces__label">ESPAÇO</h3><h2 _ngcontent-ng-c1761990998="" class="spaces__title"> Nosso <span _ngcontent-ng-c1761990998="" class="spaces__title--emphasis">Espaço</span></h2></div><div _ngcontent-ng-c1761990998="" class="spaces__layout"><div _ngcontent-ng-c1761990998="" class="spaces__main-visual"><div _ngcontent-ng-c1761990998="" class="spaces__image spaces__image--main"><img _ngcontent-ng-c1761990998="" src="" alt="img 1"></div><div _ngcontent-ng-c1761990998="" class="spaces__image spaces__image--main"><img _ngcontent-ng-c1761990998="" src="" alt="img 2"></div></div><div _ngcontent-ng-c1761990998="" class="spaces__side-visuals"><div _ngcontent-ng-c1761990998="" class="spaces__image spaces__image--side"><img _ngcontent-ng-c1761990998="" src="" alt="img 3"></div><div _ngcontent-ng-c1761990998="" class="spaces__image spaces__image--side"><img _ngcontent-ng-c1761990998="" src="" alt="img 4"></div><div _ngcontent-ng-c1761990998="" class="spaces__image spaces__image--side"><img _ngcontent-ng-c1761990998="" src="" alt="img 5"></div></div></div><p _ngcontent-ng-c1761990998="" class="spaces__paragraph"> Ambiente pensado para acolher, transmitir tranquilidade e oferecer um espaço seguro desde o primeiro contato. </p></section></app-spaces><app-blog _ngcontent-ng-c3665638741="" _nghost-ng-c616170692="" ngh="2"><section _ngcontent-ng-c616170692="" id="blog" apprevealonscroll="" class="blog"><div _ngcontent-ng-c616170692="" class="blog__container"><div _ngcontent-ng-c616170692="" class="blog__content"><div _ngcontent-ng-c616170692="" class="blog__header"><h3 _ngcontent-ng-c616170692="" class="blog__label">NOSSO BLOG</h3><div _ngcontent-ng-c616170692="" class="blog__header-row"><h2 _ngcontent-ng-c616170692="" class="blog__title">Conteúdo mais recente publicado</h2><button _ngcontent-ng-c616170692="" class="blog__button blog__button--primary-outline"> Blog <i _ngcontent-ng-c616170692="" class="fa-solid fa-arrow-right"></i></button></div></div><div _ngcontent-ng-c616170692="" class="blog__posts"><app-post _ngcontent-ng-c616170692="" image="images/blog/post2.png" imagealt="Imagem do blog 2" title="A importância do autocuidado emocional" description="Reflexões sobre práticas simples que ajudam a manter o equilíbrio emocional ao longo da vida." authorname="Pedro Ribeiro" date="15 Dez, 2025" readtime="7 min de leitura" _nghost-ng-c1976707584="" ng-reflect-image="images/blog/post2.png" ng-reflect-image-alt="Imagem do blog 2" ng-reflect-title="A importância do autocuidado e" ng-reflect-description="Reflexões sobre práticas simpl" ng-reflect-author-name="Pedro Ribeiro" ng-reflect-date="15 Dez, 2025" ng-reflect-read-time="7 min de leitura" ng-reflect-author-image="[object Object]" ngh="2"><div _ngcontent-ng-c1976707584="" class="post"><div _ngcontent-ng-c1976707584="" class="post__image-container"><img _ngcontent-ng-c1976707584="" class="post__image" src="images/blog/post2.png" alt="Imagem do blog 2"></div><div _ngcontent-ng-c1976707584="" class="post__text-container"><div _ngcontent-ng-c1976707584="" class="post__header"><h4 _ngcontent-ng-c1976707584="" class="post__title">A importância do autocuidado emocional</h4><p _ngcontent-ng-c1976707584="" class="post__description">Reflexões sobre práticas simples que ajudam a manter o equilíbrio emocional ao longo da vida.</p></div><div _ngcontent-ng-c1976707584="" class="post__author"><div _ngcontent-ng-c1976707584="" class="post__author-avatar"><img _ngcontent-ng-c1976707584="" class="post__author-image" src="images/blog/author.png" alt="imgAutor"></div><div _ngcontent-ng-c1976707584="" class="post__author-info"><p _ngcontent-ng-c1976707584="" class="post__author-name">Pedro Ribeiro</p><div _ngcontent-ng-c1976707584="" class="post__author-meta"><span _ngcontent-ng-c1976707584="">15 Dez, 2025</span><span _ngcontent-ng-c1976707584="" class="post__author-separator"></span><span _ngcontent-ng-c1976707584="">7 min de leitura</span></div></div></div></div></div></app-post><app-post _ngcontent-ng-c616170692="" image="images/blog/post1.png" imagealt="Imagem do blog 1" title="Como a ansiedade se manifesta no dia a dia" description="Entenda sinais comuns da ansiedade e como eles podem aparecer na rotina, nas relações e no trabalho." authorname="Pedro Ribeiro" date="15 Dez, 2025" readtime="8 min de leitura" _nghost-ng-c1976707584="" ng-reflect-image="images/blog/post1.png" ng-reflect-image-alt="Imagem do blog 1" ng-reflect-title="Como a ansiedade se manifesta " ng-reflect-description="Entenda sinais comuns da ansie" ng-reflect-author-name="Pedro Ribeiro" ng-reflect-date="15 Dez, 2025" ng-reflect-read-time="8 min de leitura" ng-reflect-author-image="[object Object]" ngh="2"><div _ngcontent-ng-c1976707584="" class="post"><div _ngcontent-ng-c1976707584="" class="post__image-container"><img _ngcontent-ng-c1976707584="" class="post__image" src="images/blog/post1.png" alt="Imagem do blog 1"></div><div _ngcontent-ng-c1976707584="" class="post__text-container"><div _ngcontent-ng-c1976707584="" class="post__header"><h4 _ngcontent-ng-c1976707584="" class="post__title">Como a ansiedade se manifesta no dia a dia</h4><p _ngcontent-ng-c1976707584="" class="post__description">Entenda sinais comuns da ansiedade e como eles podem aparecer na rotina, nas relações e no trabalho.</p></div><div _ngcontent-ng-c1976707584="" class="post__author"><div _ngcontent-ng-c1976707584="" class="post__author-avatar"><img _ngcontent-ng-c1976707584="" class="post__author-image" src="images/blog/author.png" alt="imgAutor"></div><div _ngcontent-ng-c1976707584="" class="post__author-info"><p _ngcontent-ng-c1976707584="" class="post__author-name">Pedro Ribeiro</p><div _ngcontent-ng-c1976707584="" class="post__author-meta"><span _ngcontent-ng-c1976707584="">15 Dez, 2025</span><span _ngcontent-ng-c1976707584="" class="post__author-separator"></span><span _ngcontent-ng-c1976707584="">8 min de leitura</span></div></div></div></div></div></app-post></div></div></div></section></app-blog><app-contact _ngcontent-ng-c3665638741="" _nghost-ng-c2514427347="" ngh="8"><section _ngcontent-ng-c2514427347="" id="contact" apprevealonscroll="" class="contact"><div _ngcontent-ng-c2514427347="" class="contact__container"><div _ngcontent-ng-c2514427347="" class="contact__header"><h3 _ngcontent-ng-c2514427347="" class="contact__label">CONTATO</h3><h2 _ngcontent-ng-c2514427347="" class="contact__title"> Fale <span _ngcontent-ng-c2514427347="" class="contact__title--emphasis">Conosco</span></h2></div><div _ngcontent-ng-c2514427347="" class="contact__body"><div _ngcontent-ng-c2514427347="" class="contact__section"><div _ngcontent-ng-c2514427347="" class="contact__content"><h4 _ngcontent-ng-c2514427347="" class="contact__content-title">Informações para contato</h4><p _ngcontent-ng-c2514427347="" class="contact__content-desc"> Estamos à disposição para tirar dúvidas, explicar nossos serviços, informar horários e ajudar você a dar o primeiro passo. </p><img _ngcontent-ng-c2514427347="" src="images/teste.png" alt="foto" class="contact__image contact__image--mobile"><ul _ngcontent-ng-c2514427347="" class="contact__details"><li _ngcontent-ng-c2514427347="" class="contact__detail"><i _ngcontent-ng-c2514427347="" class="contact__detail-icon fas fa-phone" ng-reflect-ng-class="fas fa-phone"></i><div _ngcontent-ng-c2514427347="" class="contact__detail-content"><h5 _ngcontent-ng-c2514427347="" class="contact__detail-title">Telefone</h5><p _ngcontent-ng-c2514427347="" class="contact__detail-desc">(43) 3337-7793</p></div></li><li _ngcontent-ng-c2514427347="" class="contact__detail"><i _ngcontent-ng-c2514427347="" class="contact__detail-icon fas fa-envelope" ng-reflect-ng-class="fas fa-envelope"></i><div _ngcontent-ng-c2514427347="" class="contact__detail-content"><h5 _ngcontent-ng-c2514427347="" class="contact__detail-title">E-mail</h5><p _ngcontent-ng-c2514427347="" class="contact__detail-desc">contato@clinicaabertamente.com</p></div></li><li _ngcontent-ng-c2514427347="" class="contact__detail"><i _ngcontent-ng-c2514427347="" class="contact__detail-icon fas fa-map-marker-alt" ng-reflect-ng-class="fas fa-map-marker-alt"></i><div _ngcontent-ng-c2514427347="" class="contact__detail-content"><h5 _ngcontent-ng-c2514427347="" class="contact__detail-title">Endereço</h5><p _ngcontent-ng-c2514427347="" class="contact__detail-desc">R. Belo Horizonte, 1558 - Centro, Londrina - PR, 86020-061</p></div></li><li _ngcontent-ng-c2514427347="" class="contact__detail"><i _ngcontent-ng-c2514427347="" class="contact__detail-icon fas fa-clock" ng-reflect-ng-class="fas fa-clock"></i><div _ngcontent-ng-c2514427347="" class="contact__detail-content"><h5 _ngcontent-ng-c2514427347="" class="contact__detail-title">Horário</h5><p _ngcontent-ng-c2514427347="" class="contact__detail-desc">Segunda a Sexta: 08:00–21:00 <br> sábado 08:00–14:00</p></div></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--></ul></div><img _ngcontent-ng-c2514427347="" src="images/teste.png" alt="foto" class="contact__image contact__image--desktop"></div><div _ngcontent-ng-c2514427347="" class="contact__section"><iframe _ngcontent-ng-c2514427347="" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.302505012962!2d-51.1663137!3d-23.3094531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb436e70e0f7d1%3A0x22eeb321a413d8f2!2sR.%20Belo%20Horizonte%2C%201558%20-%20Centro%2C%20Londrina%20-%20PR%2C%2086020-061!5e0!3m2!1spt-BR!2sbr!4v1719341451632!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="contact__map contact__map--desktop" style="border: 0;"></iframe><div _ngcontent-ng-c2514427347="" class="contact__content"><h4 _ngcontent-ng-c2514427347="" class="contact__content-title">Facilidades para seu conforto</h4><p _ngcontent-ng-c2514427347="" class="contact__content-desc"> Estamos situados em uma rua ampla, com estacionamento público e gratuito, além de acesso para cadeirantes e transporte público próximo. </p><iframe _ngcontent-ng-c2514427347="" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.302505012962!2d-51.1663137!3d-23.3094531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb436e70e0f7d1%3A0x22eeb321a413d8f2!2sR.%20Belo%20Horizonte%2C%201558%20-%20Centro%2C%20Londrina%20-%20PR%2C%2086020-061!5e0!3m2!1spt-BR!2sbr!4v1719341451632!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="contact__map contact__map--mobile" style="border: 0;"></iframe><ul _ngcontent-ng-c2514427347="" class="contact__facilities"><li _ngcontent-ng-c2514427347="" class="contact__facility"><i _ngcontent-ng-c2514427347="" class="contact__facility-icon fas fa-parking" ng-reflect-ng-class="fas fa-parking"></i><h5 _ngcontent-ng-c2514427347="" class="contact__facility-title">Estacionamento gratuito</h5></li><li _ngcontent-ng-c2514427347="" class="contact__facility"><i _ngcontent-ng-c2514427347="" class="contact__facility-icon fas fa-wheelchair" ng-reflect-ng-class="fas fa-wheelchair"></i><h5 _ngcontent-ng-c2514427347="" class="contact__facility-title">Área totalmente acessível</h5></li><li _ngcontent-ng-c2514427347="" class="contact__facility"><i _ngcontent-ng-c2514427347="" class="contact__facility-icon fas fa-bus" ng-reflect-ng-class="fas fa-bus"></i><h5 _ngcontent-ng-c2514427347="" class="contact__facility-title">Transporte público próximo</h5></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--></ul></div></div></div></div></section></app-contact></main><app-floating-button _ngcontent-ng-c3665638741="" _nghost-ng-c1240515941="" ngh="2"><div _ngcontent-ng-c1240515941="" class="floating-button"><div _ngcontent-ng-c1240515941="" class="floating-button__container"><a _ngcontent-ng-c1240515941="" href="https://wa.me/554399599130?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="floating-button__link"><i _ngcontent-ng-c1240515941="" class="floating-button__icon fab fa-whatsapp"></i></a></div></div></app-floating-button><app-footer _ngcontent-ng-c3665638741="" _nghost-ng-c57142235="" ngh="9"><div _ngcontent-ng-c57142235="" class="footer"><div _ngcontent-ng-c57142235="" class="footer__container"><div _ngcontent-ng-c57142235="" class="footer__content"><div _ngcontent-ng-c57142235="" class="footer__row"><div _ngcontent-ng-c57142235="" class="footer__newsletter"><img _ngcontent-ng-c57142235="" src="images/Logo.png" style="width: 120px; margin-bottom: 16px;"><div _ngcontent-ng-c57142235="" class="footer__form"><h3 _ngcontent-ng-c57142235="" class="footer__title">Fique por dentro de novidades</h3><div _ngcontent-ng-c57142235="" class="footer__input-group"><input _ngcontent-ng-c57142235="" type="email" placeholder="Digite seu e-mail" class="footer__input"><button _ngcontent-ng-c57142235="" class="footer__button">Inscrever-se</button></div></div></div><ul _ngcontent-ng-c57142235="" class="footer__menus"><li _ngcontent-ng-c57142235="" class="footer__menu"><a _ngcontent-ng-c57142235="" class="footer__link" href="#">Serviço</a></li><li _ngcontent-ng-c57142235="" class="footer__menu"><a _ngcontent-ng-c57142235="" class="footer__link" href="#">Equipe</a></li><li _ngcontent-ng-c57142235="" class="footer__menu"><a _ngcontent-ng-c57142235="" class="footer__link" href="#">Metodologia</a></li><li _ngcontent-ng-c57142235="" class="footer__menu"><a _ngcontent-ng-c57142235="" class="footer__link" href="#">Espaço</a></li><li _ngcontent-ng-c57142235="" class="footer__menu"><a _ngcontent-ng-c57142235="" class="footer__link" href="#">Blog</a></li><li _ngcontent-ng-c57142235="" class="footer__menu"><a _ngcontent-ng-c57142235="" class="footer__link" href="#">Contato</a></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--></ul></div><div _ngcontent-ng-c57142235="" class="footer__row"><p _ngcontent-ng-c57142235="" class="footer__copyright"> © 2025 Clínica Abertamente. Todos os direitos reservados </p><ul _ngcontent-ng-c57142235="" class="footer__networks"><li _ngcontent-ng-c57142235="" class="footer__network"><a _ngcontent-ng-c57142235="" class="footer__network-link" href="#"><i _ngcontent-ng-c57142235="" class="footer__network-icon fab fa-facebook-f" ng-reflect-ng-class="fab fa-facebook-f"></i></a></li><li _ngcontent-ng-c57142235="" class="footer__network"><a _ngcontent-ng-c57142235="" class="footer__network-link" href="#"><i _ngcontent-ng-c57142235="" class="footer__network-icon fab fa-linkedin-in" ng-reflect-ng-class="fab fa-linkedin-in"></i></a></li><li _ngcontent-ng-c57142235="" class="footer__network"><a _ngcontent-ng-c57142235="" class="footer__network-link" href="#"><i _ngcontent-ng-c57142235="" class="footer__network-icon fab fa-x-twitter" ng-reflect-ng-class="fab fa-x-twitter"></i></a></li><li _ngcontent-ng-c57142235="" class="footer__network"><a _ngcontent-ng-c57142235="" class="footer__network-link" href="#"><i _ngcontent-ng-c57142235="" class="footer__network-icon fab fa-instagram" ng-reflect-ng-class="fab fa-instagram"></i></a></li><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--></ul></div></div></div></div></app-footer><router-outlet _ngcontent-ng-c3665638741=""></router-outlet><!--container--></app-root>
+  <link rel="modulepreload" href="chunk-WDMUDEB6.js"><script src="polyfills.js" type="module"></script><script src="main.js" type="module"></script>
+
+<script id="ng-state" type="application/json">{"__nghData__":[{"t":{"2":"t0","3":"t2"},"c":{"2":[{"i":"t0","r":1,"t":{"4":"t1"},"c":{"4":[{"i":"t1","r":1,"x":5}]}}],"3":[]}},{"t":{"2":"t3"},"c":{"2":[{"i":"t3","r":1,"x":5}]}},{},{"t":{"5":"t5","6":"t6"},"c":{"5":[{"i":"t5","r":1}],"6":[{"i":"t6","r":1}]}},{"t":{"10":"t4"},"c":{"10":[{"i":"t4","r":1,"x":6}]}},{"t":{"9":"t8"},"c":{"9":[{"i":"t8","r":1,"x":3}]}},{"t":{"17":"t7"},"c":{"17":[{"i":"t7","r":1,"x":5}]}},{"t":{"1":"t9"},"c":{"1":[{"i":"t9","r":1,"t":{"1":"t10","2":"t12"},"c":{"1":[{"i":"t10","r":4,"e":{"0":3},"t":{"5":"t11"},"c":{"5":[{"i":"t11","r":1}]}}],"2":[]}},{"i":"t9","r":1,"t":{"1":"t10","2":"t12"},"c":{"1":[],"2":[{"i":"t12","r":4,"e":{"0":3},"t":{"8":"t13"},"c":{"8":[{"i":"t13","r":1}]}}]}},{"i":"t9","r":1,"t":{"1":"t10","2":"t12"},"c":{"1":[{"i":"t10","r":4,"e":{"0":3},"t":{"5":"t11"},"c":{"5":[{"i":"t11","r":1}]}}],"2":[]}},{"i":"t9","r":1,"t":{"1":"t10","2":"t12"},"c":{"1":[],"2":[{"i":"t12","r":4,"e":{"0":3},"t":{"8":"t13"},"c":{"8":[{"i":"t13","r":1}]}}]}},{"i":"t9","r":1,"t":{"1":"t10","2":"t12"},"c":{"1":[{"i":"t10","r":4,"e":{"0":3},"t":{"5":"t11"},"c":{"5":[{"i":"t11","r":1}]}}],"2":[]}},{"i":"t9","r":1,"t":{"1":"t10","2":"t12"},"c":{"1":[],"2":[{"i":"t12","r":4,"e":{"0":3},"t":{"8":"t13"},"c":{"8":[]}}]}}]}},{"t":{"18":"t14","29":"t15"},"c":{"18":[{"i":"t14","r":1,"x":4}],"29":[{"i":"t15","r":1,"x":3}]}},{"t":{"14":"t16","19":"t17"},"c":{"14":[{"i":"t16","r":1,"x":6}],"19":[{"i":"t17","r":1,"x":4}]}},{"n":{"2":"0f3n3"},"d":[1],"c":{"14":[]}}]}</script></body></html>`;

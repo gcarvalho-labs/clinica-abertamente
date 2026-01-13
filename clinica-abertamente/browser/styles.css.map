@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/styles/styles.scss"],
+  "sourcesContent": ["@font-face {\n  font-family: 'DM Sans';\n  src: url('/fonts/DM_Sans/DMSans-Italic-VariableFont.ttf') format('truetype');\n  font-weight: 100 1000;\n  font-style: italic;\n}\n\n@font-face {\n  font-family: 'DM Sans';\n  src: url('/fonts/DM_Sans/DMSans-VariableFont.ttf') format('truetype');\n  font-weight: 100 1000;\n  font-style: normal;\n}\nbody {\n  position: relative;\n  margin: 0;\n  padding: 82px 0 0;\n  background-color: #ffffff;\n  font-family: 'DM Sans', sans-serif;\n  box-sizing: border-box;\n}\n\n\n/* Lenis */\nhtml.lenis {\n  height: auto;\n}\n\n.lenis.lenis-smooth {\n  scroll-behavior: auto !important;\n}\n\n.lenis.lenis-stopped {\n  overflow: hidden;\n}\n\n/* Fallback SSR / no-JS */\napp-root:not(.hydrated) [appRevealOnScroll] {\n  opacity: 1;\n  transform: none;\n}\n"],
+  "mappings": ";AAAA;AACE,eAAA;AACA,OAAA,mDAAA,OAAA;AACA,eAAA,IAAA;AACA,cAAA;;AAGF;AACE,eAAA;AACA,OAAA,4CAAA,OAAA;AACA,eAAA,IAAA;AACA,cAAA;;AAEF;AACE,YAAA;AACA,UAAA;AACA,WAAA,KAAA,EAAA;AACA,oBAAA;AACA,eAAA,SAAA,EAAA;AACA,cAAA;;AAKF,IAAA,CAAA;AACE,UAAA;;AAGF,CAJA,KAIA,CAAA;AACE,mBAAA;;AAGF,CARA,KAQA,CAAA;AACE,YAAA;;AAIF,QAAA,KAAA,CAAA,UAAA,CAAA;AACE,WAAA;AACA,aAAA;;",
+  "names": []
+}
