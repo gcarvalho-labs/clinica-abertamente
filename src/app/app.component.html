@@ -12,6 +12,7 @@
     [button]="navButton"
     [items]="navItems"
     [isOpen]="isDrawerActive"
+    (navigateToSection)="scrollToSection($event)"
   ></app-drawer>
 </app-header>
 <div
@@ -25,7 +26,7 @@
   (click)="onToggleDrawer()"
 ></div>
 <main class="main">
-  <app-hero></app-hero>
+  <app-hero (navigateToSection)="scrollToSection($event)"></app-hero>
   <app-services></app-services>
   <app-team></app-team>
   <app-method></app-method>
@@ -34,9 +35,9 @@
   <app-contact></app-contact>
 </main>
 <app-floating-button></app-floating-button>
-<app-footer></app-footer>
+<app-footer (navigateToSection)="scrollToSection($event)"></app-footer>
 <router-outlet></router-outlet>
 <!--
 npx ng build --configuration=production --base-href=/clinica-abertamente/
-npx angular-cli-ghpages --dir=dist/clinica-abertamente --branch=gh-pages
+npx angular-cli-ghpages --dir=dist/clinica-abertamente/browser --branch=gh-pages
 -->

@@ -237,20 +237,20 @@
     &--secondary {
       @include buttons.button-variant(
         $bg-color: transparent,
-        $text-color: #1d6a5f,
-        $hover-bg: #e6f6f2,
-        $active-bg: #e6f6f2,
+        $text-color: #ef7445,
+        $hover-bg: rgba(239, 116, 69, 0.08),
+        $active-bg: rgba(239, 116, 69, 0.16),
         $font-weight: 500,
-        $border: 1px solid #1d6a5f
+        $border: 1px solid #ef7445
       );
       @media (max-width: 390px) {
         @include buttons.button-variant(
           $bg-color: transparent,
-          $text-color: #1d6a5f,
-          $hover-bg: #e6f6f2,
-          $active-bg: #e6f6f2,
+          $text-color: #ef7445,
+          $hover-bg: rgba(239, 116, 69, 0.08),
+          $active-bg: rgba(239, 116, 69, 0.16),
           $font-weight: 430,
-          $border: 1px solid #1d6a5f
+          $border: 1px solid #ef7445
         );
       }
     }

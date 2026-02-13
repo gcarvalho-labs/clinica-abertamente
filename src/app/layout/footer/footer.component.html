@@ -3,23 +3,60 @@
     <div class="footer__content">
       <div class="footer__row">
         <div class="footer__newsletter">
-          <img src="images/Logo.png" style="width: 120px; margin-bottom: 16px;" />
+          <img
+            src="images/logo.png"
+            style="width: 120px; margin-bottom: 16px"
+          />
 
-          <div class="footer__form">
+          <form class="footer__form" #form="ngForm" (ngSubmit)="onSubmit(form)">
             <h3 class="footer__title">Fique por dentro de novidades</h3>
+
             <div class="footer__input-group">
               <input
                 class="footer__input"
                 type="email"
+                name="email"
                 placeholder="Digite seu e-mail"
+                ngModel
+                required
+                email
+                #emailRef="ngModel"
               />
-              <button class="footer__button">Inscrever-se</button>
+
+              <button
+                class="footer__button"
+                [disabled]="buttonState === 'loading'"
+                type="submit"
+              >
+                <ng-container [ngSwitch]="buttonState">
+                  <span *ngSwitchCase="'idle'">Inscrever-se</span>
+
+                  <span
+                    *ngSwitchCase="'loading'"
+                    class="footer__spinner"
+                  ></span>
+
+                  <span *ngSwitchCase="'success'">Obrigado!</span>
+                </ng-container>
+              </button>
             </div>
-          </div>
+
+            <p
+              class="footer__error"
+              *ngIf="emailRef.invalid && (emailRef.touched || form.submitted)"
+            >
+              Informe um e-mail válido.
+            </p>
+          </form>
         </div>
         <ul class="footer__menus">
           <li class="footer__menu" *ngFor="let menu of menus">
-            <a class="footer__link" [href]="menu.href">{{ menu.label }}</a>
+            <a
+              class="footer__link"
+              [href]="menu.href"
+              (click)="$event.preventDefault(); onMenuClick(menu.label)"
+              >{{ menu.label }}</a
+            >
           </li>
         </ul>
       </div>

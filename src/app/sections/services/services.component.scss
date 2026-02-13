@@ -29,7 +29,6 @@
   &__label {
     margin: 0;
     color: #1d6a5f;
-    background-color: white;
     border: 1px solid #1b655a;
     border-radius: 30px;
     padding: 0 18px;
@@ -94,6 +93,9 @@
     justify-content: center;
   }
   &__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     &--primary {
       @include buttons.button();
       @include buttons.button-variant(

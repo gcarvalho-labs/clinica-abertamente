@@ -91,12 +91,12 @@ export class AppComponent implements AfterViewInit {
   };
 
   navButton = {
-    name: 'Contato',
+    name: 'Ver mais',
   };
 
   navItems = [
     {
-      name: 'Serviços',
+      name: 'Home',
     },
     {
       name: 'Equipe',
@@ -108,7 +108,7 @@ export class AppComponent implements AfterViewInit {
       name: 'Espaço',
     },
     {
-      name: 'Blog',
+      name: 'Contato',
     },
   ];
 }

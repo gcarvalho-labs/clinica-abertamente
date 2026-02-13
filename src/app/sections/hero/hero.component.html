@@ -26,7 +26,14 @@
             rel="noopener noreferrer"
             >Conversar</a
           >
-          <a class="hero__button hero__button--secondary"> Como funciona? </a>
+          <a
+            class="hero__button hero__button--secondary"
+            href="#"
+            (click)="$event.preventDefault(); onHowItWorksClick()"
+          >
+            Como funciona?
+          </a>
+
         </div>
       </div>
       <div class="hero__right">

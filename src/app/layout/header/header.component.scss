@@ -20,8 +20,8 @@
     @include containers.container();
   }
   &__list {
-    //border-bottom: 1px solid #ede9e1;
-    //box-sizing: border-box; desativado por causa da borda
+    //border-bottom: 1.5px solid #f1f0ee;
+    //box-sizing: border-box; //desativado por causa da borda
     padding: 0;
     margin: 0;
     list-style: none;

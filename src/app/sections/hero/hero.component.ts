@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { RevealOnScrollDirective } from '../../directives/reveal-on-scroll.directive';
 
 @Component({
@@ -15,9 +15,14 @@ export class HeroComponent implements OnInit{
     this.isMobile = window.innerWidth <= 991;
   }
 
-
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.isMobile = (event.target as Window).innerWidth <= 991;
+  }
+
+  @Output() navigateToSection = new EventEmitter<string>();
+
+  onHowItWorksClick(): void {
+    this.navigateToSection.emit('method');
   }
 }
